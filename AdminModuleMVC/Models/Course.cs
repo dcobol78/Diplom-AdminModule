@@ -21,7 +21,7 @@
         public int Duration { get; set; }
 
         // Дата создания курса
-        public DateTime CreatedDate { get; set;}
+        public DateTime CreationDate { get; set;}
 
         // Является ли курс публичным (Свободный вход, отоброжается в списке всех курсов)
         public bool IsPublic { get; set; }
@@ -29,9 +29,8 @@
         // Является ли курс последовательным (Свободный доступ ко всему контенту или последовательный)
         public bool IsCoherent { get; set; }
 
-        // Список дат начала занятий
+        // Список дат начала занятий (Не заносить в бд)
         public DateTime StartingDate { get; set; }
-
 
     }
 }

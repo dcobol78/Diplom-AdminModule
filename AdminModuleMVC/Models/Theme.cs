@@ -2,40 +2,31 @@
 {
     public class Theme
     {
-        // Id темы
+        // Id Темы
         public int Id { get; set; }
 
-        // Имя темы
+        // Id Сектора
+        public int IdSection { get; set; }
+
+        // Имя Темы
         public string Name { get; set; }
 
-        // Содержание темы
+        // Id теста Темы
+        public int IdTest { get; set; }
+
+        // Содержание Темы
         public string Content { get; set; }
 
-        // Порядковый номер темы ?
+        // Порядковый номер Темы
         public string Number { get; set; }
 
-        // Следующая тема
-        public int NextThemeId { get; set; }
-
-        // Id курса
-        public int CourseId { get; set; }
-
-        // Продолжительность сектора ?
+        // Продолжительность Темы
         public int Duration { get; set; }
 
-        // Дата начала секции ?
-        public DateTime StartingDate { get; set; }
-
-        // Опыт получаемый за прохождение курса
-        //public int Cost { get; set; }
-
-        // Id теста сектора
-        //public int TestId { get; set; }
+        // Опыт получаемый за прохождение Темы ?
+        public int Cost { get; set; }
 
         // Id задания 
-        //public int AssignmentId { get; set; }
-
-        // Загруженные файлы
-        //public string FilesId { get; set; }
+        public int IdHomework { get; set; }
     }
 }
