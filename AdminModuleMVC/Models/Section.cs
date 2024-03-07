@@ -9,10 +9,10 @@ namespace AdminModuleMVC.Models
         // Id Сектора
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         // Id курса
-        public int IdCourse { get; set; }
+        public string IdCourse { get; set; }
 
         // Имя Сектора
         public string Name { get; set; }

@@ -33,9 +33,15 @@ namespace AdminModuleMVC.Controllers
         public ActionResult Course(CourseViewModel viewModel)
         {
             var form = Request.Form;
+            Course course = new Course();
+            // Проверка есть ли у курса id, если id нет, создать id и добавить курс в базу, если есть изменить курс
+            if (string.IsNullOrEmpty(viewModel.Course.Id))
+            {
+                course.Id = Guid.NewGuid().ToString();
+            }
             if (form != null)
             {
-                Course course = new Course();
+                
                 course.Name = form["courseName"];
                 course.AutorName = form["authorName"];
                 course.Duration = int.Parse(form["duration"]);

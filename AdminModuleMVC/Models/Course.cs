@@ -7,8 +7,8 @@ namespace AdminModuleMVC.Models
     {
         // Id курса
         [ScaffoldColumn(false)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        [Key]
+        public string Id { get; set; }
 
         // Id автора
         public int AutorId { get; set; }
