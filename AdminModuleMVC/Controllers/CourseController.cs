@@ -1,4 +1,5 @@
 ﻿using AdminModuleMVC.Data;
+using AdminModuleMVC.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,34 @@ namespace AdminModuleMVC.Controllers
         // GET: CourseController
         public ActionResult Course()
         {
+            //CourseViewModel viewModel = new CourseViewModel();
+            //viewModel.Course = new Course();
+            return View();
+        }
+
+        public ActionResult Course(int courseId)
+        {
+            //CourseViewModel viewModel = new CourseViewModel();
+            //viewModel.Course = new Course();
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Course(CourseViewModel viewModel)
+        {
+            var form = Request.Form;
+            if (form != null)
+            {
+                Course course = new Course();
+                course.Name = form["courseName"];
+                course.AutorName = form["authorName"];
+                course.Duration = int.Parse(form["duration"]);
+                course.Description = form["content"];
+                course.IsCoherent = !string.IsNullOrEmpty(form["sequential"]);
+                course.IsPublic = !string.IsNullOrEmpty(form["open"]);
+                //course.AutorId 
+            }
             return View();
         }
 

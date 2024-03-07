@@ -1,8 +1,13 @@
-﻿namespace AdminModuleMVC.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace AdminModuleMVC.Models
 {
     public class Course
     {
         // Id курса
+        [ScaffoldColumn(false)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         // Id автора
@@ -29,7 +34,7 @@
         // Является ли курс последовательным (Свободный доступ ко всему контенту или последовательный)
         public bool IsCoherent { get; set; }
 
-        // Список дат начала занятий (Не заносить в бд)
+        // Список дат начала занятий (Не заносить в бд)?
         public DateTime StartingDate { get; set; }
 
     }

@@ -1,8 +1,13 @@
-﻿namespace AdminModuleMVC.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace AdminModuleMVC.Models
 {
     public class Theme
     {
         // Id Темы
+        [ScaffoldColumn(false)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         // Id Сектора

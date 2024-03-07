@@ -1,8 +1,14 @@
-﻿namespace AdminModuleMVC.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace AdminModuleMVC.Models
 {
     public class Section
     {
+
         // Id Сектора
+        [ScaffoldColumn(false)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         // Id курса
