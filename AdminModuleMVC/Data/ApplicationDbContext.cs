@@ -9,5 +9,6 @@ namespace AdminModuleMVC.Data
             : base(options)
         {
         }
+
     }
 }

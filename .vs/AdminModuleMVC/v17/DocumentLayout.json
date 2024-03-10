@@ -1,7 +1,47 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\views\\course\\editcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\views\\course\\editcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_I983D7M/coursedatadb/True/SqlTable/dbo.Courses.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\autor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\autor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\editcourseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\editcourseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\data\\coursedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\data\\coursedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +49,134 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T13:27:57.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Autor.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Autor.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Autor.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Autor.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\Autor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T12:53:34.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditCourse.cshtml",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Views\\Course\\EditCourse.cshtml",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Views\\Course\\EditCourse.cshtml",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Views\\Course\\EditCourse.cshtml",
+              "RelativeToolTip": "AdminModuleMVC\\Views\\Course\\EditCourse.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABIAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-09T12:53:14.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EditCourseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditCourseViewModel.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\EditCourseViewModel.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditCourseViewModel.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\EditCourseViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T12:52:59.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Views\\Course\\Index.cshtml",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Views\\Course\\Index.cshtml",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Views\\Course\\Index.cshtml",
+              "RelativeToolTip": "AdminModuleMVC\\Views\\Course\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-09T12:44:49.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Course.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Course.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\Course.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAIwD0AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T12:42:13.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.Courses [\u0414\u0430\u043D\u043D\u044B\u0435]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_I983D7M/coursedatadb/True/SqlTable/dbo.Courses.sql",
+              "ToolTip": "dbo.Courses [\u0414\u0430\u043D\u043D\u044B\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-03-09T12:41:47.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Controllers\\CourseController.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Controllers\\CourseController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAmwCUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T12:40:20.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T12:40:12.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CourseDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Data\\CourseDbContext.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Data\\CourseDbContext.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Data\\CourseDbContext.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Data\\CourseDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T12:40:06.647Z",
+              "EditorCaption": ""
             }
           ]
         }

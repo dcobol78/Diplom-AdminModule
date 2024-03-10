@@ -22,10 +22,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Course/Course.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvdXJzZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Course/EditCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEVkaXRDb3Vyc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Course/EditTheme.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEVkaXRUaGVtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Course/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Home/Index.cshtml]

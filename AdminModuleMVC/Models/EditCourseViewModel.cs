@@ -1,6 +1,6 @@
 ﻿namespace AdminModuleMVC.Models
 {
-    public class CourseViewModel
+    public class EditCourseViewModel
     {
         public Course Course { get; set; }
 

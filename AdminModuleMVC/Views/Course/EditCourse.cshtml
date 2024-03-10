@@ -1,5 +1,81 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model EditCourseViewModel
 @{
+    ViewData["Title"] = "Home page";
 }
+
+<form asp-action="Course" method="post">
+    <label for="courseName">Имя курса:</label>
+    <input type="text" id="courseName" name="courseName" value="@Model.Course.Name" required><br>
+
+    <label for="authorName">Имя автора:</label>
+    <input type="text" id="authorName" name="authorName" value="@Model.Course.AutorName" required><br>
+
+    <label for="duration">Продолжительность в неделях:</label>
+    <input type="number" id="duration" name="duration" value="@Model.Course.Duration" min=0 oninput="validity.valid||(value='')" required><br>
+
+    <label for="isCoherent">Последовательный курс:</label>
+    <input type="checkbox" id="isCoherent" name="isCoherent" @(Model.Course.IsCoherent ? "checked" : "")><br>
+
+    <label for="isPublic">Открытый курс:</label>
+    <input type="checkbox" id="isPublic" name="isPublic" @(Model.Course.IsPublic ? "checked" : "")><br>
+
+
+    <head>
+        <meta charset="utf-8">
+        <title>CKEditor 5 - Classic editor</title>
+        <script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
+    </head>
+    <body>
+        <h1>Classic editor</h1>
+            <textarea name="content" id="editor">
+            &lt;p&gt;This is some sample content.&lt;/p&gt;
+        </textarea>
+        <script>
+            ClassicEditor
+                .create(document.querySelector('#editor'))
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>
+    </body>
+
+<head>
+    <style>
+        .textbox-container {
+            margin-top: 10px;
+        }
+
+        .textbox {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="textbox-container">
+        <button onclick="createTextbox()">Создать Textbox</button>
+    </div>
+
+    <script>
+        function createTextbox() {
+            var textbox = document.createElement("input");
+            textbox.setAttribute("type", "text");
+            textbox.setAttribute("class", "textbox");
+
+            var container = document.querySelector(".textbox-container");
+            container.insertBefore(textbox, container.lastElementChild);
+
+            // Удаляем старую кнопку
+            var oldButton = document.querySelector(".textbox-container button");
+            oldButton.remove();
+
+            // Создаем новую кнопку
+            var button = document.createElement("button");
+            button.textContent = "Создать Textbox";
+            button.onclick = createTextbox;
+            container.appendChild(button);
+        }
+    </script>
+</body>
+    <p><input type="submit" value="Submit"></p>
+</form>

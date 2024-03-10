@@ -1,62 +1,127 @@
 ﻿using AdminModuleMVC.Data;
 using AdminModuleMVC.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdminModuleMVC.Controllers
 {
+    [Authorize]
     public class CourseController : Controller
     {
-        private ApplicationDbContext dbContext;
-        public CourseController(ApplicationDbContext context)
+        private UserManager<IdentityUser> _userManager;
+        private CourseDbContext _dbContext;
+        
+        public CourseController(CourseDbContext context, UserManager<IdentityUser> userManager)
         {
-            dbContext = context;
+            _dbContext = context;
+            _userManager = userManager;
+        }
+
+        public ActionResult Index()
+        {
+
+            CourseIndexViewModel model = new CourseIndexViewModel();
+
+            // Получение списка курсов из БД
+            model.Courses = _dbContext.Courses.ToList();
+
+            return View(model);
         }
 
         // GET: CourseController
-        public ActionResult Course()
+        public ActionResult EditCourse(string courseId)
         {
-            //CourseViewModel viewModel = new CourseViewModel();
-            //viewModel.Course = new Course();
-            return View();
-        }
+            // Проверка на то что пользователь имеет право редактировать курс
 
-        public ActionResult Course(int courseId)
-        {
-            //CourseViewModel viewModel = new CourseViewModel();
-            //viewModel.Course = new Course();
-            return View();
+            if (!string.IsNullOrEmpty(courseId))
+            {
+                EditCourseViewModel model = new EditCourseViewModel();
+
+                var course = _dbContext.Courses.FirstOrDefault(x => x.Id == courseId);
+
+                model.Course = course;
+                // Получение курса из бд или из модели или из TempData
+                return View(model);
+            }
+            
+            return RedirectToAction("Index");
         }
+        
+        // Добавить изменение записи в бд
+        /*
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditCourse(string courseId)
+        {
+            // Проверка на то что пользователь имеет право редактировать курс
+
+            if (!string.IsNullOrEmpty(courseId))
+            {
+                EditCourseViewModel model = new EditCourseViewModel();
+
+                var course = _dbContext.Courses.FirstOrDefault(x => x.Id == courseId);
+
+                model.Course = course;
+                // Получение курса из бд или из модели или из TempData
+                return View(model);
+            }
+
+            return RedirectToAction("Index");
+        }
+        */
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Course(CourseViewModel viewModel)
+        public ActionResult CreateCourse()
         {
+            var newId = Guid.NewGuid().ToString();
+            var currentUser = this.User;
+            var userId = _userManager.GetUserId(currentUser);
+            Course course = new Course(newId, userId);
+
+            //Занесение курса в БД
+            _dbContext.Courses.Add(course);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        /*
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateCourse(CourseViewModel courseModel)
+        {
+
             var form = Request.Form;
             Course course = new Course();
             // Проверка есть ли у курса id, если id нет, создать id и добавить курс в базу, если есть изменить курс
-            if (string.IsNullOrEmpty(viewModel.Course.Id))
+            if (!TempData.ContainsKey("Id"))
             {
                 course.Id = Guid.NewGuid().ToString();
             }
+            else
+            {
+                course.Id = TempData["Id"].ToString();
+            }
             if (form != null)
             {
-                
+                // Добавить проверку на то что пользователь авторизовани ?? А нужно?
+                System.Security.Claims.ClaimsPrincipal currentUser = this.User;
                 course.Name = form["courseName"];
                 course.AutorName = form["authorName"];
                 course.Duration = int.Parse(form["duration"]);
                 course.Description = form["content"];
                 course.IsCoherent = !string.IsNullOrEmpty(form["sequential"]);
                 course.IsPublic = !string.IsNullOrEmpty(form["open"]);
-                //course.AutorId 
+                course.AutorId = _userManager.GetUserId(currentUser);
+
+                // Запрос к БД для сохранения
             }
             return View();
         }
-
-        public ActionResult EditCourse(int courseId)
-        {
-            return View();
-        }
+        */
 
         public ActionResult EditTheme(int themeId)
         {

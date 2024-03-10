@@ -14,16 +14,16 @@ namespace AdminModuleMVC.Models
         // Id курса
         public string IdCourse { get; set; }
 
+        // Список тем
+        public virtual List<Theme> Themes { get; set; }
+
         // Имя Сектора
         public string Name { get; set; }
-
-        // Id теста сектора
-        public int IdTest { get; set; }
 
         // Содержание сектора
         public string Content { get; set; }
 
-        // Порядковый номер сектора ?
+        // Порядковый номер сектора
         public string Number { get; set; }
 
         // Продолжительность сектора ?
@@ -32,8 +32,10 @@ namespace AdminModuleMVC.Models
         // Опыт получаемый за прохождение курса
         public int Cost { get; set; }
 
-        // Id задания 
-        public int IdHomework { get; set; }
+        // Есть ли тест (Поменять на ссылку на тест?)
+        public bool HasTest { get; set; }
 
+        // Есть ли домашнее задание (Поменять на ссылку на задание?)
+        public bool HasHomework { get; set; }
     }
 }
