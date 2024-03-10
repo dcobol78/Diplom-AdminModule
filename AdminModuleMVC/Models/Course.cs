@@ -8,7 +8,6 @@ namespace AdminModuleMVC.Models
     {
         public Course(string id, string autorId) 
         {
-            Id = id;
             AutorId = autorId;
             Name = "My Course";
             Description = string.Empty;
@@ -19,7 +18,7 @@ namespace AdminModuleMVC.Models
             HasHomework = false;
             IsCoherent = false;
             IsPublic = false;
-            Section = new();
+            Sections = new();
             StartingDate = new();
         }
 
@@ -41,7 +40,7 @@ namespace AdminModuleMVC.Models
         public string Description { get; set; }
 
         // Список секторов
-        public virtual List<Section> Section { get; set; }
+        public virtual List<Section> Sections { get; set; }
 
         // Список тэгов (Доработать позже)
         //public virtual List<Tag> Tags { get; set; }

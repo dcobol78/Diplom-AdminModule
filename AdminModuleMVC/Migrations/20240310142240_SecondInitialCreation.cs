@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AdminModuleMVC.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class SecondInitialCreation : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -37,7 +37,8 @@ namespace AdminModuleMVC.Migrations
                 name: "Tags",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,14 +46,14 @@ namespace AdminModuleMVC.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Section",
+                name: "Sections",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     IdCourse = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Number = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Number = table.Column<int>(type: "int", nullable: false),
                     Duration = table.Column<int>(type: "int", nullable: false),
                     Cost = table.Column<int>(type: "int", nullable: false),
                     HasTest = table.Column<bool>(type: "bit", nullable: false),
@@ -61,21 +62,20 @@ namespace AdminModuleMVC.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Section", x => x.Id);
+                    table.PrimaryKey("PK_Sections", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Section_Courses_CourseId",
+                        name: "FK_Sections_Courses_CourseId",
                         column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Theme",
+                name: "Themes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdSection = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    IdSection = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Number = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -87,22 +87,22 @@ namespace AdminModuleMVC.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Theme", x => x.Id);
+                    table.PrimaryKey("PK_Themes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Theme_Section_SectionId",
+                        name: "FK_Themes_Sections_SectionId",
                         column: x => x.SectionId,
-                        principalTable: "Section",
+                        principalTable: "Sections",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Section_CourseId",
-                table: "Section",
+                name: "IX_Sections_CourseId",
+                table: "Sections",
                 column: "CourseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Theme_SectionId",
-                table: "Theme",
+                name: "IX_Themes_SectionId",
+                table: "Themes",
                 column: "SectionId");
         }
 
@@ -113,10 +113,10 @@ namespace AdminModuleMVC.Migrations
                 name: "Tags");
 
             migrationBuilder.DropTable(
-                name: "Theme");
+                name: "Themes");
 
             migrationBuilder.DropTable(
-                name: "Section");
+                name: "Sections");
 
             migrationBuilder.DropTable(
                 name: "Courses");

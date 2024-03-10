@@ -4,9 +4,11 @@
     {
         public Course Course { get; set; }
 
-        public List<Section> Sections { get; set; }
+        //Не понадобилось (Возможно заменить на эллемент модели)
+        //public List<Section> Sections { get; set; }
 
-        public List<Tag> Tags { get; set; }
+        //Скорее всего не понадобится 
+        //public List<Tag> Tags { get; set; }
 
         public Test CourseTest { get; set; }
 

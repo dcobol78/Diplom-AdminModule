@@ -4,6 +4,7 @@ using AdminModuleMVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AdminModuleMVC.Migrations
 {
     [DbContext(typeof(CourseDbContext))]
-    partial class CourseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240310142240_SecondInitialCreation")]
+    partial class SecondInitialCreation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,21 +106,24 @@ namespace AdminModuleMVC.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Number")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Number")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Section");
+                    b.ToTable("Sections");
                 });
 
             modelBuilder.Entity("AdminModuleMVC.Models.Tag", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -126,11 +132,9 @@ namespace AdminModuleMVC.Migrations
 
             modelBuilder.Entity("AdminModuleMVC.Models.Theme", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -148,8 +152,9 @@ namespace AdminModuleMVC.Migrations
                     b.Property<bool>("HasTest")
                         .HasColumnType("bit");
 
-                    b.Property<int>("IdSection")
-                        .HasColumnType("int");
+                    b.Property<string>("IdSection")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -166,13 +171,13 @@ namespace AdminModuleMVC.Migrations
 
                     b.HasIndex("SectionId");
 
-                    b.ToTable("Theme");
+                    b.ToTable("Themes");
                 });
 
             modelBuilder.Entity("AdminModuleMVC.Models.Section", b =>
                 {
                     b.HasOne("AdminModuleMVC.Models.Course", null)
-                        .WithMany("Section")
+                        .WithMany("Sections")
                         .HasForeignKey("CourseId");
                 });
 
@@ -185,7 +190,7 @@ namespace AdminModuleMVC.Migrations
 
             modelBuilder.Entity("AdminModuleMVC.Models.Course", b =>
                 {
-                    b.Navigation("Section");
+                    b.Navigation("Sections");
                 });
 
             modelBuilder.Entity("AdminModuleMVC.Models.Section", b =>

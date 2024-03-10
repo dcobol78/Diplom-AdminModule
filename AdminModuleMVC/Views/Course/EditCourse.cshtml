@@ -3,7 +3,7 @@
     ViewData["Title"] = "Home page";
 }
 
-<form asp-action="Course" method="post">
+<form asp-action="SaveCourse" method="post">
     <label for="courseName">Имя курса:</label>
     <input type="text" id="courseName" name="courseName" value="@Model.Course.Name" required><br>
 
@@ -28,7 +28,7 @@
     <body>
         <h1>Classic editor</h1>
             <textarea name="content" id="editor">
-            &lt;p&gt;This is some sample content.&lt;/p&gt;
+            @Model.Course.Description
         </textarea>
         <script>
             ClassicEditor
@@ -38,44 +38,36 @@
                 });
         </script>
     </body>
-
-<head>
-    <style>
-        .textbox-container {
-            margin-top: 10px;
-        }
-
-        .textbox {
-            display: block;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="textbox-container">
-        <button onclick="createTextbox()">Создать Textbox</button>
-    </div>
-
-    <script>
-        function createTextbox() {
-            var textbox = document.createElement("input");
-            textbox.setAttribute("type", "text");
-            textbox.setAttribute("class", "textbox");
-
-            var container = document.querySelector(".textbox-container");
-            container.insertBefore(textbox, container.lastElementChild);
-
-            // Удаляем старую кнопку
-            var oldButton = document.querySelector(".textbox-container button");
-            oldButton.remove();
-
-            // Создаем новую кнопку
-            var button = document.createElement("button");
-            button.textContent = "Создать Textbox";
-            button.onclick = createTextbox;
-            container.appendChild(button);
-        }
-    </script>
-</body>
     <p><input type="submit" value="Submit"></p>
 </form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Номер</th>
+            <th>Стоимость</th>
+            <th>Продолжительность</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Course.Sections != null)
+        {
+            Model.Course.Sections.Sort((emp1, emp2) => emp1.Number.CompareTo(emp2.Number));
+            @foreach (var sect in Model.Course.Sections)
+            {
+                <tr>
+                    <td>@Html.ActionLink(sect.Name, "EditSector", "Course", new { sectorId = sect.Id })</td>
+                    <td>@sect.Number</td>
+                    <td>@sect.Cost</td>
+                    <td>@sect.Duration</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@using (Html.BeginForm("CreateSector", "Course", new { courseId = Model.Course.Id }))
+{
+    <input type="submit" value="Create Section" />
+}

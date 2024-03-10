@@ -1,5 +1,63 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model EditSectorViewModel
 @{
+    ViewData["Title"] = "Home page";
+}
+
+<form asp-action="SaveSector" method="post">
+    <label for="courseName">Имя секции:</label>
+    <input type="text" id="sectorName" name="sectorName" value="@Model.Section.Name" required><br>
+
+    <label for="duration">Продолжительность в неделях:</label>
+    <input type="number" id="duration" name="duration" value="@Model.Section.Duration" min=0 oninput="validity.valid||(value='')" required><br>
+
+    <head>
+        <meta charset="utf-8">
+        <title>CKEditor 5 - Classic editor</title>
+        <script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
+    </head>
+    <body>
+        <h1>Classic editor</h1>
+        <textarea name="content" id="editor">
+            @Model.Section.Content
+        </textarea>
+        <script>
+            ClassicEditor
+                .create(document.querySelector('#editor'))
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>
+    </body>
+    <p><input type="submit" value="Submit"></p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Номер</th>
+            <th>Стоимость</th>
+            <th>Продолжительность</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Section.Themes != null)
+        {
+            Model.Section.Themes.Sort((emp1, emp2) => emp1.Number.CompareTo(emp2.Number));
+            @foreach (var theme in Model.Section.Themes)
+            {
+                <tr>
+                    <td>@Html.ActionLink(theme.Name, "EditTheme", "Course", new { themeId = theme.Id })</td>
+                    <td>@theme.Number</td>
+                    <td>@theme.Cost</td>
+                    <td>@theme.Duration</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@using (Html.BeginForm("CreateTheme", "Course", new { sectorId = Model.Section.Id }))
+{
+    <input type="submit" value="Create Theme" />
 }

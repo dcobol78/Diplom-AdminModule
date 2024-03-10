@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace AdminModuleMVC.Controllers
 {
@@ -12,7 +14,7 @@ namespace AdminModuleMVC.Controllers
     {
         private UserManager<IdentityUser> _userManager;
         private CourseDbContext _dbContext;
-        
+
         public CourseController(CourseDbContext context, UserManager<IdentityUser> userManager)
         {
             _dbContext = context;
@@ -39,38 +41,15 @@ namespace AdminModuleMVC.Controllers
             {
                 EditCourseViewModel model = new EditCourseViewModel();
 
-                var course = _dbContext.Courses.FirstOrDefault(x => x.Id == courseId);
-
+                var course = _dbContext.Courses.Include(c => c.Sections).FirstOrDefault(x => x.Id == courseId);
                 model.Course = course;
-                // Получение курса из бд или из модели или из TempData
-                return View(model);
-            }
-            
-            return RedirectToAction("Index");
-        }
-        
-        // Добавить изменение записи в бд
-        /*
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult EditCourse(string courseId)
-        {
-            // Проверка на то что пользователь имеет право редактировать курс
 
-            if (!string.IsNullOrEmpty(courseId))
-            {
-                EditCourseViewModel model = new EditCourseViewModel();
-
-                var course = _dbContext.Courses.FirstOrDefault(x => x.Id == courseId);
-
-                model.Course = course;
-                // Получение курса из бд или из модели или из TempData
+                TempData["CourseId"] = course.Id;
                 return View(model);
             }
 
             return RedirectToAction("Index");
         }
-        */
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -88,128 +67,144 @@ namespace AdminModuleMVC.Controllers
             return RedirectToAction("Index");
         }
 
-        /*
+        // Здесь используется Request.Form может использовать модель?
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateCourse(CourseViewModel courseModel)
+        public ActionResult SaveCourse()
         {
-
-            var form = Request.Form;
-            Course course = new Course();
-            // Проверка есть ли у курса id, если id нет, создать id и добавить курс в базу, если есть изменить курс
-            if (!TempData.ContainsKey("Id"))
+            var courseId = TempData["CourseId"].ToString();
+            if (!string.IsNullOrEmpty(courseId))
             {
-                course.Id = Guid.NewGuid().ToString();
+                var form = Request.Form;
+                Course course = _dbContext.Courses.First(x => x.Id == courseId);
+                if (form != null && course != null)
+                {
+                    // Добавить проверку на то что пользователь авторизовани ?? А нужно?
+                    course.Name = form["courseName"];
+                    course.AutorName = form["authorName"];
+                    course.Duration = int.Parse(form["duration"]);
+                    course.Description = form["content"];
+                    course.IsCoherent = !string.IsNullOrEmpty(form["sequential"]);
+                    course.IsPublic = !string.IsNullOrEmpty(form["open"]);
+
+                    // Запрос к БД для сохранения
+                    _dbContext.SaveChanges();
+                }
             }
-            else
+            return RedirectToAction("EditCourse", new { courseId = courseId });
+        }
+
+        public ActionResult DeleteCourse()
+        {
+            return View();
+        }
+
+
+
+
+        public ActionResult EditSector(string? sectorId)
+        {
+
+            if (!string.IsNullOrEmpty(sectorId))
             {
-                course.Id = TempData["Id"].ToString();
+                EditSectorViewModel model = new EditSectorViewModel();
+
+                var section = _dbContext.Sections.Include(c => c.Themes).FirstOrDefault(x => x.Id == sectorId);
+                model.Section = section;
+
+                TempData["SectorId"] = section.Id;
+                return View(model);
             }
-            if (form != null)
-            {
-                // Добавить проверку на то что пользователь авторизовани ?? А нужно?
-                System.Security.Claims.ClaimsPrincipal currentUser = this.User;
-                course.Name = form["courseName"];
-                course.AutorName = form["authorName"];
-                course.Duration = int.Parse(form["duration"]);
-                course.Description = form["content"];
-                course.IsCoherent = !string.IsNullOrEmpty(form["sequential"]);
-                course.IsPublic = !string.IsNullOrEmpty(form["open"]);
-                course.AutorId = _userManager.GetUserId(currentUser);
-
-                // Запрос к БД для сохранения
-            }
-            return View();
-        }
-        */
-
-        public ActionResult EditTheme(int themeId)
-        {
-            return View();
+            return RedirectToAction("Index");
         }
 
-        public ActionResult EditSector(int sectorId)
-        {
-            return View();
-        }
-
-        // GET: CourseController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: CourseController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create()
+        public ActionResult CreateSector(string? courseId)
         {
-            string formValue;
-            if (!string.IsNullOrEmpty(Request.Form["content"]))
-            {
-                formValue = Request.Form["content"];
-            }
-            return View();
+            var course = _dbContext
+                .Courses
+                .Include(c => c.Sections)
+                .First(x => x.Id == courseId);
+            var sections = course.Sections;
+
+            if (sections == null) sections = new List<Section>();
+
+            sections.Add(new Section(courseId, sections.Count));
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("EditCourse", new { courseId = courseId });
         }
 
-        /*
-        // POST: CourseController/Create
+        // Здесь используется Request.Form может использовать модель?
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult SaveSector()
         {
-            int i = 0;
-            try
+            var courseId = TempData["SectorId"].ToString();
+            if (!string.IsNullOrEmpty(courseId))
             {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-        */
+                var form = Request.Form;
+                var sector = _dbContext.Sections.First(x => x.Id == courseId);
+                if (form != null && sector != null)
+                {
+                    // Добавить проверку на то что пользователь авторизовани ?? А нужно?
+                    sector.Name = form["sectorName"];
+                    sector.Duration = int.Parse(form["duration"]);
+                    sector.Content = form["content"];
 
-        // GET: CourseController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: CourseController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
+                    // Запрос к БД для сохранения
+                    _dbContext.SaveChanges();
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("EditSector", new { sectorId = courseId });
         }
 
-        // GET: CourseController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult DeleteSector()
         {
             return View();
         }
 
-        // POST: CourseController/Delete/5
+
+
+/*
+        public ActionResult EditTheme(string themeId)
+        {
+            if (!string.IsNullOrEmpty(themeId))
+            {
+                EditSectorViewModel model = new EditSectorViewModel();
+
+                var section = _dbContext.Sections.Include(c => c.Themes).FirstOrDefault(x => x.Id == sectorId);
+                model.Section = section;
+
+                TempData["ThemeId"] = section.Id;
+                return View(model);
+            }
+            return RedirectToAction("Index");
+        }
+*/
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult CreateTheme()
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
+
+        // Здесь используется Request.Form может использовать модель?
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SaveTheme()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteTheme()
+        {
+            return View();
+        }
+
     }
 }

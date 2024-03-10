@@ -5,6 +5,33 @@ namespace AdminModuleMVC.Models
 {
     public class Section
     {
+        public Section() 
+        { }
+
+        public Section(string idCourse, int number)
+        {
+            IdCourse = idCourse;
+            Number = number;
+            Name = $"Sector{number}";
+            Themes = new();
+            Content = string.Empty;
+            Duration = 0;
+            Cost = 0;
+            HasTest = false;
+            HasHomework = false;
+        }
+        public Section(string idCourse)
+        {
+            IdCourse = idCourse;
+            Number = 0;
+            Name = $"Sector{Number}";
+            Themes = new();
+            Content = string.Empty;
+            Duration = 0;
+            Cost = 0;
+            HasTest = false;
+            HasHomework = false;
+        }
 
         // Id Сектора
         [ScaffoldColumn(false)]
@@ -24,7 +51,7 @@ namespace AdminModuleMVC.Models
         public string Content { get; set; }
 
         // Порядковый номер сектора
-        public string Number { get; set; }
+        public int Number { get; set; }
 
         // Продолжительность сектора ?
         public int Duration { get; set; }

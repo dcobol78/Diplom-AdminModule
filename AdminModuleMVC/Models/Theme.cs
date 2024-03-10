@@ -8,10 +8,10 @@ namespace AdminModuleMVC.Models
         // Id Темы
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         // Id Сектора
-        public int IdSection { get; set; }
+        public string IdSection { get; set; }
 
         // Имя Темы
         public string Name { get; set; }
