@@ -46,11 +46,8 @@ namespace AdminModuleMVC.Migrations
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
-                    b.Property<bool>("HasHomework")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("HasTest")
-                        .HasColumnType("bit");
+                    b.Property<string>("HomeworkId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("IsCoherent")
                         .HasColumnType("bit");
@@ -66,7 +63,14 @@ namespace AdminModuleMVC.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TestId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("HomeworkId");
+
+                    b.HasIndex("TestId");
 
                     b.ToTable("Courses");
                 });
@@ -83,6 +87,9 @@ namespace AdminModuleMVC.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HomeworkId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -106,11 +113,79 @@ namespace AdminModuleMVC.Migrations
 
                     b.HasIndex("CourseId");
 
+                    b.HasIndex("HomeworkId");
+
                     b.HasIndex("SectionId");
 
                     b.HasIndex("ThemeId");
 
                     b.ToTable("CourseFiles");
+                });
+
+            modelBuilder.Entity("AdminModuleMVC.Models.Homework", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Cost")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ParentId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Homeworks");
+                });
+
+            modelBuilder.Entity("AdminModuleMVC.Models.Question", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Number")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Options")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TestId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TestId");
+
+                    b.ToTable("Question");
                 });
 
             modelBuilder.Entity("AdminModuleMVC.Models.Section", b =>
@@ -132,11 +207,9 @@ namespace AdminModuleMVC.Migrations
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
-                    b.Property<bool>("HasHomework")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("HasTest")
-                        .HasColumnType("bit");
+                    b.Property<string>("HomeworkId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("IdCourse")
                         .IsRequired()
@@ -149,9 +222,16 @@ namespace AdminModuleMVC.Migrations
                     b.Property<int>("Number")
                         .HasColumnType("int");
 
+                    b.Property<int>("TestId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CourseId");
+
+                    b.HasIndex("HomeworkId");
+
+                    b.HasIndex("TestId");
 
                     b.ToTable("Sections");
                 });
@@ -170,6 +250,40 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Tags");
                 });
 
+            modelBuilder.Entity("AdminModuleMVC.Models.Test", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AttemptsAlowed")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cost")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ParentId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tests");
+                });
+
             modelBuilder.Entity("AdminModuleMVC.Models.Theme", b =>
                 {
                     b.Property<string>("Id")
@@ -186,11 +300,9 @@ namespace AdminModuleMVC.Migrations
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
-                    b.Property<bool>("HasHomework")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("HasTest")
-                        .HasColumnType("bit");
+                    b.Property<string>("HomeworkId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("IdSection")
                         .IsRequired()
@@ -206,11 +318,35 @@ namespace AdminModuleMVC.Migrations
                     b.Property<string>("SectionId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("TestId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("HomeworkId");
 
                     b.HasIndex("SectionId");
 
+                    b.HasIndex("TestId");
+
                     b.ToTable("Themes");
+                });
+
+            modelBuilder.Entity("AdminModuleMVC.Models.Course", b =>
+                {
+                    b.HasOne("AdminModuleMVC.Models.Homework", "Homework")
+                        .WithMany()
+                        .HasForeignKey("HomeworkId");
+
+                    b.HasOne("AdminModuleMVC.Models.Test", "Test")
+                        .WithMany()
+                        .HasForeignKey("TestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Homework");
+
+                    b.Navigation("Test");
                 });
 
             modelBuilder.Entity("AdminModuleMVC.Models.CourseFile", b =>
@@ -218,6 +354,10 @@ namespace AdminModuleMVC.Migrations
                     b.HasOne("AdminModuleMVC.Models.Course", null)
                         .WithMany("CourseFiles")
                         .HasForeignKey("CourseId");
+
+                    b.HasOne("AdminModuleMVC.Models.Homework", null)
+                        .WithMany("HomeWorkFiles")
+                        .HasForeignKey("HomeworkId");
 
                     b.HasOne("AdminModuleMVC.Models.Section", null)
                         .WithMany("SectionFiles")
@@ -228,18 +368,57 @@ namespace AdminModuleMVC.Migrations
                         .HasForeignKey("ThemeId");
                 });
 
+            modelBuilder.Entity("AdminModuleMVC.Models.Question", b =>
+                {
+                    b.HasOne("AdminModuleMVC.Models.Test", null)
+                        .WithMany("Questions")
+                        .HasForeignKey("TestId");
+                });
+
             modelBuilder.Entity("AdminModuleMVC.Models.Section", b =>
                 {
                     b.HasOne("AdminModuleMVC.Models.Course", null)
                         .WithMany("Sections")
                         .HasForeignKey("CourseId");
+
+                    b.HasOne("AdminModuleMVC.Models.Homework", "Homework")
+                        .WithMany()
+                        .HasForeignKey("HomeworkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AdminModuleMVC.Models.Test", "Test")
+                        .WithMany()
+                        .HasForeignKey("TestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Homework");
+
+                    b.Navigation("Test");
                 });
 
             modelBuilder.Entity("AdminModuleMVC.Models.Theme", b =>
                 {
+                    b.HasOne("AdminModuleMVC.Models.Homework", "Homework")
+                        .WithMany()
+                        .HasForeignKey("HomeworkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("AdminModuleMVC.Models.Section", null)
                         .WithMany("Themes")
                         .HasForeignKey("SectionId");
+
+                    b.HasOne("AdminModuleMVC.Models.Test", "Test")
+                        .WithMany()
+                        .HasForeignKey("TestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Homework");
+
+                    b.Navigation("Test");
                 });
 
             modelBuilder.Entity("AdminModuleMVC.Models.Course", b =>
@@ -249,11 +428,21 @@ namespace AdminModuleMVC.Migrations
                     b.Navigation("Sections");
                 });
 
+            modelBuilder.Entity("AdminModuleMVC.Models.Homework", b =>
+                {
+                    b.Navigation("HomeWorkFiles");
+                });
+
             modelBuilder.Entity("AdminModuleMVC.Models.Section", b =>
                 {
                     b.Navigation("SectionFiles");
 
                     b.Navigation("Themes");
+                });
+
+            modelBuilder.Entity("AdminModuleMVC.Models.Test", b =>
+                {
+                    b.Navigation("Questions");
                 });
 
             modelBuilder.Entity("AdminModuleMVC.Models.Theme", b =>

@@ -14,8 +14,6 @@ namespace AdminModuleMVC.Models
             AutorName = string.Empty;
             Duration = 0;
             CreationDate = DateTime.Now;
-            HasTest = false;
-            HasHomework = false;
             IsCoherent = false;
             IsPublic = false;
             Sections = new();
@@ -62,12 +60,12 @@ namespace AdminModuleMVC.Models
 
         // Является ли курс последовательным (Свободный доступ ко всему контенту или последовательный)
         public bool IsCoherent { get; set; }
+        
+        [AllowNull]
+        public Homework Homework { get; set; }
 
-        // Есть ли тест (Поменять на ссылку на тест?)
-        public bool HasTest { get; set; }
-
-        // Есть ли домашнее задание (Поменять на ссылку на задание?)
-        public bool HasHomework {  get; set; }
+        [AllowNull]
+        public Test Test { get; set; }
 
         // Приложенные к курсу файлы
         public List<CourseFile> CourseFiles { get; set; }

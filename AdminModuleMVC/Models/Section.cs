@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AdminModuleMVC.Models
 {
@@ -17,8 +18,6 @@ namespace AdminModuleMVC.Models
             Content = string.Empty;
             Duration = 0;
             Cost = 0;
-            HasTest = false;
-            HasHomework = false;
         }
         public Section(string idCourse)
         {
@@ -29,8 +28,6 @@ namespace AdminModuleMVC.Models
             Content = string.Empty;
             Duration = 0;
             Cost = 0;
-            HasTest = false;
-            HasHomework = false;
         }
 
         // Id Сектора
@@ -59,11 +56,11 @@ namespace AdminModuleMVC.Models
         // Опыт получаемый за прохождение курса
         public int Cost { get; set; }
 
-        // Есть ли тест (Поменять на ссылку на тест?)
-        public bool HasTest { get; set; }
+        [AllowNull]
+        public Homework Homework { get; set; }
 
-        // Есть ли домашнее задание (Поменять на ссылку на задание?)
-        public bool HasHomework { get; set; }
+        [AllowNull]
+        public Test Test { get; set; }
 
         // Список файлов сектора
         public List<CourseFile> SectionFiles {  get; set; }

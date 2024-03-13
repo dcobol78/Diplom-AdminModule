@@ -3,90 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\homework.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\homework.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_I983D7M/coursedatadb/True/SqlTable/dbo.CourseFiles.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\views\\course\\editcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\views\\course\\editcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\data\\coursedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\data\\coursedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\views\\course\\editsector.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\views\\course\\editsector.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\coursefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\coursefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\section.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\section.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_I983D7M/coursedatadb/True/SqlTable/dbo.Themes.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\views\\course\\edittheme.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\views\\course\\edittheme.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\editthemeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\editthemeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\tag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\tag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\tagtocourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\tagtocourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\data\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\data\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\wwwroot\\assets\\vendor\\ckeditor5\\src\\ckeditor.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\wwwroot\\assets\\vendor\\ckeditor5\\src\\ckeditor.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\editsectorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\editsectorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\editcourseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -97,12 +19,56 @@
       "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\courseindexviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\editsectorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\editsectorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\editthemeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\editthemeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\eventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\eventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\homework.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\homework.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\section.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\section.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\startingdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\startingdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\tag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\tag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\autor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -111,6 +77,44 @@
     {
       "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\models\\coursefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\models\\coursefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_I983D7M/coursedatadb/True/SqlTable/dbo.CourseFiles.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\views\\course\\editcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\views\\course\\editcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\views\\course\\editsector.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\views\\course\\editsector.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_I983D7M/coursedatadb/True/SqlTable/dbo.Themes.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\views\\course\\edittheme.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\views\\course\\edittheme.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\data\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\data\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\wwwroot\\assets\\vendor\\ckeditor5\\src\\ckeditor.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\wwwroot\\assets\\vendor\\ckeditor5\\src\\ckeditor.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|c:\\users\\dcobo.desktop-i983d7m\\source\\repos\\adminmodulemvc\\adminmodulemvc\\views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F3FD2D3E-D185-44FF-96DE-57F8AE8360AF}|AdminModuleMVC\\AdminModuleMVC.csproj|solutionrelative:adminmodulemvc\\views\\course\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -124,46 +128,267 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EventViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EventViewModel.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\EventViewModel.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EventViewModel.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\EventViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T11:55:08.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Event.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Event.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Event.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Event.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\Event.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T09:27:27.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T12:09:09.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditThemeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditThemeViewModel.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\EditThemeViewModel.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditThemeViewModel.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\EditThemeViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T13:25:00.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EditSectorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditSectorViewModel.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\EditSectorViewModel.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditSectorViewModel.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\EditSectorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T12:09:53.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditCourseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditCourseViewModel.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\EditCourseViewModel.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditCourseViewModel.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\EditCourseViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T12:52:59.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CourseIndexViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\CourseIndexViewModel.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\CourseIndexViewModel.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\CourseIndexViewModel.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\CourseIndexViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T11:59:40.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CourseDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Data\\CourseDbContext.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Data\\CourseDbContext.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Data\\CourseDbContext.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Data\\CourseDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T12:40:06.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Controllers\\CourseController.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Controllers\\CourseController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAADwv4gAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T12:40:20.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Homework.cs",
               "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Homework.cs",
               "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Homework.cs",
               "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Homework.cs",
               "RelativeToolTip": "AdminModuleMVC\\Models\\Homework.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAmAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-12T14:14:20.2Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Course.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Course.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Course.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Course.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\Course.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAgwBwAAAAAAAAA",
+              "DocumentIndex": 10,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Question.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Question.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\Question.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-09T12:42:13.283Z",
+              "WhenOpened": "2024-03-13T09:59:21.427Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
+              "Title": "Section.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Section.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Section.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Section.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\Section.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T09:25:01.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "StartingDate.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\StartingDate.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\StartingDate.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\StartingDate.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\StartingDate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T11:35:05.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Tag.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Tag.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Tag.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Tag.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\Tag.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T09:27:57.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Test.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Test.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Test.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Test.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\Test.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T11:35:00.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Theme.cs",
               "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Theme.cs",
               "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Theme.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Theme.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\Theme.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowDQAAAA4AAAA",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Theme.cs*",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\Theme.cs*",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwA8AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-10T11:34:59.388Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Course.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Course.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\Course.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T12:42:13.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CourseFile.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\CourseFile.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\CourseFile.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\CourseFile.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\CourseFile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T11:10:47.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T13:27:57.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Autor.cs",
+              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Autor.cs",
+              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Autor.cs",
+              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Autor.cs",
+              "RelativeToolTip": "AdminModuleMVC\\Models\\Autor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T12:53:34.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "AdminModuleMVC\\Data\\ApplicationDbContext.cs",
@@ -176,33 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CourseDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Data\\CourseDbContext.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Data\\CourseDbContext.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Data\\CourseDbContext.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Data\\CourseDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-09T12:40:06.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CourseController.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Controllers\\CourseController.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Controllers\\CourseController.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Controllers\\CourseController.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Controllers\\CourseController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAwIkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-09T12:40:20.834Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 22,
               "Title": "EditCourse.cshtml",
               "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Views\\Course\\EditCourse.cshtml",
               "RelativeDocumentMoniker": "AdminModuleMVC\\Views\\Course\\EditCourse.cshtml",
@@ -210,72 +409,20 @@
               "RelativeToolTip": "AdminModuleMVC\\Views\\Course\\EditCourse.cshtml",
               "ViewState": "AQIAADEAAAAAAAAAAAAkwE0AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-09T12:53:14.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-09T12:53:14.299Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\ErrorViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T12:09:09.401Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Test.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Test.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Test.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Test.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\Test.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T11:35:00.223Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CourseFile.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\CourseFile.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\CourseFile.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\CourseFile.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\CourseFile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T11:10:47.769Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 21,
               "Title": "dbo.CourseFiles [\u0414\u0430\u043D\u043D\u044B\u0435]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_I983D7M/coursedatadb/True/SqlTable/dbo.CourseFiles.sql",
               "ToolTip": "dbo.CourseFiles [\u0414\u0430\u043D\u043D\u044B\u0435]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-03-12T12:59:15.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-12T12:59:15.828Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "EditThemeViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditThemeViewModel.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\EditThemeViewModel.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditThemeViewModel.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\EditThemeViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T13:25:00.169Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 23,
               "Title": "EditSector.cshtml",
               "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Views\\Course\\EditSector.cshtml",
               "RelativeDocumentMoniker": "AdminModuleMVC\\Views\\Course\\EditSector.cshtml",
@@ -283,37 +430,11 @@
               "RelativeToolTip": "AdminModuleMVC\\Views\\Course\\EditSector.cshtml",
               "ViewState": "AQIAABgAAAAAAAAAAAAAAC8AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-10T11:46:40.688Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-10T11:46:40.688Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Section.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Section.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Section.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Section.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\Section.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAAAEMAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T09:25:01.231Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Event.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Event.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Event.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Event.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\Event.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T09:27:27.823Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 24,
               "Title": "dbo.Themes [\u0414\u0430\u043D\u043D\u044B\u0435]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_I983D7M/coursedatadb/True/SqlTable/dbo.Themes.sql",
               "ToolTip": "dbo.Themes [\u0414\u0430\u043D\u043D\u044B\u0435]",
@@ -322,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 25,
               "Title": "EditTheme.cshtml",
               "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Views\\Course\\EditTheme.cshtml",
               "RelativeDocumentMoniker": "AdminModuleMVC\\Views\\Course\\EditTheme.cshtml",
@@ -334,31 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Tag.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Tag.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Tag.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Tag.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\Tag.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T09:27:57.247Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "TagToCourse.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\TagToCourse.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\TagToCourse.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\TagToCourse.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\TagToCourse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T11:35:04.518Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 26,
               "Title": "ApplicationDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "AdminModuleMVC\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
@@ -370,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 27,
               "Title": "ckeditor.ts",
               "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\wwwroot\\assets\\vendor\\ckeditor5\\src\\ckeditor.ts",
               "RelativeDocumentMoniker": "AdminModuleMVC\\wwwroot\\assets\\vendor\\ckeditor5\\src\\ckeditor.ts",
@@ -382,19 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "EditCourseViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditCourseViewModel.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\EditCourseViewModel.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditCourseViewModel.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\EditCourseViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-09T12:52:59.277Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Views\\Course\\Index.cshtml",
               "RelativeDocumentMoniker": "AdminModuleMVC\\Views\\Course\\Index.cshtml",
@@ -403,66 +488,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-03-09T12:44:49.368Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "EditSectorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditSectorViewModel.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\EditSectorViewModel.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\EditSectorViewModel.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\EditSectorViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T12:09:53.846Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "CourseIndexViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\CourseIndexViewModel.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\CourseIndexViewModel.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\CourseIndexViewModel.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\CourseIndexViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T11:59:40.387Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "StartingDate.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\StartingDate.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\StartingDate.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\StartingDate.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\StartingDate.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T11:35:05.676Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Autor.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Autor.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Models\\Autor.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Models\\Autor.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Models\\Autor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-09T12:53:34.809Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "AdminModuleMVC\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "AdminModuleMVC\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-09T13:27:57.473Z"
             }
           ]
         }

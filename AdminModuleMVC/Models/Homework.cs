@@ -11,7 +11,11 @@ namespace AdminModuleMVC.Models
 
         public string Name { get; set; }
 
-        public DateTime StartDate { get; set; }
+        public string ParentId { get; set; }
+
+        //public DateTime StartDate { get; set; }
+
+        //public DateTime EndDate { get; set; }
 
         public int Duration { get; set; }
 
@@ -19,6 +23,8 @@ namespace AdminModuleMVC.Models
 
         public string Description { get; set; }
 
+        // Файлы необходимые для выполнения ДЗ
+        public List<CourseFile> HomeWorkFiles { get; set; }
 
     }
 }

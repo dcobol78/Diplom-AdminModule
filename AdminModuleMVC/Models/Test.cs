@@ -11,16 +11,20 @@ namespace AdminModuleMVC.Models
 
         public string Name { get; set; }
 
-        public DateTime StartTime { get; set; }
+        public string Description { get; set; }
 
-        public DateTime EndTime { get; set; }
+        public string ParentId { get; set; }
+
+        //public DateTime StartTime { get; set; }
+
+        //public DateTime EndTime { get; set; }
 
         public int Duration { get; set; }
 
         public int AttemptsAlowed {  get; set; }
 
-        public string Content { get; set; }
-
         public int Cost {  get; set; }
+
+        public List<Question> Questions { get; set; }
     }
 }
