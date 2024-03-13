@@ -17,6 +17,9 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\assets\vendor\" />
+    <Folder Include="wwwroot\files\coursefiles\" />
+    <Folder Include="wwwroot\files\sectorfiles\" />
+    <Folder Include="wwwroot\files\themefiles\" />
   </ItemGroup>
 
 </Project>

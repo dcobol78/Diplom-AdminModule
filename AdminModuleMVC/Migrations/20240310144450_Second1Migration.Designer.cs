@@ -4,6 +4,7 @@ using AdminModuleMVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AdminModuleMVC.Migrations
 {
     [DbContext(typeof(CourseDbContext))]
-    partial class CourseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240310144450_Second1Migration")]
+    partial class Second1Migration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,48 +72,6 @@ namespace AdminModuleMVC.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Courses");
-                });
-
-            modelBuilder.Entity("AdminModuleMVC.Models.CourseFile", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CourseId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ParentId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Path")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SectionId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ThemeId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CourseId");
-
-                    b.HasIndex("SectionId");
-
-                    b.HasIndex("ThemeId");
-
-                    b.ToTable("CourseFiles");
                 });
 
             modelBuilder.Entity("AdminModuleMVC.Models.Section", b =>
@@ -213,21 +174,6 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Themes");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.CourseFile", b =>
-                {
-                    b.HasOne("AdminModuleMVC.Models.Course", null)
-                        .WithMany("CourseFiles")
-                        .HasForeignKey("CourseId");
-
-                    b.HasOne("AdminModuleMVC.Models.Section", null)
-                        .WithMany("SectionFiles")
-                        .HasForeignKey("SectionId");
-
-                    b.HasOne("AdminModuleMVC.Models.Theme", null)
-                        .WithMany("ThemeFiles")
-                        .HasForeignKey("ThemeId");
-                });
-
             modelBuilder.Entity("AdminModuleMVC.Models.Section", b =>
                 {
                     b.HasOne("AdminModuleMVC.Models.Course", null)
@@ -244,21 +190,12 @@ namespace AdminModuleMVC.Migrations
 
             modelBuilder.Entity("AdminModuleMVC.Models.Course", b =>
                 {
-                    b.Navigation("CourseFiles");
-
                     b.Navigation("Sections");
                 });
 
             modelBuilder.Entity("AdminModuleMVC.Models.Section", b =>
                 {
-                    b.Navigation("SectionFiles");
-
                     b.Navigation("Themes");
-                });
-
-            modelBuilder.Entity("AdminModuleMVC.Models.Theme", b =>
-                {
-                    b.Navigation("ThemeFiles");
                 });
 #pragma warning restore 612, 618
         }

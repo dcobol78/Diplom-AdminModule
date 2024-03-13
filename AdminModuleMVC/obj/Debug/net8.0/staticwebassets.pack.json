@@ -337,6 +337,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\wwwroot\\files\\coursefilesFUGA_Melodies_of_Steel..torrent",
+      "PackagePath": "staticwebassets\\files\\coursefilesFUGA_Melodies_of_Steel..torrent"
+    },
+    {
+      "Id": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\wwwroot\\files\\coursefilesStellaris_Galaxy_Edition_v3.11.1.0.torrent",
+      "PackagePath": "staticwebassets\\files\\coursefilesStellaris_Galaxy_Edition_v3.11.1.0.torrent"
+    },
+    {
       "Id": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

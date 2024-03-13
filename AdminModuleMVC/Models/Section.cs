@@ -64,5 +64,8 @@ namespace AdminModuleMVC.Models
 
         // Есть ли домашнее задание (Поменять на ссылку на задание?)
         public bool HasHomework { get; set; }
+
+        // Список файлов сектора
+        public List<CourseFile> SectionFiles {  get; set; }
     }
 }

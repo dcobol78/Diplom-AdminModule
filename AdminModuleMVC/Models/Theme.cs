@@ -5,6 +5,21 @@ namespace AdminModuleMVC.Models
 {
     public class Theme
     {
+        public Theme(string idSector, int number)
+        {
+            IdSection = idSector;
+            Number = number;
+            Name = $"Theme{number}";
+            Content = string.Empty;
+            Duration = 0;
+            Cost = 0;
+            HasTest = false;
+            HasHomework = false;
+        }
+
+        public Theme()
+        { }
+
         // Id Темы
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -20,7 +35,7 @@ namespace AdminModuleMVC.Models
         public string Content { get; set; }
 
         // Порядковый номер Темы
-        public string Number { get; set; }
+        public int Number { get; set; }
 
         // Продолжительность Темы
         public int Duration { get; set; }
@@ -33,5 +48,8 @@ namespace AdminModuleMVC.Models
 
         // Есть ли домашнее задание (Поменять на ссылку на задание?)
         public bool HasHomework { get; set; }
+
+        // Спсок файлов темы
+        public List<CourseFile> ThemeFiles { get; set; }
     }
 }

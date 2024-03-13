@@ -71,3 +71,10 @@
 {
     <input type="submit" value="Create Section" />
 }
+
+<form asp-action="AddCourseFiles" asp-controller="Course" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploads" /><br>
+    <input type="file" name="uploads" /><br>
+    <input type="file" name="uploads" /><br>
+    <input type="submit" value="Загрузить" />
+</form>

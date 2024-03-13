@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AdminModuleMVC.Models
 {
-    public class Homework
+    public class CourseFile
     {
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -11,14 +11,10 @@ namespace AdminModuleMVC.Models
 
         public string Name { get; set; }
 
-        public DateTime StartDate { get; set; }
-
-        public int Duration { get; set; }
-
-        public int Cost {  get; set; }
-
         public string Description { get; set; }
 
+        public string ParentId { get; set; }
 
+        public string Path { get; set; }
     }
 }

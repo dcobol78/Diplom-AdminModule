@@ -6,7 +6,7 @@ namespace AdminModuleMVC.Models
 {
     public class Course
     {
-        public Course(string id, string autorId) 
+        public Course(string autorId) 
         {
             AutorId = autorId;
             Name = "My Course";
@@ -27,7 +27,7 @@ namespace AdminModuleMVC.Models
 
         // Id курса
         [ScaffoldColumn(false)]
-        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
 
         // Id автора
@@ -68,6 +68,9 @@ namespace AdminModuleMVC.Models
 
         // Есть ли домашнее задание (Поменять на ссылку на задание?)
         public bool HasHomework {  get; set; }
+
+        // Приложенные к курсу файлы
+        public List<CourseFile> CourseFiles { get; set; }
 
     }
 }

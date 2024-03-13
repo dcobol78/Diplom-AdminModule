@@ -1,4 +1,7 @@
-﻿using AdminModuleMVC.Data;
+﻿// Разделить контроллер на несколько файлов? Для читаемости.
+// Зачем 3 модели и 3 таблицы в бд под файлы если можно использовать 1?
+
+using AdminModuleMVC.Data;
 using AdminModuleMVC.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -6,19 +9,22 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.IO;
 
 namespace AdminModuleMVC.Controllers
 {
     [Authorize]
     public class CourseController : Controller
     {
-        private UserManager<IdentityUser> _userManager;
-        private CourseDbContext _dbContext;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly CourseDbContext _dbContext;
+        private readonly IWebHostEnvironment _appEnvironment;
 
-        public CourseController(CourseDbContext context, UserManager<IdentityUser> userManager)
+        public CourseController(CourseDbContext context, UserManager<IdentityUser> userManager, IWebHostEnvironment appEnvironment)
         {
             _dbContext = context;
             _userManager = userManager;
+            _appEnvironment = appEnvironment;
         }
 
         public ActionResult Index()
@@ -31,6 +37,8 @@ namespace AdminModuleMVC.Controllers
 
             return View(model);
         }
+
+        #region Course
 
         // GET: CourseController
         public ActionResult EditCourse(string courseId)
@@ -55,10 +63,9 @@ namespace AdminModuleMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateCourse()
         {
-            var newId = Guid.NewGuid().ToString();
             var currentUser = this.User;
             var userId = _userManager.GetUserId(currentUser);
-            Course course = new Course(newId, userId);
+            Course course = new Course(userId);
 
             //Занесение курса в БД
             _dbContext.Courses.Add(course);
@@ -68,6 +75,7 @@ namespace AdminModuleMVC.Controllers
         }
 
         // Здесь используется Request.Form может использовать модель?
+        // Еще здесь используется TempData в других подобных частях используется модель, че за бред?
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SaveCourse()
@@ -94,13 +102,41 @@ namespace AdminModuleMVC.Controllers
             return RedirectToAction("EditCourse", new { courseId = courseId });
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddCourseFiles(IFormFileCollection uploads)
+        {
+            var courseId = TempData["CourseId"].ToString();
+            foreach (var uploadedFile in uploads)
+            {
+                if (!string.IsNullOrEmpty(courseId))
+                {
+                    if (uploadedFile != null)
+                    {
+                        // путь к папке Files
+                        string path = "/files/coursefiles/" + uploadedFile.FileName;
+                        // сохраняем файл в папку Files в каталоге wwwroot
+                        using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
+                        {
+                            uploadedFile.CopyTo(fileStream);
+                        }
+                        CourseFile file = new CourseFile { Name = uploadedFile.FileName, ParentId = courseId, Path = path, Description = ""};
+                        _dbContext.CourseFiles.Add(file);
+                        _dbContext.SaveChanges();
+                    }
+                }
+            }
+            return RedirectToAction("EditCourse", new { courseId = courseId });
+        }
+
         public ActionResult DeleteCourse()
         {
             return View();
         }
 
+        #endregion
 
-
+        #region Sector
 
         public ActionResult EditSector(string? sectorId)
         {
@@ -118,6 +154,7 @@ namespace AdminModuleMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        // Принимает courseId, но курс courseId есть в TeampData, нахуя?
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateSector(string? courseId)
@@ -160,35 +197,75 @@ namespace AdminModuleMVC.Controllers
             return RedirectToAction("EditSector", new { sectorId = courseId });
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddSectorFiles(IFormFileCollection uploads)
+        {
+            //Использовать модель или поменять везде на TempData
+            //Работает неверно
+            var sectorId = TempData["SectorId"].ToString();
+            foreach (var uploadedFile in uploads)
+            {
+                if (!string.IsNullOrEmpty(sectorId))
+                {
+                    if (uploadedFile != null)
+                    {
+                        // путь к папке Files
+                        string path = "/files/sectorfiles/" + uploadedFile.FileName;
+                        // сохраняем файл в папку Files в каталоге wwwroot
+                        using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
+                        {
+                            uploadedFile.CopyTo(fileStream);
+                        }
+                        CourseFile file = new CourseFile { Name = uploadedFile.FileName, ParentId = sectorId, Path = path };
+                        _dbContext.CourseFiles.Add(file);
+                        _dbContext.SaveChanges();
+                    }
+                }
+            }
+            return RedirectToAction("EditSector", new { sectorId = sectorId });
+        }
+
         public ActionResult DeleteSector()
         {
             return View();
         }
 
+        #endregion
 
-
-/*
+        #region Theme
         public ActionResult EditTheme(string themeId)
         {
             if (!string.IsNullOrEmpty(themeId))
             {
-                EditSectorViewModel model = new EditSectorViewModel();
+                EditThemeViewModel model = new EditThemeViewModel();
 
-                var section = _dbContext.Sections.Include(c => c.Themes).FirstOrDefault(x => x.Id == sectorId);
-                model.Section = section;
+                var theme = _dbContext.Themes.FirstOrDefault(x => x.Id == themeId);
+                model.Theme = theme;
 
-                TempData["ThemeId"] = section.Id;
+                TempData["ThemeId"] = theme.Id;
                 return View(model);
             }
             return RedirectToAction("Index");
         }
-*/
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateTheme()
+        public ActionResult CreateTheme(string? sectorId)
         {
-            return View();
+            var sector = _dbContext
+                .Sections
+                .Include(s => s.Themes)
+                .First(x => x.Id == sectorId);
+            var themes = sector.Themes;
+
+            if (themes == null) themes = new List<Theme>();
+
+            themes.Add(new Theme(sectorId, themes.Count));
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("EditSector", new { sectorId = sectorId });
         }
 
         // Здесь используется Request.Form может использовать модель?
@@ -196,7 +273,52 @@ namespace AdminModuleMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SaveTheme()
         {
-            return View();
+            var themeId = TempData["ThemeId"].ToString();
+            if (!string.IsNullOrEmpty(themeId))
+            {
+                var form = Request.Form;
+                var theme = _dbContext.Themes.First(x => x.Id == themeId);
+                if (form != null && theme != null)
+                {
+                    // Добавить проверку на то что пользователь авторизовани ?? А нужно?
+                    theme.Name = form["themeName"];
+                    theme.Duration = int.Parse(form["duration"]);
+                    theme.Content = form["content"];
+
+                    // Запрос к БД для сохранения
+                    _dbContext.SaveChanges();
+                }
+            }
+            return RedirectToAction("EditTheme", new { themeId = themeId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddThemeFiles(IFormFileCollection uploads)
+        {
+            //Использовать модель или поменять везде на TempData
+            //Работает неверно
+            var themeId = TempData["ThemeId"].ToString();
+            foreach (var uploadedFile in uploads)
+            {
+                if (!string.IsNullOrEmpty(themeId))
+                {
+                    if (uploadedFile != null)
+                    {
+                        // путь к папке Files
+                        string path = "/files/themefiles/" + uploadedFile.FileName;
+                        // сохраняем файл в папку Files в каталоге wwwroot
+                        using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
+                        {
+                            uploadedFile.CopyTo(fileStream);
+                        }
+                        CourseFile file = new CourseFile { Name = uploadedFile.FileName, ParentId = themeId, Path = path };
+                        _dbContext.CourseFiles.Add(file);
+                        _dbContext.SaveChanges();
+                    }
+                }
+            }
+            return RedirectToAction("EditTheme", new { themeId = themeId });
         }
 
         [HttpPost]
@@ -205,6 +327,8 @@ namespace AdminModuleMVC.Controllers
         {
             return View();
         }
+
+        #endregion
 
     }
 }
