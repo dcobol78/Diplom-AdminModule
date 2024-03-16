@@ -17,17 +17,7 @@ namespace AdminModuleMVC.Models
             Themes = new();
             Content = string.Empty;
             Duration = 0;
-            Cost = 0;
-        }
-        public Section(string idCourse)
-        {
-            IdCourse = idCourse;
-            Number = 0;
-            Name = $"Sector{Number}";
-            Themes = new();
-            Content = string.Empty;
-            Duration = 0;
-            Cost = 0;
+            //Cost = 0;
         }
 
         // Id Сектора
@@ -53,16 +43,14 @@ namespace AdminModuleMVC.Models
         // Продолжительность сектора ?
         public int Duration { get; set; }
 
-        // Опыт получаемый за прохождение курса
-        public int Cost { get; set; }
-
-        [AllowNull]
-        public Homework Homework { get; set; }
-
-        [AllowNull]
-        public Test Test { get; set; }
+        public virtual Homework Homework { get; set; }
 
         // Список файлов сектора
         public List<CourseFile> SectionFiles {  get; set; }
+
+        //public Test Test { get; set; }
+
+        // Опыт получаемый за прохождение курса
+        //public int Cost { get; set; }
     }
 }

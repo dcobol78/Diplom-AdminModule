@@ -49,7 +49,7 @@ namespace AdminModuleMVC.Controllers
             {
                 EditCourseViewModel model = new EditCourseViewModel();
 
-                var course = _dbContext.Courses.Include(c => c.Sections).FirstOrDefault(x => x.Id == courseId);
+                var course = _dbContext.Courses.Include(c => c.Sections).Include(c => c.Homework).FirstOrDefault(x => x.Id == courseId);
                 model.Course = course;
 
                 TempData["CourseId"] = course.Id;
@@ -58,6 +58,7 @@ namespace AdminModuleMVC.Controllers
 
             return RedirectToAction("Index");
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -129,6 +130,43 @@ namespace AdminModuleMVC.Controllers
             return RedirectToAction("EditCourse", new { courseId = courseId });
         }
 
+        public ActionResult CreateCourseHomework()
+        {
+            var courseId = TempData["CourseId"].ToString();
+            if (!string.IsNullOrEmpty(courseId))
+            {
+                var course = _dbContext
+                 .Courses
+                 .Include(c => c.Homework)
+                 .First(x => x.Id == courseId);
+
+                course.Homework = new Homework(courseId);
+                _dbContext.SaveChanges();
+            }
+            return RedirectToAction("EditCourse", new { courseId = courseId });
+        }
+
+        public ActionResult SaveCourseHomework(IFormFile file)
+        {
+            var courseId = TempData["CourseId"].ToString();
+            if (!string.IsNullOrEmpty(courseId))
+            {
+                var form = Request.Form;
+                var course = _dbContext
+                 .Courses
+                 .Include(c => c.Homework)
+                 .First(x => x.Id == courseId);
+
+                var homework = course.Homework;
+                homework.Duration = int.Parse(form["duration"]);
+                homework.Description = form["content"];
+                homework.Name = form["name"];
+                homework.HomeWorkFile = (CourseFile)form.Files[0];
+                _dbContext.SaveChanges();
+            }
+            return RedirectToAction("EditCourse", new { courseId = courseId });
+        }
+
         public ActionResult DeleteCourse()
         {
             return View();
@@ -154,7 +192,7 @@ namespace AdminModuleMVC.Controllers
             return RedirectToAction("Index");
         }
 
-        // Принимает courseId, но курс courseId есть в TeampData, нахуя?
+        // Принимает courseId, но курс courseId есть в TeampData?
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateSector(string? courseId)
@@ -210,6 +248,7 @@ namespace AdminModuleMVC.Controllers
                 {
                     if (uploadedFile != null)
                     {
+                        var sector = _dbContext.Sections.Include(s => s.SectionFiles).First(s => s.Id == sectorId);
                         // путь к папке Files
                         string path = "/files/sectorfiles/" + uploadedFile.FileName;
                         // сохраняем файл в папку Files в каталоге wwwroot
@@ -217,12 +256,29 @@ namespace AdminModuleMVC.Controllers
                         {
                             uploadedFile.CopyTo(fileStream);
                         }
-                        CourseFile file = new CourseFile { Name = uploadedFile.FileName, ParentId = sectorId, Path = path };
-                        _dbContext.CourseFiles.Add(file);
+                        sector.SectionFiles.Add(new CourseFile { Name = uploadedFile.FileName, ParentId = sectorId, Path = path });
                         _dbContext.SaveChanges();
                     }
                 }
             }
+            return RedirectToAction("EditSector", new { sectorId = sectorId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddSectorHomeWork(IFormFile upload)
+        {
+            var sectorId = TempData["SectorId"].ToString();
+            if (!string.IsNullOrEmpty(sectorId))
+            {
+                var form = Request.Form;
+                var sector = _dbContext.Sections.Include(s => s.Homework).First(s => s.Id == sectorId);
+                if (form != null && sector != null) 
+                {
+                    // Добавить из курса
+                }
+            }
+
             return RedirectToAction("EditSector", new { sectorId = sectorId });
         }
 

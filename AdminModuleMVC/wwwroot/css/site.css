@@ -89,3 +89,43 @@ color: #8A3B58;
     box-shadow: 0 0 1px 15px rgba(#8A3B58, 0.4), 0 0 1px 30px rgba(#8A3B58, 0.1), 0 0 1px 45px rgba(#8A3B58, 0.1);
 }
 }
+
+
+.form-block {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-block h2 {
+    margin-top: 0;
+}
+
+.form-block label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-block input[type="text"],
+.form-block input[type="number"],
+.form-block textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.form-block input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+    .form-block input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+</style >

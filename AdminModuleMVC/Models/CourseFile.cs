@@ -5,6 +5,16 @@ namespace AdminModuleMVC.Models
 {
     public class CourseFile
     {
+        public CourseFile() { }
+
+        public CourseFile(string parentId) 
+        { 
+            ParentId = parentId;
+            Name = string.Empty;
+            Description = string.Empty;
+            Path = string.Empty;
+        }
+
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }

@@ -337,6 +337,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\wwwroot\\files\\coursefiles\\FUGA_Melodies_of_Steel..torrent",
+      "PackagePath": "staticwebassets\\files\\coursefiles\\FUGA_Melodies_of_Steel..torrent"
+    },
+    {
       "Id": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

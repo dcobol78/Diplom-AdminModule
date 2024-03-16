@@ -13,7 +13,7 @@ namespace AdminModuleMVC.Models
             Name = $"Theme{number}";
             Content = string.Empty;
             Duration = 0;
-            Cost = 0;
+            //Cost = 0;
         }
 
         public Theme()
@@ -39,14 +39,17 @@ namespace AdminModuleMVC.Models
         // Продолжительность Темы
         public int Duration { get; set; }
 
+        /*
         // Опыт получаемый за прохождение Темы ?
         public int Cost { get; set; }
+
 
         [AllowNull]
         public Homework Homework { get; set; }
 
         [AllowNull]
         public Test Test { get; set; }
+        */
 
         // Спсок файлов темы
         public List<CourseFile> ThemeFiles { get; set; }

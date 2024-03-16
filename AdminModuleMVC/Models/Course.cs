@@ -17,7 +17,7 @@ namespace AdminModuleMVC.Models
             IsCoherent = false;
             IsPublic = false;
             Sections = new();
-            StartingDate = new();
+            //StartingDate = new();
         }
 
         public Course()
@@ -40,12 +40,6 @@ namespace AdminModuleMVC.Models
         // Список секторов
         public virtual List<Section> Sections { get; set; }
 
-        // Список тэгов (Доработать позже)
-        //public virtual List<Tag> Tags { get; set; }
-
-        // Список дат начала занятий ???
-        public virtual List<DateTime> StartingDate { get; set; }
-
         // Имя автора
         public string AutorName { get; set; }
 
@@ -62,13 +56,18 @@ namespace AdminModuleMVC.Models
         public bool IsCoherent { get; set; }
         
         [AllowNull]
-        public Homework Homework { get; set; }
-
-        [AllowNull]
-        public Test Test { get; set; }
+        public virtual Homework Homework { get; set; }
 
         // Приложенные к курсу файлы
-        public List<CourseFile> CourseFiles { get; set; }
+        public virtual List<CourseFile> CourseFiles { get; set; }
 
+        //[AllowNull]
+        //public Test Test { get; set; }
+
+        // Список тэгов (Доработать позже)
+        //public virtual List<Tag> Tags { get; set; }
+
+        // Список дат начала занятий ???
+        //public virtual List<DateTime> StartingDate { get; set; }
     }
 }

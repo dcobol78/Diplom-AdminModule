@@ -4,6 +4,7 @@ using AdminModuleMVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AdminModuleMVC.Migrations
 {
     [DbContext(typeof(CourseDbContext))]
-    partial class CourseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240316135849_Fourth1Migration")]
+    partial class Fourth1Migration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,7 +124,8 @@ namespace AdminModuleMVC.Migrations
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
-                    b.Property<string>("HomeworkFileId")
+                    b.Property<string>("HomeWorkFileId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
@@ -134,7 +138,7 @@ namespace AdminModuleMVC.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HomeworkFileId");
+                    b.HasIndex("HomeWorkFileId");
 
                     b.ToTable("Homeworks");
                 });
@@ -255,7 +259,9 @@ namespace AdminModuleMVC.Migrations
                 {
                     b.HasOne("AdminModuleMVC.Models.CourseFile", "HomeWorkFile")
                         .WithMany()
-                        .HasForeignKey("HomeworkFileId");
+                        .HasForeignKey("HomeWorkFileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("HomeWorkFile");
                 });
