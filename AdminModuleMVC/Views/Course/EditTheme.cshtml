@@ -1,32 +1,10 @@
-﻿@model EditThemeViewModel
+﻿@model Theme
 @{
     ViewData["Title"] = "Home page";
 }
 
-<form asp-action="SaveTheme" method="post">
-    <label for="courseName">Имя темы:</label>
-    <input type="text" id="themeName" name="themeName" value="@Model.Theme.Name" required><br>
+@Html.Partial("PartialThemeDetails", Model);
 
-    <label for="duration">Продолжительность в неделях:</label>
-    <input type="number" id="duration" name="duration" value="@Model.Theme.Duration" min=0 oninput="validity.valid||(value='')" required><br>
+@Html.Partial("PartialThemeHomework", Model.Homework);
 
-    <head>
-        <meta charset="utf-8">
-        <title>CKEditor 5 - Classic editor</title>
-        <script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
-    </head>
-    <body>
-        <h1>Classic editor</h1>
-        <textarea name="content" id="editor">
-            @Model.Theme.Content
-        </textarea>
-        <script>
-            ClassicEditor
-                .create(document.querySelector('#editor'))
-                .catch(error => {
-                    console.error(error);
-                });
-        </script>
-    </body>
-    <p><input type="submit" value="Submit"></p>
-</form>
+@Html.Partial("PartialThemeFiles", Model.ThemeFiles);

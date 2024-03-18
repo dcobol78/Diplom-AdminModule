@@ -381,56 +381,42 @@ namespace AdminModuleMVC.Controllers
         #endregion
 
         #region Theme
-        public ActionResult EditTheme(string? themeId)
+        public ActionResult EditTheme(string themeId)
         {
+            // Проверка на то что пользователь имеет право редактировать курс
+
             if (!string.IsNullOrEmpty(themeId))
             {
-                EditThemeViewModel model = new EditThemeViewModel();
-
-                var theme = _dbContext.Themes.FirstOrDefault(x => x.Id == themeId);
-                model.Theme = theme;
-
-                TempData["ThemeId"] = theme.Id;
-                return View(model);
+                var theme = _dbContext.
+                    Themes.
+                    Include(theme => theme.Homework).
+                    Include(theme => theme.Homework.HomeworkFile).
+                    Include(theme => theme.ThemeFiles).
+                    First(c => c.Id == themeId);
+                if (theme != null)
+                {
+                    TempData["ThemeId"] = themeId;
+                    return View(theme);
+                }
             }
+
             return RedirectToAction("Index");
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateTheme(string? sectorId)
-        {
-            var sector = _dbContext
-                .Sections
-                .Include(s => s.Themes)
-                .First(x => x.Id == sectorId);
-            var themes = sector.Themes;
-
-            if (themes == null) themes = new List<Theme>();
-
-            themes.Add(new Theme(sectorId, themes.Count));
-            _dbContext.SaveChanges();
-
-            return RedirectToAction("EditSector", new { sectorId = sectorId });
-        }
-
-        // Здесь используется Request.Form может использовать модель?
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult SaveTheme()
+        public ActionResult SaveTheme(Section model)
         {
             var themeId = TempData["ThemeId"].ToString();
             if (!string.IsNullOrEmpty(themeId))
             {
-                var form = Request.Form;
                 var theme = _dbContext.Themes.First(x => x.Id == themeId);
-                if (form != null && theme != null)
+                if (model != null && theme != null)
                 {
                     // Добавить проверку на то что пользователь авторизовани ?? А нужно?
-                    theme.Name = form["themeName"];
-                    theme.Duration = int.Parse(form["duration"]);
-                    theme.Content = form["content"];
+                    theme.Name = model.Name;
+                    theme.Duration = model.Duration;
+                    theme.Content = model.Content;
 
                     // Запрос к БД для сохранения
                     _dbContext.SaveChanges();
@@ -443,12 +429,14 @@ namespace AdminModuleMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddThemeFiles(IFormFileCollection uploads)
         {
-            //Использовать модель или поменять везде на TempData
-            //Работает неверно
             var themeId = TempData["ThemeId"].ToString();
-            foreach (var uploadedFile in uploads)
+            if (!string.IsNullOrEmpty(themeId))
             {
-                if (!string.IsNullOrEmpty(themeId))
+                var theme = _dbContext.
+                    Themes.
+                    Include(theme => theme.ThemeFiles).
+                    First(c => c.Id == themeId);
+                foreach (var uploadedFile in uploads)
                 {
                     if (uploadedFile != null)
                     {
@@ -459,8 +447,8 @@ namespace AdminModuleMVC.Controllers
                         {
                             uploadedFile.CopyTo(fileStream);
                         }
-                        CourseFile file = new CourseFile { Name = uploadedFile.FileName, ParentId = themeId, Path = path };
-                        _dbContext.CourseFiles.Add(file);
+                        CourseFile courseFile = new CourseFile { Name = uploadedFile.FileName, ParentId = themeId, Path = path, Description = "" };
+                        theme.ThemeFiles.Add(courseFile);
                         _dbContext.SaveChanges();
                     }
                 }
@@ -470,12 +458,59 @@ namespace AdminModuleMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteTheme()
+        public ActionResult CreateThemeHomework()
         {
-            return View();
+            var themeId = TempData["ThemeId"].ToString();
+            if (!string.IsNullOrEmpty(themeId))
+            {
+                var theme = _dbContext
+                 .Themes
+                 .Include(c => c.Homework)
+                 .First(x => x.Id == themeId);
+
+                theme.Homework = new Homework(themeId);
+                _dbContext.SaveChanges();
+            }
+            return RedirectToAction("EditTheme", new { themeId = themeId });
         }
 
-        #endregion
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SaveThemeHomework(Homework model, IFormFile FormFile)
+        {
+            var themeId = TempData["ThemeId"].ToString();
+            if (!string.IsNullOrEmpty(themeId))
+            {
+                var theme = _dbContext
+                 .Themes
+                 .Include(c => c.Homework)
+                 .First(x => x.Id == themeId);
+
+                var homework = theme.Homework;
+                homework.Duration = model.Duration;
+                homework.Description = model.Description.IsNullOrEmpty() ? "" : model.Description;
+                homework.Name = model.Name;
+                var file = model.FormFile;
+                if (FormFile != null) file = FormFile;
+                if (file != null)
+                {
+                    // путь к папке Files
+                    string path = "/files/themefiles/" + file.FileName;
+                    // сохраняем файл в папку Files в каталоге wwwroot
+                    using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    }
+                    CourseFile courseFile = new CourseFile { Name = file.FileName, ParentId = homework.Id, Path = path, Description = "" };
+                    homework.HomeworkFile = courseFile;
+                }
+                _dbContext.SaveChanges();
+            }
+            return RedirectToAction("EditTheme", new { themeId = themeId });
+        }
 
     }
+
+    #endregion
+
 }

@@ -1,0 +1,30 @@
+﻿@model List<CourseFile>
+
+<div class="form-block">
+    <h2>Файлы приложенные к теме</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                @foreach (var file in Model)
+                {
+                    <tr>
+                        <td>@file.Name</td>
+                        <td>@file.Description</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <h2>Приложить файлы к теме</h2>
+    <form asp-action="AddThemeFiles" asp-controller="Course" method="post" enctype="multipart/form-data">
+        <input type="file" name="uploads" /><br>
+        <input type="submit" value="Загрузить" />
+    </form>
+</div>
