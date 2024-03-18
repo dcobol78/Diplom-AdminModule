@@ -156,7 +156,6 @@ namespace AdminModuleMVC.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("HomeworkId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("IdCourse")
@@ -206,6 +205,9 @@ namespace AdminModuleMVC.Migrations
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
+                    b.Property<string>("HomeworkId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("IdSection")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -221,6 +223,8 @@ namespace AdminModuleMVC.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("HomeworkId");
 
                     b.HasIndex("SectionId");
 
@@ -268,18 +272,22 @@ namespace AdminModuleMVC.Migrations
 
                     b.HasOne("AdminModuleMVC.Models.Homework", "Homework")
                         .WithMany()
-                        .HasForeignKey("HomeworkId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("HomeworkId");
 
                     b.Navigation("Homework");
                 });
 
             modelBuilder.Entity("AdminModuleMVC.Models.Theme", b =>
                 {
+                    b.HasOne("AdminModuleMVC.Models.Homework", "Homework")
+                        .WithMany()
+                        .HasForeignKey("HomeworkId");
+
                     b.HasOne("AdminModuleMVC.Models.Section", null)
                         .WithMany("Themes")
                         .HasForeignKey("SectionId");
+
+                    b.Navigation("Homework");
                 });
 
             modelBuilder.Entity("AdminModuleMVC.Models.Course", b =>

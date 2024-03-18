@@ -1,0 +1,41 @@
+﻿@model Course
+<div class="form-block">
+    <h2>Курс</h2>
+    <form asp-action="SaveCourse" method="post">
+        <label asp-for="Name">Имя курса:</label>
+        <input type="text" id="Name" name="Name" value="@Model.Name" required><br>
+
+        <label asp-for="AutorName">Имя автора:</label>
+        <input type="text" id="AutorName" name="AutorName" value="@Model.AutorName" required><br>
+
+        <label asp-for="Duration">Продолжительность в неделях:</label>
+        <input type="number" id="Duration" name="Duration" value="@Model.Duration" min=0 oninput="validity.valid||(value='')" required><br>
+
+        <label asp-for="IsCoherent">Последовательный курс:</label>
+        <input type="checkbox" id="IsCoherent" name="IsCoherent" @(Model.IsCoherent ? "checked" : "")><br>
+
+        <label asp-for="IsPublic">Открытый курс:</label>
+        <input type="checkbox" id="IsPublic" name="IsPublic" @(Model.IsPublic ? "checked" : "")><br>
+
+
+        <head>
+            <meta charset="utf-8">
+            <title>CKEditor 5 - Classic editor</title>
+            <script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
+        </head>
+        <body>
+            <h1>Classic editor</h1>
+            <textarea asp-for="Description" name="Description" id="descEditor">
+                @Model.Description
+        </textarea>
+            <script>
+                ClassicEditor
+                    .create(document.querySelector('#descEditor'))
+                    .catch(error => {
+                        console.error(error);
+                    });
+            </script>
+        </body>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+</div>

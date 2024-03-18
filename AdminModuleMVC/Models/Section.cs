@@ -43,6 +43,9 @@ namespace AdminModuleMVC.Models
         // Продолжительность сектора ?
         public int Duration { get; set; }
 
+        public string? HomeworkId { get; set; }
+
+        [ForeignKey("HomeworkId")]
         public virtual Homework Homework { get; set; }
 
         // Список файлов сектора

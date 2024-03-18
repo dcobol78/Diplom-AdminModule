@@ -54,8 +54,10 @@ namespace AdminModuleMVC.Models
 
         // Является ли курс последовательным (Свободный доступ ко всему контенту или последовательный)
         public bool IsCoherent { get; set; }
-        
-        [AllowNull]
+
+        public string? HomeworkId { get; set; }
+
+        [ForeignKey("HomeworkId")]
         public virtual Homework Homework { get; set; }
 
         // Приложенные к курсу файлы

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cwcqqhddlw4DKT9i7p2hb4Q0nWhw8zoSp4L+wGycK3o=",
+  "Hash": "g68f2WygkTi0k6GMWPd4gu2Qz2rXQGkw+/Hgfrnf6lo=",
   "Source": "AdminModuleMVC",
   "BasePath": "_content/AdminModuleMVC",
   "Mode": "Default",
@@ -2770,25 +2770,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\wwwroot\\files\\coursefiles\\FUGA_Melodies_of_Steel..torrent",
-      "SourceId": "AdminModuleMVC",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\wwwroot\\",
-      "BasePath": "_content/AdminModuleMVC",
-      "RelativePath": "files/coursefiles/FUGA_Melodies_of_Steel..torrent",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\files\\coursefiles\\FUGA_Melodies_of_Steel..torrent"
     },
     {
       "Identity": "C:\\Users\\dcobo.DESKTOP-I983D7M\\source\\repos\\AdminModuleMVC\\AdminModuleMVC\\wwwroot\\js\\site.js",

@@ -39,14 +39,14 @@ namespace AdminModuleMVC.Models
         // Продолжительность Темы
         public int Duration { get; set; }
 
+        public string? HomeworkId { get; set; }
+
+        [ForeignKey("HomeworkId")]
+        public virtual Homework Homework { get; set; }
+
         /*
         // Опыт получаемый за прохождение Темы ?
         public int Cost { get; set; }
-
-
-        [AllowNull]
-        public Homework Homework { get; set; }
-
         [AllowNull]
         public Test Test { get; set; }
         */

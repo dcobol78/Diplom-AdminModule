@@ -1,0 +1,52 @@
+﻿@model Homework
+
+<div class="form-block">
+    <h2>Домашняя работа</h2>
+    @if (@Model == null)
+    {
+        @using (Html.BeginForm("CreateSectorHomework", "Course"))
+        {
+            <input type="submit" value="Create Homework" />
+        }
+    }
+    else
+    {
+        <form asp-action="SaveSectorHomework" method="post" enctype="multipart/form-data">
+
+            <label asp-for="Name">Название:</label>
+            <input type="text" id="Name" name="Name" value="@Model.Name" required><br>
+
+            <label asp-for="Duration">Продолжительность в неделях:</label>
+            <input type="number" id="Duration" name="Duration" value="@Model.Duration" min=0 oninput="validity.valid||(value='')" required><br>
+
+            <head>
+                <meta charset="utf-8">
+                <title>CKEditor 5 - Classic editor</title>
+                <script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
+            </head>
+            <body>
+                <h1>Classic editor</h1>
+                <textarea asp-for="Description" name="Description" id="homeEditor">
+                    @Model.Description
+                </textarea>
+                <script>
+                    ClassicEditor
+                        .create(document.querySelector('#homeEditor'))
+                        .catch(error => {
+                            console.error(error);
+                        });
+                </script>
+            </body>
+            @if (@Model.HomeworkFile == null)
+            {
+                <input type="file" asp-for="FormFile" id="FormFile" name="FormFile" />
+            }
+            else
+            {
+                <h3>@Model.HomeworkFile.Name</h3>
+            }
+
+            <button type="submit">Сохранить</button>
+        </form>
+    }
+</div>

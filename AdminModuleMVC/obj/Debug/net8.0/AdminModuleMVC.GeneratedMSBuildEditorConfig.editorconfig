@@ -38,6 +38,38 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Course/PartialCourseDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFBhcnRpYWxDb3Vyc2VEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Course/PartialCourseFiles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFBhcnRpYWxDb3Vyc2VGaWxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Course/PartialCourseHomework.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFBhcnRpYWxDb3Vyc2VIb21ld29yay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Course/PartialCourseSectors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFBhcnRpYWxDb3Vyc2VTZWN0b3JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Course/PartialSectorDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFBhcnRpYWxTZWN0b3JEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Course/PartialSectorFiles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFBhcnRpYWxTZWN0b3JGaWxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Course/PartialSectorHomework.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFBhcnRpYWxTZWN0b3JIb21ld29yay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Course/PartialSectorThemes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFBhcnRpYWxTZWN0b3JUaGVtZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/dcobo.DESKTOP-I983D7M/source/repos/AdminModuleMVC/AdminModuleMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

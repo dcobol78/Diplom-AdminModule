@@ -26,5 +26,6 @@ namespace AdminModuleMVC.Models
         public string ParentId { get; set; }
 
         public string Path { get; set; }
+
     }
 }

@@ -28,12 +28,15 @@ namespace AdminModuleMVC.Models
 
         public string Description { get; set; }
 
+        [NotMapped]
+        public IFormFile FormFile { get; set; }
+
         public string? HomeworkFileId { get; set; }
 
 
         // Файлы необходимые для выполнения ДЗ
         [ForeignKey("HomeworkFileId")]
-        public virtual CourseFile HomeWorkFile { get; set; }
+        public virtual CourseFile HomeworkFile { get; set; }
 
         //public int Cost {  get; set; }
 
