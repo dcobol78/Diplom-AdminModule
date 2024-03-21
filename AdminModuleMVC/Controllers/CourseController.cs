@@ -27,6 +27,7 @@ namespace AdminModuleMVC.Controllers
             _appEnvironment = appEnvironment;
         }
 
+        #region Index
         public ActionResult Index()
         {
             CourseIndexViewModel model = new CourseIndexViewModel();
@@ -51,6 +52,8 @@ namespace AdminModuleMVC.Controllers
 
             return RedirectToAction("Index");
         }
+
+        #endregion
 
         #region Course
 

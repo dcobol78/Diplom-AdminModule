@@ -23,7 +23,11 @@ namespace AdminModuleMVC.Models
 
         public int AttemptsAlowed {  get; set; }
 
+        // Стоимость тест
         public int Cost {  get; set; }
+
+        // Количество опыта за тест
+        public int Exp { get; set; }
 
         public List<Question> Questions { get; set; }
     }

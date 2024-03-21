@@ -17,7 +17,7 @@ namespace AdminModuleMVC.Models
             Themes = new();
             Content = string.Empty;
             Duration = 0;
-            //Cost = 0;
+            Exp = 0;
         }
 
         // Id Сектора
@@ -51,9 +51,10 @@ namespace AdminModuleMVC.Models
         // Список файлов сектора
         public List<CourseFile> SectionFiles {  get; set; }
 
+        //Опыт получаемый за прохождение
+        public int Exp { get; set;} 
+
         //public Test Test { get; set; }
 
-        // Опыт получаемый за прохождение курса
-        //public int Cost { get; set; }
     }
 }

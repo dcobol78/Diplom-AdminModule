@@ -44,9 +44,11 @@ namespace AdminModuleMVC.Models
         [ForeignKey("HomeworkId")]
         public virtual Homework Homework { get; set; }
 
+        
+        //Опыт получаемый за прохождение курса
+        public int Exp { get; set;}
+
         /*
-        // Опыт получаемый за прохождение Темы ?
-        public int Cost { get; set; }
         [AllowNull]
         public Test Test { get; set; }
         */

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdminModuleMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2945b861a12f02a640a03d9aeca149353b648374")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+497740627fadfca95b7e6f5d6c632a675d5496d2")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdminModuleMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdminModuleMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

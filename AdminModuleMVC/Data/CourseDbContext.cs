@@ -17,7 +17,8 @@ namespace AdminModuleMVC.Data
         public DbSet<CourseFile> CourseFiles { get; set;}
         public DbSet<Homework> Homeworks { get; set; }
 
-        //public DbSet<Test> Tests { get; set; }
-        //public DbSet<Question> Questions { get; set; }
+        public DbSet<Test> Tests { get; set; }
+        
+        public DbSet<Question> Questions { get; set; }
     }
 }

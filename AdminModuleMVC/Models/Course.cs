@@ -17,6 +17,7 @@ namespace AdminModuleMVC.Models
             IsCoherent = false;
             IsPublic = false;
             Sections = new();
+            Exp = 0;
             //StartingDate = new();
         }
 
@@ -63,13 +64,23 @@ namespace AdminModuleMVC.Models
         // Приложенные к курсу файлы
         public virtual List<CourseFile> CourseFiles { get; set; }
 
-        //[AllowNull]
-        //public Test Test { get; set; }
+        /*
+        public string? TestId { get; set; }
+
+        [ForeignKey("TestId")]
+        public Test Test { get; set; }
+        */
+
+        //Опыт получаемый за прохождение курса
+        public int Exp { get; set;} 
 
         // Список тэгов (Доработать позже)
         //public virtual List<Tag> Tags { get; set; }
 
         // Список дат начала занятий ???
         //public virtual List<DateTime> StartingDate { get; set; }
+
+        // Список тэгов (Доработать позже)
+        //public virtual List<Event> Events { get; set; }
     }
 }

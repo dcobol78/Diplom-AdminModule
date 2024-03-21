@@ -1,0 +1,89 @@
+﻿@model Question
+
+<div id="updateDiv">
+    <form asp-action="ChangeQuestion" method="post"
+          data-ajax="true"
+          data-ajax-method="post"
+          data-ajax-url="@Url.Page("UserMessage", "ContactUs")"
+          data-ajax-loading="#loading"
+          data-ajax-mode="replace"
+          data-ajax-update="#updateDiv">
+
+        <!-- form controls -->
+
+        <head>
+            <meta charset="utf-8">
+            <title>Вопрос номер @Model.Number</title>
+            <script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
+        </head>
+        <body>
+            <h1>Classic editor</h1>
+            <textarea asp-for="Content" name="Content" id="ContentEditor">
+                @Model.Content
+        </textarea>
+            <script>
+                ClassicEditor
+                    .create(document.querySelector('#ContentEditor'))
+                    .catch(error => {
+                        console.error(error);
+                    });
+            </script>
+        </body>
+
+        <label asp-for="Cost">Стоимость вопроса</label>
+        <input type="number" id="Cost" name="Cost" value="@Model.Cost" min=0 oninput="validity.valid||(value='')" required><br>
+
+        <label asp-for="Type">Тип вопроса:</label>
+        <input type="text" id="Type" name="Type" value="@Model.Type" required><br>
+        
+        <div id="answers-container">
+            <div class="answer-item">
+                <input asp-for="AnswerHelpers" type="text" name="AnswerHelpers" />
+                <label asp-for="AnswerHelpers">Открытый курс:</label>
+                <input type="checkbox" id="IsPublic" name="IsPublic" @(Model.IsPublic ? "checked" : "")><br>
+                <button class="delete-answer">Удалить</button>
+            </div>
+        </div>
+        <button id="add-answer">Добавить вариант ответа</button>
+
+        <script>
+            document.getElementById('add-answer').addEventListener('click', function () {
+                var container = document.getElementById('answers-container');
+                var answerItem = document.createElement('div');
+                answerItem.className = 'answer-item';
+
+                var input = document.createElement('input');
+                input.type = 'text';
+                input.name = 'answer';
+
+                var checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = 'correct';
+
+                var deleteButton = document.createElement('button');
+                deleteButton.className = 'delete-answer';
+                deleteButton.textContent = 'Удалить';
+
+                answerItem.appendChild(input);
+                answerItem.appendChild(checkbox);
+                answerItem.appendChild(deleteButton);
+                container.appendChild(answerItem);
+            });
+
+            document.getElementById('answers-container').addEventListener('click', function (event) {
+                if (event.target.classList.contains('delete-answer')) {
+                    event.target.parentElement.remove();
+                }
+            });
+        </script>
+
+        <button type="submit" class="btn solid-btn" id="btnContactUs">Send Message</button>
+        <span id="loading" style="display:none;"> <i class="fas fa-spinner fa-spin"></i></span>
+    </form>
+</div>
+
+<!-- include jquery libraries -->
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ajax-unobtrusive@3.2.6/dist/jquery.unobtrusive-ajax.min.js"></script>
+}

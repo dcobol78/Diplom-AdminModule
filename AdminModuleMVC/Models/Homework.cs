@@ -24,6 +24,7 @@ namespace AdminModuleMVC.Models
 
         public string ParentId { get; set; }
 
+        // Продолжительность в днях
         public int Duration { get; set; }
 
         public string Description { get; set; }
@@ -33,12 +34,18 @@ namespace AdminModuleMVC.Models
 
         public string? HomeworkFileId { get; set; }
 
-
         // Файлы необходимые для выполнения ДЗ
         [ForeignKey("HomeworkFileId")]
         public virtual CourseFile HomeworkFile { get; set; }
 
-        //public int Cost {  get; set; }
+        // Стоимость домашнего задания
+        public int Cost {  get; set; }
+
+        //Опыт получаемый за прохождение курса
+        public int Exp { get; set;} 
+
+        // Разрешать загружать даже после срока
+        public bool AllowLateUpload { get; set; }
 
         //public DateTime StartDate { get; set; }
 
