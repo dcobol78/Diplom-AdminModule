@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace AdminModuleMVC.Models
 {
-    public class Section
+    public class Section: ICourseStage
     {
         public Section() 
         { }
@@ -52,9 +52,12 @@ namespace AdminModuleMVC.Models
         public List<CourseFile> SectionFiles {  get; set; }
 
         //Опыт получаемый за прохождение
-        public int Exp { get; set;} 
+        public int Exp { get; set;}
 
-        //public Test Test { get; set; }
+        public string? TestId { get; set; }
+
+        [ForeignKey("TestId")]
+        public Test Test { get; set; }
 
     }
 }

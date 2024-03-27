@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace AdminModuleMVC.Models
 {
-    public class Course
+    public class Course: ICourseStage
     {
         public Course(string autorId) 
         {
@@ -64,18 +64,13 @@ namespace AdminModuleMVC.Models
         // Приложенные к курсу файлы
         public virtual List<CourseFile> CourseFiles { get; set; }
 
-        /*
         public string? TestId { get; set; }
 
         [ForeignKey("TestId")]
         public Test Test { get; set; }
-        */
 
         //Опыт получаемый за прохождение курса
         public int Exp { get; set;} 
-
-        // Список тэгов (Доработать позже)
-        //public virtual List<Tag> Tags { get; set; }
 
         // Список дат начала занятий ???
         //public virtual List<DateTime> StartingDate { get; set; }

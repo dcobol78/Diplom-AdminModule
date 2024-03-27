@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace AdminModuleMVC.Models
 {
-    public class Theme
+    public class Theme: ICourseStage
     {
         public Theme(string idSector, int number)
         {
@@ -48,10 +48,10 @@ namespace AdminModuleMVC.Models
         //Опыт получаемый за прохождение курса
         public int Exp { get; set;}
 
-        /*
-        [AllowNull]
+        public string? TestId { get; set; }
+
+        [ForeignKey("TestId")]
         public Test Test { get; set; }
-        */
 
         // Спсок файлов темы
         public List<CourseFile> ThemeFiles { get; set; }

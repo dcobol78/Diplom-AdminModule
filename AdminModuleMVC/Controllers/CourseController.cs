@@ -160,6 +160,24 @@ namespace AdminModuleMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        public ActionResult CreateCourseTest()
+        {
+            var courseId = TempData["CourseId"].ToString();
+            if (!string.IsNullOrEmpty(courseId))
+            {
+                var course = _dbContext
+                 .Courses
+                 .Include(c => c.Test)
+                 .First(x => x.Id == courseId);
+
+                course.Test = new Test(courseId);
+                _dbContext.SaveChanges();
+            }
+            return RedirectToAction("EditCourse", new { courseId = courseId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SaveCourseHomework(Homework model, IFormFile FormFile)
         {
             var courseId = TempData["CourseId"].ToString();
@@ -314,6 +332,24 @@ namespace AdminModuleMVC.Controllers
                  .First(x => x.Id == sectorId);
 
                 sector.Homework = new Homework(sectorId);
+                _dbContext.SaveChanges();
+            }
+            return RedirectToAction("EditSector", new { sectorId = sectorId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateSectorTest()
+        {
+            var sectorId = TempData["SectorId"].ToString();
+            if (!string.IsNullOrEmpty(sectorId))
+            {
+                var sector = _dbContext
+                 .Sections
+                 .Include(c => c.Test)
+                 .First(x => x.Id == sectorId);
+
+                sector.Test = new Test(sectorId);
                 _dbContext.SaveChanges();
             }
             return RedirectToAction("EditSector", new { sectorId = sectorId });
@@ -479,6 +515,24 @@ namespace AdminModuleMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        public ActionResult CreateThemeTest()
+        {
+            var themeId = TempData["ThemeId"].ToString();
+            if (!string.IsNullOrEmpty(themeId))
+            {
+                var theme = _dbContext
+                 .Themes
+                 .Include(c => c.Test)
+                 .First(x => x.Id == themeId);
+
+                theme.Test = new Test(themeId);
+                _dbContext.SaveChanges();
+            }
+            return RedirectToAction("EditTheme", new { themeId = themeId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SaveThemeHomework(Homework model, IFormFile FormFile)
         {
             var themeId = TempData["ThemeId"].ToString();
@@ -511,9 +565,96 @@ namespace AdminModuleMVC.Controllers
             }
             return RedirectToAction("EditTheme", new { themeId = themeId });
         }
+        #endregion
 
+        #region Test
+
+
+
+        public ActionResult EditTest(string parentId)
+        {
+            // Проверка на то что пользователь имеет право редактировать курс
+            if (!string.IsNullOrEmpty((string)parentId))
+            {
+                var test = _dbContext.
+                    Tests.
+                    Include(t => t.Questions).ThenInclude(q => q.Answers).
+                    First(t => t.ParentId == parentId);
+                if (test != null)
+                {
+                    TempData["TestId"] = test.Id;
+                    return View(test);
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
+        public ContentResult SaveTest(Test model)
+        {
+
+            return Content("Good");
+        }
+
+        public ContentResult AddQuestion()
+        {
+            var testId = TempData["TestId"].ToString();
+            if (!string.IsNullOrEmpty(testId))
+            {
+                var test = _dbContext.
+                    Tests.
+                    Include(t => t.Questions).
+                    First(t => t.Id == testId);
+                test.Questions.Add(new Question(test.Questions.Count + 1));
+                _dbContext.SaveChanges();
+            }
+            return Content("Good");
+        }
+
+        public ContentResult AddAnswer(string questionId)
+        {
+            if (!string.IsNullOrEmpty(questionId)) 
+            {
+                var question = _dbContext.
+                    Questions.
+                    Include(q => q.Answers).
+                    First(t => t.Id == questionId);
+                question.Answers.Add(new Answer());
+                _dbContext.SaveChanges();
+            }
+            return Content("Good");
+        }
+
+        public ContentResult ChangeQuestion(Question model, string questionId)
+        {
+            if (!string.IsNullOrEmpty(model.Id))
+            {
+                questionId = model.Id;
+            }
+            if (!string.IsNullOrEmpty(questionId) && model != null)
+            {
+                var question = _dbContext.
+                Questions.
+                Include(q => q.Answers).
+                First(t => t.Id == questionId);
+
+                question.Content = model.Content;
+                question.Cost = model.Cost;
+                question.Type = model.Type;
+
+                var mAnswers = model.Answers;
+                mAnswers.OrderBy(x => x.Number);
+                var qAnswers = question.Answers;
+                question.Answers.OrderBy(x => x.Number);
+                for (int i = 0; i < model.Answers.Count; i++)
+                {
+                    qAnswers[i].IsCorrect = model.Answers[i].IsCorrect;
+                    qAnswers[i].Content = model.Answers[i].Content;
+                }
+                _dbContext.SaveChanges();
+            }
+            return Content("Good");
+        }
+
+        #endregion
     }
-
-    #endregion
-
 }

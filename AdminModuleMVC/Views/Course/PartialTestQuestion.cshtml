@@ -1,16 +1,16 @@
 ﻿@model Question
 
-<div id="updateDiv">
+
     <form asp-action="ChangeQuestion" method="post"
           data-ajax="true"
           data-ajax-method="post"
-          data-ajax-url="@Url.Page("UserMessage", "ContactUs")"
+          data-ajax-url="@Url.Page("ChangeQuestion", "Course")"
           data-ajax-loading="#loading"
           data-ajax-mode="replace"
           data-ajax-update="#updateDiv">
 
         <!-- form controls -->
-
+    <div id="updateDiv">
         <head>
             <meta charset="utf-8">
             <title>Вопрос номер @Model.Number</title>
@@ -35,49 +35,34 @@
 
         <label asp-for="Type">Тип вопроса:</label>
         <input type="text" id="Type" name="Type" value="@Model.Type" required><br>
-        
+    </div>
+
+    <div id="updateAnswersDiv">
         <div id="answers-container">
-            <div class="answer-item">
-                <input asp-for="AnswerHelpers" type="text" name="AnswerHelpers" />
-                <label asp-for="AnswerHelpers">Открытый курс:</label>
-                <input type="checkbox" id="IsPublic" name="IsPublic" @(Model.IsPublic ? "checked" : "")><br>
-                <button class="delete-answer">Удалить</button>
-            </div>
+            @for (int i = 0; i < Model.Answers.Count; i++)
+            {
+                <div class="answer-item">
+                    <input asp-for="@Model.Answers[i].Content" type="text" value="@Model.Answers[i].Content" required><br>
+                    <input asp-for="@Model.Answers[i].IsCorrect" type="checkbox" value="@Model.Answers[i].IsCorrect" oninput="validity.valid||(value='')" />
+                </div>
+            }
         </div>
-        <button id="add-answer">Добавить вариант ответа</button>
-
-        <script>
-            document.getElementById('add-answer').addEventListener('click', function () {
-                var container = document.getElementById('answers-container');
-                var answerItem = document.createElement('div');
-                answerItem.className = 'answer-item';
-
-                var input = document.createElement('input');
-                input.type = 'text';
-                input.name = 'answer';
-
-                var checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.name = 'correct';
-
-                var deleteButton = document.createElement('button');
-                deleteButton.className = 'delete-answer';
-                deleteButton.textContent = 'Удалить';
-
-                answerItem.appendChild(input);
-                answerItem.appendChild(checkbox);
-                answerItem.appendChild(deleteButton);
-                container.appendChild(answerItem);
-            });
-
-            document.getElementById('answers-container').addEventListener('click', function (event) {
-                if (event.target.classList.contains('delete-answer')) {
-                    event.target.parentElement.remove();
-                }
-            });
-        </script>
+    </div>
 
         <button type="submit" class="btn solid-btn" id="btnContactUs">Send Message</button>
+        <span id="loading" style="display:none;"> <i class="fas fa-spinner fa-spin"></i></span>
+    </form>
+
+    
+    <form asp-action="AddAnswer" method="post"
+          data-ajax="true"
+          data-ajax-method="post"
+          data-ajax-url="@Url.Page("AddAnswer", "Course")"
+          data-ajax-loading="#loading"
+          data-ajax-mode="replace"
+          data-ajax-update="#updateDiv">
+    
+        <button type="submit" class="btn solid-btn" id="btnAddAnswer">Добавить вариант ответа</button>
         <span id="loading" style="display:none;"> <i class="fas fa-spinner fa-spin"></i></span>
     </form>
 </div>

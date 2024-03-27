@@ -5,9 +5,18 @@ namespace AdminModuleMVC.Models
 {
     public class Test
     {
+        public Test() { }
+        public Test(string parentId) 
+        {
+            Name = "Test";
+            ParentId = parentId;
+            Description = string.Empty;
+            AttemptsAlowed = 1;
+        }
+
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
 
@@ -29,6 +38,6 @@ namespace AdminModuleMVC.Models
         // Количество опыта за тест
         public int Exp { get; set; }
 
-        public List<Question> Questions { get; set; }
+        public virtual List<Question> Questions { get; set; }
     }
 }

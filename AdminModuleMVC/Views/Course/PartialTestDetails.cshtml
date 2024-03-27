@@ -1,5 +1,25 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model Test
+
+
+
+<div id="updateDiv">
+    <form asp-action="SaveTest" method="post"
+          data-ajax="true"
+          data-ajax-method="post"
+          data-ajax-url="@Url.Page("SaveTest", "Course")"
+          data-ajax-loading="#loading"
+          data-ajax-mode="replace"
+          data-ajax-update="#updateDiv">
+
+        
+
+        <button type="submit" class="btn solid-btn" id="btnContactUs">Save Test</button>
+        <span id="loading" style="display:none;"> <i class="fas fa-spinner fa-spin"></i></span>
+    </form>
+</div>
+
+<!-- include jquery libraries -->
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ajax-unobtrusive@3.2.6/dist/jquery.unobtrusive-ajax.min.js"></script>
 }
