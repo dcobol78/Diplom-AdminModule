@@ -1,0 +1,49 @@
+﻿@model Question
+
+<script type='text/javascript' src="..\assets\vendor\ckeditor5\build\ckeditor.js"></script>
+
+    <form asp-action="UpdateQuestion" method="post">
+        <!-- form controls -->
+    <div id="updateDiv">
+        <head>
+            <meta charset="utf-8">
+            <title>Вопрос номер @Model.Number</title>
+        </head>
+        <body>
+            <h1></h1>
+            <textarea asp-for="Content" name="Content" id="ContentEditor">
+                @Model.Content
+        </textarea>
+            <script>
+                ClassicEditor
+                    .create(document.querySelector('#ContentEditor'))
+                    .catch(error => {
+                        console.error(error);
+                    });
+            </script>
+        </body>
+
+        <label asp-for="Cost">Стоимость вопроса</label>
+        <input type="number" id="Cost" name="Cost" value="@Model.Cost" min=0 oninput="validity.valid||(value='')" required><br>
+
+        <label asp-for="Type">Тип вопроса:</label>
+        <input type="text" id="Type" name="Type" value="@Model.Type" required><br>
+    </div>
+
+    <div id="answers">
+    @Html.Partial("PartialQuestionAnswers", Model)
+    </div>
+
+    <button type="submit">Сохранить вопрос</button>
+</form>
+
+<form asp-action="AddAnswer" method="post"
+      data-ajax="true"
+      data-ajax-method="post"
+      data-ajax-loading="#loading"
+      data-ajax-mode="replace"
+      data-ajax-update="#answers">
+
+    <button type="submit" class="btn solid-btn" id="btnContactUs">Add Question</button>
+    <span id="loading" style="display:none;"> <i class="fas fa-spinner fa-spin"></i></span>
+</form>

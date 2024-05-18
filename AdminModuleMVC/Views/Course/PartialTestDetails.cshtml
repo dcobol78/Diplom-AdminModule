@@ -1,0 +1,30 @@
+﻿@model List<Question>
+
+<div class="form-block">
+    <h2>Список вопросов</h2>
+    <div id="updateQuestionsListDiv">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Номер</th>
+                    <th>Тип</th>
+                    <th>Стоимость</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    Model.Sort((emp1, emp2) => emp1.Number.CompareTo(emp2.Number));
+                    @foreach (var question in Model)
+                    {
+                        <tr>
+                            <td>@Html.ActionLink(@question.Number.ToString(), "EditQuestion", "Course")</td>
+                            <td>@question.Type</td>
+                            <td>@question.Cost</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+﻿@model Theme
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<script type='text/javascript' src="..\assets\vendor\ckeditor5\build\ckeditor.js"></script>
+
+<div>
+    @using (Html.BeginForm("EditSector", "Course", new { sectorId = Model.IdSection }))
+    {
+        <input type="submit" value="К сектору" />
+    }
+    <h1></h1>
+</div>
+
+
+<form asp-action="SaveTheme" method="post"
+        data-ajax="true"
+        data-ajax-method="post"
+        data-ajax-loading="#loading"
+        data-ajax-mode="replace"
+        data-ajax-update="#themedetails">
+    <div id="themedetails">
+        @Html.Partial("PartialThemeDetails", Model)
+    </div>
+</form>
+
+
+
+<form asp-action="UpdateHomework" method="post" id="uploader"
+      data-ajax="true"
+      data-ajax-method="post"
+      data-ajax-loading="#loading"
+      data-ajax-mode="replace"
+      data-ajax-update="#homework"
+      data-ajax-enctype="multipart/form-data">
+
+       
+    <div id="homework">
+        @{
+            ViewData["HomeworkParrentType"] = "theme";
+        }
+        @Html.Partial("PartialHomework", Model.Homework)
+    </div>
+
+</form>
+
+<div class="form-block">
+    <h2>Файлы</h2>
+    <div class="form-block">
+        @Html.Partial("PartialFiles", Model.ThemeFiles)
+    </div>
+    <form asp-action="AddThemeFiles" asp-controller="Course"
+          method="post"
+          enctype="multipart/form-data">
+        <input type="file" name="uploads" /><br>
+        <h1></h1>
+        <input type="submit" value="Загрузить" />
+    </form>
+</div>
+
+<div class="form-block">
+    <h2>Тест</h2>
+    @if (Model.Test != null)
+    {
+        @using (Html.BeginForm("EditTest", "Course", new { parentId = Model.Id }))
+        {
+            <input type="submit" value="Редактировать тест" />
+        }
+    }
+    else
+    {
+        @using (Html.BeginForm("CreateThemeTest", "Course"))
+        {
+            <input type="submit" value="Добавить тест" />
+        }
+    }
+</div>
+
+<div class="form-block">
+    <h2>Удалить тему</h2>
+    @using (Html.BeginForm("DeleteTheme", "Course"))
+    {
+        <input type="submit" value="Удалить тему" />
+    }
+</div>

@@ -1,0 +1,37 @@
+﻿@model List<Question>
+
+<div class="form-block">
+    <h2>Список вопросов</h2>
+    <div id="updateQuestionsListDiv">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Номер</th>
+                    <th>Тип</th>
+                    <th>Стоимость</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    Model.Sort((emp1, emp2) => emp1.Number.CompareTo(emp2.Number));
+                    @foreach (var question in Model)
+                    {
+                        <tr>
+                            <td>@Html.ActionLink(@question.Number.ToString(), "EditQuestion", "Course", new { questionId = question.Id})</td>
+                            <td>@question.Type</td>
+                            <td>@question.Cost</td>
+                            <td>
+                                <form asp-action="DeleteQuestion" method="post">
+                                    <input type="hidden" id="questionId" name="questionId" value="@question.Id"><br>
+                                <input type="submit" value="X" />
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

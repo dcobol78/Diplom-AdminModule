@@ -1,0 +1,23 @@
+﻿@model List<Course>
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="form-block">
+
+<h2>Список курсов</h2>
+
+<div id="courses">
+    @Html.Partial("PartialIndexCourses", Model)
+</div>
+
+    <form asp-action="CreateCourse" method="post"
+          data-ajax="true"
+          data-ajax-method="post"
+          data-ajax-loading="#loading"
+          data-ajax-mode="replace"
+          data-ajax-update="#courses">
+
+        <input type="submit" value="Create Course"></input>
+        <span id="loading" style="display:none;"> <i class="fas fa-spinner fa-spin"></i></span>
+    </form>
+</div>

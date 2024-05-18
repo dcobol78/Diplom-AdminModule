@@ -1,0 +1,29 @@
+﻿@model List<Sector>
+
+<div class="form-block">
+    <h2>Список секторов</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Номер</th>
+                <th>Продолжительность</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                Model.Sort((emp1, emp2) => emp1.Number.CompareTo(emp2.Number));
+                @foreach (var sect in Model)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(sect.Name, "EditSector", "Course", new { sectorId = sect.Id })</td>
+                        <td>@sect.Number</td>
+                        <td>@sect.Duration</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>

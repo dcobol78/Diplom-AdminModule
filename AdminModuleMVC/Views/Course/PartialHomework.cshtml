@@ -1,0 +1,70 @@
+﻿@model Homework
+
+<div class="form-block">
+<h2>Домашняя работа</h2>
+    @if (@Model == null)
+    {
+
+        <button type="submit" class="btn btn-primary" id="createHW" name="createHW" value="@ViewData["HomeworkParrentType"]">Создать домашнюю работу</button>
+
+    ViewData["HomeworkParrentType"] = "";
+
+    }
+    else
+    {
+
+    <label asp-for="Name">Название:</label>
+    <input type="text" id="Name" name="Name" value="@Model.Name" required><br>
+
+    <label asp-for="Duration">Продолжительность в неделях:</label>
+    <input type="number" id="Duration" name="Duration" value="@Model.Duration" min=0 oninput="validity.valid||(value='')" required><br>
+
+    <label asp-for="Cost">Стоимость в баллах:</label>
+    <input type="number" id="Cost" name="Cost" value="@Model.Cost" min=0 max=100 oninput="validity.valid||(value='')" required><br>
+
+    <label asp-for="Exp">Опыт получаемый за прохождение:</label>
+    <input type="number" id="Exp" name="Exp" value="@Model.Exp" min=0 max=5000 oninput="validity.valid||(value='')" required><br>
+
+    @Html.HiddenFor(m => m.ParentType)
+
+    <head>
+        <meta charset="utf-8">
+        <title>CKEditor 5 - Classic editor</title>
+    </head>
+    <body>
+        <h1></h1>
+        <textarea asp-for="Description" name="Description" id="homeEditor">
+            @Model.Description
+        </textarea>
+        <script>
+            ClassicEditor
+                .create(document.querySelector('#homeEditor'))
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>
+    </body>
+    <h1></h1>
+    @if (@Model.HomeworkFile == null)
+    {
+        <input id="FormFile" type="file" name="FormFile">
+    }
+    else
+    {
+        <h3>@Model.HomeworkFile.Name</h3>
+
+        <button type="submit" id="deleteFile" name="deleteFile" value="Delete">Удалить файл</button>
+    }
+    <div>
+        <h1></h1>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </div>
+
+    <div>
+        <h1></h1>
+            <input type="submit" id="deleteHW" name="deleteHW" value="Удалить домашнюю работу"></input>
+    </div>
+    
+
+}
+</div>

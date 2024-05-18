@@ -1,0 +1,123 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<script type='text/javascript' src="..\assets\vendor\ckeditor5\build\ckeditor.js"></script>
+
+<div>
+@using (Html.BeginForm("Index", "Course"))
+{
+    <input type="submit" value="К курсам" />
+}
+    <h1></h1>
+</div>
+
+
+    <form asp-action="SaveCourse" method="post"
+        data-ajax="true"
+        data-ajax-method="post"
+        data-ajax-loading="#loading"
+        data-ajax-mode="replace"
+        data-ajax-update="#coursedetails">
+        <div id="coursedetails">
+            @Html.Partial("PartialCourseDetails", Model)
+        </div>
+    </form>
+
+
+
+
+<div class="form-block">
+    <div id="events">
+        @Html.Partial("PartialCourseEvents", Model.Events)
+    </div>
+    <form asp-action="AddEvent" method="post"
+          data-ajax="true"
+          data-ajax-method="post"
+          data-ajax-loading="#loading"
+          data-ajax-mode="replace"
+          data-ajax-update="#events">
+
+        <input type="submit" value="Добавить событие"></input>
+        <span id="loading" style="display:none;"> <i class="fas fa-spinner fa-spin"></i></span>
+    </form>
+</div>
+    
+<div class="form-block">
+    <div id="sectors">
+        @Html.Partial("PartialCourseSectors", Model.Sections)
+    </div>
+
+    <form asp-action="CreateSector" method="post"
+          data-ajax="true"
+          data-ajax-method="post"
+          data-ajax-loading="#loading"
+          data-ajax-mode="replace"
+          data-ajax-update="#sectors">
+
+        <input type="submit" value="Добавить сектор"></input>
+        <span id="loading" style="display:none;"> <i class="fas fa-spinner fa-spin"></i></span>
+    </form>
+</div>
+    
+    <form asp-action="UpdateHomework" method="post" id="upload"
+          data-ajax="true"
+          data-ajax-method="post"
+          data-ajax-loading="#loading"
+          data-ajax-mode="replace"
+          data-ajax-update="#homework"
+          data-ajax-enctype="multipart/form-data">
+
+        
+    <div id="homework">
+        @{
+            ViewData["HomeworkParrentType"] = "course";
+        }
+        @Html.Partial("PartialHomework", Model.Homework)
+    </div>
+
+    </form>
+    
+
+<div class="form-block">
+    <h2>Файлы</h2>
+    <div class="form-block">
+    @Html.Partial("PartialFiles", Model.CourseFiles)
+    </div>
+        <form asp-action="AddCourseFiles" asp-controller="Course" 
+        method="post" 
+        enctype="multipart/form-data">
+            <input type="file" name="uploads" /><br>
+            <h1></h1>
+            <input type="submit" value="Загрузить" />
+        </form>
+</div>
+
+    
+
+<div class="form-block">
+    <h2>Тест</h2>
+    @if (Model.Test != null)
+    {
+        @using (Html.BeginForm("EditTest", "Course", new { parentId = Model.Id }))
+        {
+            <input type="submit" value="Редактировать тест" />
+        }
+    }
+    else
+    {
+        @using (Html.BeginForm("CreateCourseTest", "Course"))
+        {
+            <input type="submit" value="Добавить тест" />
+        }
+    }
+</div>
+
+<div class="form-block">
+    <h2>Удалить курс</h2>
+    @using (Html.BeginForm("DeleteCourse", "Course"))
+    {
+        <input type="submit" value="Удалить курс" />
+    }
+</div>

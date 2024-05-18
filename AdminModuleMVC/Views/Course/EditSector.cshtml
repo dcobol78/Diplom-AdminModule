@@ -1,0 +1,88 @@
+﻿@model Sector
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<script type='text/javascript' src="..\assets\vendor\ckeditor5\build\ckeditor.js"></script>
+
+<div>
+    @using (Html.BeginForm("EditCourse", "Course", new { courseId = Model.IdCourse}))
+    {
+        <input type="submit" value="К курсу" />
+    }
+    <h1></h1>
+</div>
+
+
+<form asp-action="SaveSector" method="post"
+        data-ajax="true"
+        data-ajax-method="post"
+        data-ajax-loading="#loading"
+        data-ajax-mode="replace"
+        data-ajax-update="#sectordetails">
+    <div id="sectordetails">
+        @Html.Partial("PartialSectorDetails", Model)
+    </div>
+</form>
+
+
+@Html.Partial("PartialSectorThemes", Model.Themes)
+
+<form asp-action="UpdateHomework" method="post" id="uploader"
+      data-ajax="true"
+      data-ajax-method="post"
+      data-ajax-loading="#loading"
+      data-ajax-mode="replace"
+      data-ajax-update="#homework"
+      data-ajax-enctype="multipart/form-data">
+
+
+    <div id="homework">
+        @{
+            ViewData["HomeworkParrentType"] = "sector";
+        }
+        @Html.Partial("PartialHomework", Model.Homework)
+    </div>
+
+</form>
+
+<div class="form-block">
+    <h2>Файлы</h2>
+    <div class="form-block">
+        @Html.Partial("PartialFiles", Model.SectionFiles)
+    </div>
+    <form asp-action="AddSectorFiles" asp-controller="Course"
+          method="post"
+          enctype="multipart/form-data">
+        <input type="file" name="uploads" /><br>
+        <h1></h1>
+        <input type="submit" value="Загрузить" />
+    </form>
+</div>
+
+<div class="form-block">
+    <h2>Тест</h2>
+    @if (Model.Test != null)
+    {
+        @using (Html.BeginForm("EditTest", "Course", new { parentId = Model.Id }))
+        {
+            <input type="submit" value="Редактировать тест" />
+        }
+    }
+    else
+    {
+        @using (Html.BeginForm("CreateSectorTest", "Course"))
+        {
+            <input type="submit" value="Добавить тест" />
+        }
+    }
+</div>
+
+<div class="form-block">
+    <h2>Удалить сектор</h2>
+    @using (Html.BeginForm("DeleteSector", "Course"))
+    {
+        <input type="submit" value="Удалить сектор" />
+    }
+</div>
+

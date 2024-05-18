@@ -1,0 +1,47 @@
+﻿@model Course
+<div class="form-block">
+    <h2>Курс</h2>
+        <label asp-for="Name">Имя курса:</label>
+        <input type="text" id="Name" name="Name" value="@Model.Name" required><br>
+
+        <label asp-for="AutorName">Имя автора:</label>
+        <input type="text" id="AutorName" name="AutorName" value="@Model.AutorName" required><br>
+
+        <label asp-for="Duration">Продолжительность в неделях:</label>
+        <input type="number" id="Duration" name="Duration" value="@Model.Duration" min=0 oninput="validity.valid||(value='')" required><br>
+
+        <label asp-for="IsCoherent">Последовательный курс:</label>
+        @Html.CheckBoxFor(model => model.IsCoherent)
+
+        <label asp-for="IsPublic">Открытый курс:</label>
+        @Html.CheckBoxFor(model => model.IsPublic)
+
+        <label asp-for="Exp">Опыт получаемый за Окончание курса:</label>
+        <input type="number" id="Exp" name="Exp" value="@Model.Exp" min=0 max=10000 oninput="validity.valid||(value='')" required><br>
+
+        <label asp-for="StartingDate">Дата открытия курса:</label>
+        @Html.EditorFor(model => model.StartingDate)
+
+
+        <head>
+            <meta charset="utf-8">
+            <title>CKEditor 5 - Classic editor</title>
+        </head>
+        <body>
+            <h1></h1>
+            <div class="editor">
+            <textarea asp-for="Description" name="Description" id="descEditor">
+                @Model.Description
+            </textarea>
+        </div>
+            <script>
+                ClassicEditor
+                    .create(document.querySelector('#descEditor'))
+                    .catch(error => {
+                        console.error(error);
+                    });
+            </script>
+        </body>
+    <h2></h2>
+    <p><input type="submit" value="Сохранить"></p>
+</div>
