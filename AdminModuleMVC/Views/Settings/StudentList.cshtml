@@ -1,0 +1,75 @@
+﻿@model List<Student>
+
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="form-block">
+
+    @using (Html.BeginForm("AddStudent", "Course"))
+    {
+        <h1>Приглашение по почте</h1>
+        <h1></h1>
+        <input type="text" name="email" id="email" value=""></input>
+        <h1></h1>
+        <button type="submit" class="btn btn-primary">Управлять студентами</button>
+    }
+</div>
+
+<div class="form-block">
+
+
+
+    @using (Html.BeginForm("CreateCode", "Course"))
+    {
+        <h1>Сгенерировать уникальный код</h1>
+        <h1></h1>
+        <form asp-action="CreateCode" method="post"
+              data-ajax="true"
+              data-ajax-method="post"
+              data-ajax-loading="#loading"
+              data-ajax-mode="replace"
+              data-ajax-update="#code">
+
+            <label>Максимум новых пользователей:</label>
+            <input type="number" id="maxUsers" name="maxUsers" value="1" required><br>
+
+            <label>Дата завершения работы:</label>
+            <input type="datetime" id="expireDate" name="expireDate"/>
+            <h1></h1>
+            <button type="submit" class="btn btn-primary">Управлять студентами</button>
+        </form>
+
+        <div id="code">
+            @Html.Partial("PartialStudentListCode", "Course")
+        </div>
+
+        <h1></h1>
+        
+    }
+</div>
+
+<div class="form-block">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Email</th>
+                <th>Звание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                @foreach (var student in Model)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(student.Name, "StudentDetails", "Course", new { studentId = student.Id })</td>
+                        <td>@student.Email</td>
+                        <td>@student.Title</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+

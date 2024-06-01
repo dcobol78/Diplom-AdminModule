@@ -1,0 +1,13 @@
+﻿@model List<Course>
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="form-block">
+
+    <h2>Список курсов</h2>
+
+    <div id="courses">
+        @Html.Partial("PartialIndexCourses", Model)
+    </div>
+
+</div>

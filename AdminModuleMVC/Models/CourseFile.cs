@@ -29,5 +29,7 @@ namespace AdminModuleMVC.Models
 
         public string Path { get; set; }
 
+        public Teacher Author { get; set; }
+
     }
 }

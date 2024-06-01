@@ -9,6 +9,7 @@ var defaultConnectionString = builder.Configuration.GetConnectionString("Default
 var mssqlServerConnectionString = builder.Configuration.GetConnectionString("MSSQLSERVER") ?? throw new InvalidOperationException("Connection string 'MSSQLSERVER' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(defaultConnectionString));
+
 builder.Services.AddDbContext<CourseDbContext>(options =>
     options.UseSqlServer(mssqlServerConnectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();

@@ -17,6 +17,7 @@ using static System.Net.WebRequestMethods;
 
 namespace AdminModuleMVC.Controllers
 {
+
     [Authorize]
     public class CourseController : Controller
     {
@@ -92,9 +93,19 @@ namespace AdminModuleMVC.Controllers
             return RedirectToAction("Index");
         }
 
-        // Здесь используется Request.Form может использовать модель?
-        // Еще здесь используется TempData в других подобных частях используется модель, че за бред?
-        // Сделать частичные представлениями, не будет дрочки с моделями!
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateCode()
+        {
+            var courseId = TempData.Peek("CourseId").ToString();
+            if (!string.IsNullOrEmpty(courseId))
+            {
+                string code = "JD73D9djk3";
+                return PartialView("PartialStudentListCode", code);
+            }
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SaveCourse(Course model)
@@ -379,6 +390,7 @@ namespace AdminModuleMVC.Controllers
                     sector.Name = model.Name;
                     sector.Duration = model.Duration;
                     sector.Content = model.Content;
+                    sector.Exp = model.Exp;
 
                     // Запрос к БД для сохранения
                     _dbContext.SaveChanges();
@@ -1209,6 +1221,38 @@ namespace AdminModuleMVC.Controllers
             return RedirectToAction($"Edit{parentType}", new { courseId = parentId, themeId = parentId, sectorId = parentId });
         }
 
+        public ActionResult Attendance(string eventId)
+        {
+            var courseId = TempData.Peek("CourseId").ToString();
+
+            if (string.IsNullOrEmpty(eventId) && string.IsNullOrEmpty(courseId))
+            {
+                var course = _dbContext.
+                    Courses.
+                    Include(c => c.Students).
+                    FirstOrDefault(c => c.Id == courseId);
+
+                TempData["EventId"] = eventId;
+
+                if (course != null)
+                {
+                    return View(course.Students);
+                }    
+            }
+            return View();
+        }
+
+        public ActionResult SaveAttendance()
+        {
+
+            return View();
+        }
+
+        private void NotifyStudent(string studentEmail)
+        {
+
+        }
+
         private void DeleteTest(Test test)
         {
             if (test != null)
@@ -1392,5 +1436,6 @@ namespace AdminModuleMVC.Controllers
             _dbContext.Courses.Remove(course);
             course = null;
         }
+
     }
 }

@@ -8,11 +8,18 @@
 <div>
 @using (Html.BeginForm("Index", "Course"))
 {
-    <input type="submit" value="К курсам" />
+        <button type="submit" class="btn btn-primary">К курсам</button>
 }
     <h1></h1>
 </div>
 
+@using (Html.BeginForm("StudentList", "Course"))
+{
+    <button type="submit" class="btn btn-primary">Управлять студентами</button>
+}
+
+<h1></h1>
+</div>
 
     <form asp-action="SaveCourse" method="post"
         data-ajax="true"
@@ -94,7 +101,12 @@
         </form>
 </div>
 
-    
+<div class="form-block">
+    @using(Html.BeginForm("SudentList", "Course"))
+    {
+        <input type="submit" value="Управлять студентами" />
+    }
+</div>
 
 <div class="form-block">
     <h2>Тест</h2>

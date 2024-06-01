@@ -1,0 +1,26 @@
+﻿@model List<Course>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Автор</th>
+                <th>Продолжительность</th>
+                <th>Дата создания</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                @foreach (var course in Model)
+                {
+                    <tr>
+                    <td>@Html.ActionLink(course.Name, "EditAccess", "Settings", new { courseId = course.Id })</td>
+                        <td>@course.AutorName</td>
+                        <td>@course.Duration</td>
+                        <td>@course.CreationDate.ToShortDateString()</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>

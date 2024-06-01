@@ -25,5 +25,7 @@ namespace AdminModuleMVC.Models
         public EventType Type { get; set; }
 
         public string Content { get; set; }
+
+        public List<Student> Attendance {  get; set; }
     }
 }

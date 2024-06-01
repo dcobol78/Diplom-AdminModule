@@ -6,18 +6,6 @@ namespace AdminModuleMVC.Models
 {
     public class Theme: ICourseStage
     {
-        public Theme(string idSector, int number)
-        {
-            IdSection = idSector;
-            Number = number;
-            Name = $"Theme{number}";
-            Content = string.Empty;
-            Duration = 0;
-            //Cost = 0;
-        }
-
-        public Theme()
-        { }
 
         // Id Темы
         [ScaffoldColumn(false)]

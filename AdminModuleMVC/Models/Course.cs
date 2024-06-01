@@ -77,5 +77,8 @@ namespace AdminModuleMVC.Models
 
         // Список событий
         public virtual List<Event> Events { get; set; }
+
+        public virtual List<Student> Students { get; set; }
+        public virtual List<Teacher> Teachers { get; set; }
     }
 }
