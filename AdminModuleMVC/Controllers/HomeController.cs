@@ -1,4 +1,4 @@
-using AdminModuleMVC.Models;
+using CourseShared.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

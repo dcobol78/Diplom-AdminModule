@@ -1,5 +1,5 @@
 ﻿using AdminModuleMVC.Data;
-using AdminModuleMVC.Models;
+using CourseShared.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

@@ -1,4 +1,4 @@
-﻿using AdminModuleMVC.Models;
+﻿using CourseShared.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace AdminModuleMVC.Data

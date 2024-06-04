@@ -25,7 +25,7 @@ namespace AdminModuleMVC.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Course", b =>
+            modelBuilder.Entity("CourseShared.Models.Course", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -73,7 +73,7 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Section", b =>
+            modelBuilder.Entity("CourseShared.Models.Section", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -116,7 +116,7 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Sections");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Tag", b =>
+            modelBuilder.Entity("CourseShared.Models.Tag", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -130,7 +130,7 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Tags");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Theme", b =>
+            modelBuilder.Entity("CourseShared.Models.Theme", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -174,26 +174,26 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Themes");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Section", b =>
+            modelBuilder.Entity("CourseShared.Models.Section", b =>
                 {
-                    b.HasOne("AdminModuleMVC.Models.Course", null)
+                    b.HasOne("CourseShared.Models.Course", null)
                         .WithMany("Sections")
                         .HasForeignKey("CourseId");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Theme", b =>
+            modelBuilder.Entity("CourseShared.Models.Theme", b =>
                 {
-                    b.HasOne("AdminModuleMVC.Models.Section", null)
+                    b.HasOne("CourseShared.Models.Section", null)
                         .WithMany("Themes")
                         .HasForeignKey("SectionId");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Course", b =>
+            modelBuilder.Entity("CourseShared.Models.Course", b =>
                 {
                     b.Navigation("Sections");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Section", b =>
+            modelBuilder.Entity("CourseShared.Models.Section", b =>
                 {
                     b.Navigation("Themes");
                 });

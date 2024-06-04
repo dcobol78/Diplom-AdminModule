@@ -22,7 +22,7 @@ namespace AdminModuleMVC.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Answer", b =>
+            modelBuilder.Entity("CourseShared.Models.Answer", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,7 +48,7 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Answers");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Course", b =>
+            modelBuilder.Entity("CourseShared.Models.Course", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -103,7 +103,7 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.CourseFile", b =>
+            modelBuilder.Entity("CourseShared.Models.CourseFile", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -149,7 +149,7 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("CourseFiles");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Event", b =>
+            modelBuilder.Entity("CourseShared.Models.Event", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -182,7 +182,7 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Events");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Homework", b =>
+            modelBuilder.Entity("CourseShared.Models.Homework", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -232,7 +232,7 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Homeworks");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Question", b =>
+            modelBuilder.Entity("CourseShared.Models.Question", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -262,7 +262,7 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Questions");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Sector", b =>
+            modelBuilder.Entity("CourseShared.Models.Sector", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -309,7 +309,7 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Sections");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Test", b =>
+            modelBuilder.Entity("CourseShared.Models.Test", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -354,7 +354,7 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Tests");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Theme", b =>
+            modelBuilder.Entity("CourseShared.Models.Theme", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -401,20 +401,20 @@ namespace AdminModuleMVC.Migrations
                     b.ToTable("Themes");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Answer", b =>
+            modelBuilder.Entity("CourseShared.Models.Answer", b =>
                 {
-                    b.HasOne("AdminModuleMVC.Models.Question", null)
+                    b.HasOne("CourseShared.Models.Question", null)
                         .WithMany("Answers")
                         .HasForeignKey("QuestionId");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Course", b =>
+            modelBuilder.Entity("CourseShared.Models.Course", b =>
                 {
-                    b.HasOne("AdminModuleMVC.Models.Homework", "Homework")
+                    b.HasOne("CourseShared.Models.Homework", "Homework")
                         .WithMany()
                         .HasForeignKey("HomeworkId");
 
-                    b.HasOne("AdminModuleMVC.Models.Test", "Test")
+                    b.HasOne("CourseShared.Models.Test", "Test")
                         .WithMany()
                         .HasForeignKey("TestId");
 
@@ -423,55 +423,55 @@ namespace AdminModuleMVC.Migrations
                     b.Navigation("Test");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.CourseFile", b =>
+            modelBuilder.Entity("CourseShared.Models.CourseFile", b =>
                 {
-                    b.HasOne("AdminModuleMVC.Models.Course", null)
+                    b.HasOne("CourseShared.Models.Course", null)
                         .WithMany("CourseFiles")
                         .HasForeignKey("CourseId");
 
-                    b.HasOne("AdminModuleMVC.Models.Sector", null)
+                    b.HasOne("CourseShared.Models.Sector", null)
                         .WithMany("SectionFiles")
                         .HasForeignKey("SectorId");
 
-                    b.HasOne("AdminModuleMVC.Models.Theme", null)
+                    b.HasOne("CourseShared.Models.Theme", null)
                         .WithMany("ThemeFiles")
                         .HasForeignKey("ThemeId");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Event", b =>
+            modelBuilder.Entity("CourseShared.Models.Event", b =>
                 {
-                    b.HasOne("AdminModuleMVC.Models.Course", null)
+                    b.HasOne("CourseShared.Models.Course", null)
                         .WithMany("Events")
                         .HasForeignKey("CourseId");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Homework", b =>
+            modelBuilder.Entity("CourseShared.Models.Homework", b =>
                 {
-                    b.HasOne("AdminModuleMVC.Models.CourseFile", "HomeworkFile")
+                    b.HasOne("CourseShared.Models.CourseFile", "HomeworkFile")
                         .WithMany()
                         .HasForeignKey("HomeworkFileId");
 
                     b.Navigation("HomeworkFile");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Question", b =>
+            modelBuilder.Entity("CourseShared.Models.Question", b =>
                 {
-                    b.HasOne("AdminModuleMVC.Models.Test", null)
+                    b.HasOne("CourseShared.Models.Test", null)
                         .WithMany("Questions")
                         .HasForeignKey("TestId");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Sector", b =>
+            modelBuilder.Entity("CourseShared.Models.Sector", b =>
                 {
-                    b.HasOne("AdminModuleMVC.Models.Course", null)
+                    b.HasOne("CourseShared.Models.Course", null)
                         .WithMany("Sections")
                         .HasForeignKey("CourseId");
 
-                    b.HasOne("AdminModuleMVC.Models.Homework", "Homework")
+                    b.HasOne("CourseShared.Models.Homework", "Homework")
                         .WithMany()
                         .HasForeignKey("HomeworkId");
 
-                    b.HasOne("AdminModuleMVC.Models.Test", "Test")
+                    b.HasOne("CourseShared.Models.Test", "Test")
                         .WithMany()
                         .HasForeignKey("TestId");
 
@@ -480,17 +480,17 @@ namespace AdminModuleMVC.Migrations
                     b.Navigation("Test");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Theme", b =>
+            modelBuilder.Entity("CourseShared.Models.Theme", b =>
                 {
-                    b.HasOne("AdminModuleMVC.Models.Homework", "Homework")
+                    b.HasOne("CourseShared.Models.Homework", "Homework")
                         .WithMany()
                         .HasForeignKey("HomeworkId");
 
-                    b.HasOne("AdminModuleMVC.Models.Sector", null)
+                    b.HasOne("CourseShared.Models.Sector", null)
                         .WithMany("Themes")
                         .HasForeignKey("SectorId");
 
-                    b.HasOne("AdminModuleMVC.Models.Test", "Test")
+                    b.HasOne("CourseShared.Models.Test", "Test")
                         .WithMany()
                         .HasForeignKey("TestId");
 
@@ -499,7 +499,7 @@ namespace AdminModuleMVC.Migrations
                     b.Navigation("Test");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Course", b =>
+            modelBuilder.Entity("CourseShared.Models.Course", b =>
                 {
                     b.Navigation("CourseFiles");
 
@@ -508,24 +508,24 @@ namespace AdminModuleMVC.Migrations
                     b.Navigation("Sections");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Question", b =>
+            modelBuilder.Entity("CourseShared.Models.Question", b =>
                 {
                     b.Navigation("Answers");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Sector", b =>
+            modelBuilder.Entity("CourseShared.Models.Sector", b =>
                 {
                     b.Navigation("SectionFiles");
 
                     b.Navigation("Themes");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Test", b =>
+            modelBuilder.Entity("CourseShared.Models.Test", b =>
                 {
                     b.Navigation("Questions");
                 });
 
-            modelBuilder.Entity("AdminModuleMVC.Models.Theme", b =>
+            modelBuilder.Entity("CourseShared.Models.Theme", b =>
                 {
                     b.Navigation("ThemeFiles");
                 });

@@ -2,7 +2,7 @@
 // Зачем 3 модели и 3 таблицы в бд под файлы если можно использовать 1?
 
 using AdminModuleMVC.Data;
-using AdminModuleMVC.Models;
+using CourseShared.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;

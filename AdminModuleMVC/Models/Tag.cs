@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AdminModuleMVC.Models
+namespace CourseShared.Models
 {
     public class Tag
     {

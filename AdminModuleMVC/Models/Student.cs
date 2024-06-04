@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace AdminModuleMVC.Models
+namespace CourseShared.Models
 {
 
     public class Student

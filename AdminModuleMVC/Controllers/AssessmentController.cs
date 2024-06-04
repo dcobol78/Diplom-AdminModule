@@ -22,8 +22,7 @@ namespace AdminModuleMVC.Controllers
         // Метод для отображения списка всех оценок
         public ActionResult Index()
         {
-            var assessments = await _dbContext.Assessments.ToListAsync();
-            return View(assessments);
+            return View();
         }
 
         // Метод для отображения формы создания новой оценки
@@ -37,43 +36,13 @@ namespace AdminModuleMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddNewGrade()
         {
-            if (ModelState.IsValid)
-            {
-                fdsaa
-                    dfsadsa
-                    afds
-                    dsafdsaf
-                    dfsa
-                    dfas
-                    dafsf
-                    d
-                    sdafd
-                    as
-                    dfasdas
-                    dasf
-                    dsfa
-                    dsa
-                    dasf
-                _dbContext.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
             return View();
         }
 
         // Метод для отображения формы редактирования оценки
         public ActionResult EditGrades(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var assessment = await _dbContext.Assessments.FindAsync(id);
-            if (assessment == null)
-            {
-                return NotFound();
-            }
-            return View(assessment);
+            return View();
         }
 
         // Метод для сохранения изменений после редактирования оценки
@@ -81,82 +50,25 @@ namespace AdminModuleMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SaveChanges(int id)
         {
-            if (id != assessment.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _dbContext.Update(assessment);
-                    await _dbContext.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!AssessmentExists(assessment.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(assessment);
+            return View();
         }
 
         // Метод для отображения частичного представления формы удаления оценки
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var assessment = await _dbContext.Assessments
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (assessment == null)
-            {
-                return NotFound();
-            }
-
-            return View(assessment);
+            return View();
         }
 
         // Метод для отображения формы редактирования оценок домашинх заданий
         public ActionResult HomeworkGrades(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var assessment = await _dbContext.Assessments.FindAsync(id);
-            if (assessment == null)
-            {
-                return NotFound();
-            }
-            return View(assessment);
+            return View();
         }
 
         // Метод для отображения формы редактирования оценок тестов
         public ActionResult TestGrades(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var assessment = await _dbContext.Assessments.FindAsync(id);
-            if (assessment == null)
-            {
-                return NotFound();
-            }
-            return View(assessment);
+            return View();
         }
 
         // Метод для удаления оценки
@@ -164,16 +76,19 @@ namespace AdminModuleMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            /*
             var assessment = await _dbContext.Assessments.FindAsync(id);
             _dbContext.Assessments.Remove(assessment);
             await _dbContext.SaveChangesAsync();
+            */
             return RedirectToAction(nameof(Index));
+            
         }
 
         // Метод для проверки существования оценки
         private bool AssessmentExists(int id)
         {
-            return _dbContext.Assessments.Any(e => e.Id == id);
+            return true;
         }
 
     }

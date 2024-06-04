@@ -2,10 +2,14 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace AdminModuleMVC.Models
+namespace CourseShared.Models
 {
     public class Theme: ICourseStage
     {
+        // Потерялся конструкор
+        public Theme(string s, int z) 
+        { 
+        }
 
         // Id Темы
         [ScaffoldColumn(false)]

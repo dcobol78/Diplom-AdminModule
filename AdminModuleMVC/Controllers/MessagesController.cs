@@ -19,96 +19,24 @@ namespace AdminModuleMVC.Controllers
 
         public ActionResult Index()
         {
-            var currentUserId = _userManager.GetUserId(User);
-
-            var course = await _dbContext.Courses
-                .Include(c => c.Messages)
-                .ThenInclude(m => m.Sender)
-                .FirstOrDefaultAsync(c => c.Id == courseId);
-
-            if (course == null)
-            {
-                return NotFound();
-            }
-
-            var model = new CourseMessagesViewModel
-            {
-                Course = course,
-                Messages = course.Messages.OrderBy(m => m.Timestamp).ToList()
-            };
-
-            return View(model);
+            return View();
         }
 
         public ActionResult CourseChat(string courseId)
         {
-            var currentUserId = _userManager.GetUserId(User);
-
-            var course = await _dbContext.Courses
-                .Include(c => c.Messages)
-                .ThenInclude(m => m.Sender)
-                .FirstOrDefaultAsync(c => c.Id == courseId);
-
-            if (course == null)
-            {
-                return NotFound();
-            }
-
-            var model = new CourseMessagesViewModel
-            {
-                Course = course,
-                Messages = course.Messages.OrderBy(m => m.Timestamp).ToList()
-            };
-
-            return View(model);
+            return View();
         }
 
         public ActionResult Chat(string chatId)
         {
-            var currentUserId = _userManager.GetUserId(User);
-
-            var course = await _dbContext.Courses
-                .Include(c => c.Messages)
-                .ThenInclude(m => m.Sender)
-                .FirstOrDefaultAsync(c => c.Id == courseId);
-
-            if (course == null)
-            {
-                return NotFound();
-            }
-
-            var model = new CourseMessagesViewModel
-            {
-                Course = course,
-                Messages = course.Messages.OrderBy(m => m.Timestamp).ToList()
-            };
-
-            return View(model);
+            return View();
         }
 
         [HttpPost]
         public ActionResult SendMessage(string chatId, string messageContent)
         {
-            var currentUserId = _userManager.GetUserId(User);
 
-            var course = await _dbContext.Courses.FindAsync(courseId);
-            if (course == null)
-            {
-                return NotFound();
-            }
-
-            var message = new Message
-            {
-                Content = messageContent,
-                Timestamp = DateTime.Now,
-                SenderId = currentUserId,
-                CourseId = courseId
-            };
-
-            _dbContext.Messages.Add(message);
-            await _dbContext.SaveChangesAsync();
-
-            return RedirectToAction("Index", new { courseId = courseId });
+            return RedirectToAction("Index");
         }
     }
 

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AdminModuleMVC.Models
+namespace CourseShared.Models
 {
     public interface ICourseStage
     {

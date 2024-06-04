@@ -1,4 +1,4 @@
-﻿namespace AdminModuleMVC.Models
+﻿namespace CourseShared.Models
 {
     public class StartingDate
     {

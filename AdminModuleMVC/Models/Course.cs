@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace AdminModuleMVC.Models
+namespace CourseShared.Models
 {
     public class Course: ICourseStage
     {
@@ -80,5 +80,6 @@ namespace AdminModuleMVC.Models
 
         public virtual List<Student> Students { get; set; }
         public virtual List<Teacher> Teachers { get; set; }
+        public virtual List<Message> Messages { get; set; }
     }
 }
