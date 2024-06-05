@@ -9,8 +9,8 @@ namespace CourseShared.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
 
-        public Test Test { get; set; }
+        public Test? Test { get; set; }
 
-        public List<Answer> Answers { get; set; }
+        public List<Answer>? Answers { get; set; }
     }
 }

@@ -5,17 +5,21 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var defaultConnectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-var mssqlServerConnectionString = builder.Configuration.GetConnectionString("MSSQLSERVER") ?? throw new InvalidOperationException("Connection string 'MSSQLSERVER' not found.");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(defaultConnectionString));
+var connectionString = builder.Configuration.GetConnectionString("TeachersConnection") ?? throw new InvalidOperationException("Connection string 'TeachersConnection' not found.");
 
+var courseConnectionString = builder.Configuration.GetConnectionString("CoursesConnection") ?? throw new InvalidOperationException("Connection string 'CoursesConnection' not found.");
+
+// Add AplicationDbContext
+builder.Services.AddDbContext<TeachersDbContext>(options =>
+    options.UseSqlServer(connectionString));
+// Add CourseDbContext to services.
 builder.Services.AddDbContext<CourseDbContext>(options =>
-    options.UseSqlServer(mssqlServerConnectionString));
+    options.UseSqlServer(courseConnectionString));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<TeachersDbContext>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

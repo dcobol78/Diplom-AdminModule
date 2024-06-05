@@ -7,14 +7,14 @@ namespace CourseShared.Models
     {
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; }
+        public string? Id { get; set; }
 
-        public TestSession TestSession { get; set; }
+        public TestSession? TestSession { get; set; }
 
-        public Test Test { get; set; }
+        public Test? Test { get; set; }
 
-        public float Grade {  get; set; }
+        public float? Grade {  get; set; }
 
-        public int MaxGrade { get; set; }
+        public int? MaxGrade { get; set; }
     }
 }

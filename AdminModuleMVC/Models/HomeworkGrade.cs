@@ -11,6 +11,8 @@ namespace CourseShared.Models
 
         public float Grade {  get; set; }
 
+        public float Exp { get; set; }
+
         public Homework Homework { get; set; }
 
         public UserFile UserFile { get; set; }

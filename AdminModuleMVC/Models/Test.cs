@@ -39,7 +39,7 @@ namespace CourseShared.Models
         public int Cost {  get; set; }
 
         // Количество опыта за тест
-        public int Exp { get; set; }
+        public float? Exp { get; set; }
 
         public virtual List<Question> Questions { get; set; }
     }

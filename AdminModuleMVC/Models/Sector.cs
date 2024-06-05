@@ -52,7 +52,7 @@ namespace CourseShared.Models
         public List<CourseFile> SectionFiles {  get; set; }
 
         //Опыт получаемый за прохождение
-        public int Exp { get; set;}
+        public float? Exp { get; set;}
 
         public string? TestId { get; set; }
 

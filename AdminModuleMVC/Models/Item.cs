@@ -3,15 +3,20 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CourseShared.Models
 {
-    public class UserAnswer
+    public class Item
     {
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
-        public bool IsCorrect { get; set; } = false;
 
-        public string? Content { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
-        public int? Number {  get; set; }
+        public string? Description { get; set; }
+
+        public Course? Course { get; set; }
+
+        public float? Expthreshold { get; set; }
+
+        public Image? Image { get; set; }
     }
 }

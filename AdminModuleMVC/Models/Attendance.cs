@@ -1,17 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using CourseShared.Models;
 
-namespace CourseShared.Models
+namespace diplomV1.Models
 {
-    public class UserAnswer
+    public class Attendance
     {
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
-        public bool IsCorrect { get; set; } = false;
 
-        public string? Content { get; set; } = string.Empty;
+        public virtual List<Student> Students { get; set; }
 
-        public int? Number {  get; set; }
+        public virtual List<Event> Events {  get; set; }
     }
 }

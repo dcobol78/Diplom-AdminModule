@@ -8,24 +8,21 @@ namespace CourseShared.Models
 
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id {  get; set; }
+        public string Id { get; set; }
 
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
-        public string Email { get; set; }
+        public string? Email { get; set; }
+
+        public string? UserId { get; set; }
+
+        public Image Avatar { get; set; }
+
+        public virtual List<Notification> Notifications { get; set; }
 
         public virtual List<Course> Courses { get; set; }
-
-        /*
-         * 0 - Все права
-         * 1 - Удаление курса
-         * ...
-         * x..x - Четотам
-        */
-
-        public virtual List<int> RightsTypes {  get; set; }
 
         public Teacher() { }
 

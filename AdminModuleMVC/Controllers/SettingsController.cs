@@ -109,7 +109,6 @@ namespace AdminModuleMVC.Controllers
                     var not = new Notification()
                     {
                         Title = "Invite",
-                        CourseId = courseId,
                         Description = $"Это приглашение на курс {course.Name}",
                         ReciverEmail = email
                     };
@@ -148,7 +147,6 @@ namespace AdminModuleMVC.Controllers
             {
                 var student = _dbContext.
                     Teachers.
-                    Include(t => t.RightsTypes).
                     FirstOrDefault(s => s.Id == teacherId);
                 if (student != null)
                 {
@@ -177,10 +175,8 @@ namespace AdminModuleMVC.Controllers
                     var not = new Notification()
                     {
                         Title = "Invite",
-                        CourseId = courseId,
                         Description = $"Это приглашение на курс {course.Name}",
                         ReciverEmail = email,
-                        NotificationType = false
                     };
 
                     _dbContext.Notifications.Add(not);

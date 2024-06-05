@@ -6,8 +6,8 @@ namespace CourseShared.Models
     {
         public string Id { get; set; }
 
-        public Homework Homework { get; set; }
+        public Homework? Homework { get; set; }
 
-        public Test Test { get; set; }
+        public Test? Test { get; set; }
     }
 }

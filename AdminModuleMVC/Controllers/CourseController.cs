@@ -483,7 +483,13 @@ namespace AdminModuleMVC.Controllers
 
                 if (themes == null) themes = new List<Theme>();
 
-                themes.Add(new Theme(sectorId, (themes.Count + 1)));
+                themes.Add(new Theme() 
+                { 
+                    IdSection = sectorId, 
+                    Number = themes.Count,
+                    Content = " ",
+                    Name = "Deafualt Theme"
+                });
                 _dbContext.SaveChanges();
                 return RedirectToAction("EditSector", new { sectorId = sectorId });
             }

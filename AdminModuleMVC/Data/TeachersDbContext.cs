@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AdminModuleMVC.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class TeachersDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public TeachersDbContext(DbContextOptions<TeachersDbContext> options)
             : base(options)
         {
         }

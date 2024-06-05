@@ -21,14 +21,14 @@ namespace CourseShared.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
 
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
-        public string ParentId { get; set; }
+        public string? ParentId { get; set; }
 
         // Продолжительность в днях
-        public int Duration { get; set; }
+        public int? Duration { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [NotMapped]
         public IFormFile FormFile { get; set; }
@@ -40,18 +40,18 @@ namespace CourseShared.Models
         public virtual CourseFile HomeworkFile { get; set; }
 
         // Стоимость домашнего задания
-        public int Cost {  get; set; }
+        public int? Cost {  get; set; }
 
         //Опыт получаемый за прохождение курса
-        public int Exp { get; set;} 
+        public float? Exp { get; set;} 
 
-        public string ParentType { get; set; }
+        public string? ParentType { get; set; }
 
         // Разрешать загружать даже после срока
-        public bool AllowLateUpload { get; set; }
+        public bool? AllowLateUpload { get; set; }
 
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
     }
 }
