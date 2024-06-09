@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CourseShared.Models
 {
-    public class Item
+    public class HomeworkFile
     {
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -13,12 +13,14 @@ namespace CourseShared.Models
 
         public string? Description { get; set; }
 
-        public string? Type { get; set; }
+        public string? Path { get; set; }
 
-        public string AchivementId { get; set; }
+        public string? AutorId { get; set; }
 
-        public Image? Image { get; set; }
+        [ForeignKey("AutorId")]
+        public Student? Author { get; set; }
 
-        public string? Title { get; set; }
+        public Homework? Homework { get; set; }
+
     }
 }

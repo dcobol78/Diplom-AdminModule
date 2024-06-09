@@ -13,13 +13,13 @@ namespace CourseShared.Models
         public string Id { get; set; }
 
         // Id Сектора
-        public string? IdSection { get; set; }
+        public string IdSection { get; set; }
 
         // Имя Темы
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         // Содержание Темы
-        public string? Content { get; set; }
+        public string Content { get; set; }
 
         // Порядковый номер Темы
         public int Number { get; set; }
@@ -39,7 +39,7 @@ namespace CourseShared.Models
         public string? TestId { get; set; }
 
         [ForeignKey("TestId")]
-        public Test? Test { get; set; }
+        public Test Test { get; set; }
 
         // Спсок файлов темы
         public List<CourseFile> ThemeFiles { get; set; }

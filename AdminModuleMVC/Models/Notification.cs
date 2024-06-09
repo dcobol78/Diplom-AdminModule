@@ -15,6 +15,15 @@ namespace CourseShared.Models
 
         public string? ReciverEmail { get; set; }
 
-        public Notification() { }
+        public bool Seen { get; set; } = false;
+
+        public string? UserId { get; set; }
+
+        public DateTime CreationTime { get; set; }
+
+        public Notification() 
+        {
+            CreationTime = DateTime.Now;
+        }
     }
 }

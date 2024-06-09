@@ -14,9 +14,13 @@ namespace CourseShared.Models
 
         public string? Description {  get; set; }
 
-        public float? Expthreshold { get; set; }
+        public float? ExpThreshold { get; set; }
 
-        public Course? Course { get; set; }  
+        public Item? Reward { get; set; }
+
+        public string CourseId { get; set; }
+
+        public Course Course { get; set; }  
 
         public Image? Image { get; set; }
 

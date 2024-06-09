@@ -11,12 +11,14 @@ namespace CourseShared.Models
 
         public string? Content { get; set; }
 
-        public ChatInstance? ChatInstance { get; set; }
-
         public DateTime? CreationTime {  get; set; }
 
-        public Student? StudentAutor { get; set; }
+        public string? ChatId { get; set; }
 
-        public Teacher? TeacherAutor { get; set; }
+        public string? UserId { get; set; }
+
+        public string? UserName { get; set; }
+
+        public string? ImageId { get; set;}
     }
 }

@@ -12,6 +12,10 @@ namespace CourseShared.Models
 
         public string? Name { get; set; }
 
+        public string? Surname { get; set; }
+
+        public string? Patronymic { get; set; }
+
         public string? Description { get; set; }
 
         public string? Email { get; set; }
@@ -23,6 +27,8 @@ namespace CourseShared.Models
         public virtual List<Notification> Notifications { get; set; }
 
         public virtual List<Course> Courses { get; set; }
+        public virtual List<UserChat> UserChats { get; set; }
+        public virtual List<CourseChat> CourseChats { get; set; }
 
         public Teacher() { }
 

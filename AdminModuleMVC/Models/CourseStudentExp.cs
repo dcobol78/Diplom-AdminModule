@@ -1,17 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using CourseShared.Models;
 
 namespace CourseShared.Models
 {
-    public class Attendance
+    public class CourseStudentExp
     {
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; }
+        public string? Id { get; set; }
+        public Student? Student { get; set; }
+        public Course? Course { get; set; }
 
-        public virtual List<Student> Students { get; set; }
+        public float Exp { get; set; }
 
-        public virtual List<Event> Events {  get; set; }
     }
 }

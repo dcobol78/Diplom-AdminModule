@@ -10,14 +10,17 @@ namespace CourseShared.Models
         public string? Id { get; set; }
 
         public string? ImageTitle { get; set; }
+
+        public string? MimeType { get; set; } // New property to store MIME type
+
         public virtual byte[] ImageData { get; set; }
 
         public string GetImageDataUrl()
         {
-            if (ImageData != null && ImageData.Length > 0)
+            if (ImageData != null && ImageData.Length > 0 && !string.IsNullOrEmpty(MimeType))
             {
                 string base64String = Convert.ToBase64String(ImageData);
-                return $"data:image/png;base64,{base64String}"; // Assuming the image is PNG. Adjust the MIME type if necessary.
+                return $"data:{MimeType};base64,{base64String}";
             }
             return string.Empty;
         }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CourseShared.Models
 {
-    public class ChatInstance
+    public class CourseChat
     {
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -14,11 +14,10 @@ namespace CourseShared.Models
         public virtual List<Student> Students { get; set; }
         public virtual List<Teacher> Teachers { get; set; }
 
-        public string? Name { get; set; }
+        public string CourseName { get; set; }
+        public string CourseId { get; set; }
 
         public DateTime? LastInteraction { get; set; }
-
-        public string? ParentId { get; set; }
 
     }
 }

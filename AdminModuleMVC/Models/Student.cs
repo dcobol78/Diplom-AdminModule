@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-using diplomV1.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace CourseShared.Models
 {
@@ -14,6 +14,12 @@ namespace CourseShared.Models
         public string Id { get; set; }
 
         public string? Name { get; set; }
+
+        public string? Surname { get; set; }
+
+        public string? Patronymic { get; set; }
+
+        public DateOnly? DOB { get; set; }
 
         public string? Email { get; set; }
 
@@ -31,7 +37,17 @@ namespace CourseShared.Models
 
         public virtual List<Item> Inventory { get; set; }
 
+        public virtual List<HomeworkFile> HomeworkFiles { get; set; }
+
         public virtual List<Notification> Notifications { get; set; }
+
+        public virtual List<CourseStudentExp> CourseStudentExp { get; set; }
+
+        public virtual List<UserChat> UserChats { get; set; }
+
+        public virtual List<CourseChat> CourseChats { get; set; }
+
+        public virtual List<TestInstance> TestInstances { get; set; }
 
         public string? UserId { get; set; }
 

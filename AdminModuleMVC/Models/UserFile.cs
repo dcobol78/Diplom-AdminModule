@@ -16,5 +16,6 @@ namespace CourseShared.Models
         public string? Path { get; set; }
 
         public Student? Author { get; set; }
+
     }
 }
