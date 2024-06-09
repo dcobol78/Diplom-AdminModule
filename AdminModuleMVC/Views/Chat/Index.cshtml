@@ -1,0 +1,19 @@
+﻿@model IndexChatViewModel
+
+@{
+    ViewData["Title"] = "My Chats";
+}
+
+<h2>My Chats</h2>
+
+<ul>
+    @foreach (var chat in Model.Chats)
+    {
+        <li>
+            <a asp-controller="Chat" asp-action="Chat" asp-route-chatId="@chat.ChatId">
+                @chat.Name 
+            </a>
+            <span style="font-size: small; color: gray;">Last interaction: @chat.LastInteraction</span>
+        </li>
+    }
+</ul>

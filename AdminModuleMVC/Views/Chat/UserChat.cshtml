@@ -1,0 +1,26 @@
+﻿@model UserChatViewModel
+
+@{
+    ViewData["Title"] = "Chat";
+}
+
+<h2>@Model.Name</h2>
+
+<div id="chat-window" style="height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;">
+    @foreach (var message in Model.Messages)
+    {
+        <div>
+            <img src="@message.AuthorAvatarUrl" alt="Avatar" style="width: 30px; height: 30px; border-radius: 50%;" />
+            <strong>@message.AuthorName:</strong> @message.Content
+            <span style="font-size: small; color: gray;">(@message.CreationTime)</span>
+        </div>
+    }
+</div>
+
+<div id="message-input" style="margin-top: 10px;">
+    <form asp-action="SendUserMessage" method="post">
+        <input type="hidden" name="chatId" value="@Model.ChatId" />
+        <textarea name="messageContent" style="width: 100%; height: 50px;"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</div>

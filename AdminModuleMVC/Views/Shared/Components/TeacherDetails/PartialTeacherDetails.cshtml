@@ -1,0 +1,12 @@
+﻿@model TeacherDetailsViewModel
+
+<div class="teacher-details">
+    <div class="teacher-avatar">
+        <img src="@Model.AvatarUrl" alt="Teacher Avatar" />
+    </div>
+    <div class="teacher-info">
+        <h3>@Model.Name @Model.Surname @Model.Patronymic</h3>
+        <p><strong>Email:</strong> @Model.Email</p>
+        <p><strong>Date of Birth:</strong> @Model.DOB?.ToString("dd/MM/yyyy")</p>
+    </div>
+</div>

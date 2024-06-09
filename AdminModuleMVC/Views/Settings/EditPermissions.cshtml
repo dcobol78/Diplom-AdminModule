@@ -1,0 +1,42 @@
+﻿@model CourseSettingsViewModel
+
+@{
+    ViewData["Title"] = "Edit Permissions";
+}
+
+<h3>Generate a Join Code</h3>
+@await Component.InvokeAsync("GenerateCode", new { courseId = Model.CourseId })
+
+<h2>Edit Permissions for @Model.CourseName</h2>
+
+<form asp-action="UpdatePermissions">
+    <input type="hidden" asp-for="CourseId" />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Teacher</th>
+                <th>Edit Course</th>
+                <th>Add Students</th>
+                <th>Remove Students</th>
+                <th>Manage Content</th>
+                <th>View Grades</th>
+                <th>Edit Grades</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var permission in Model.TeacherPermissions)
+            {
+                <tr>
+                    <td>@await Component.InvokeAsync("TeacherDetails", new { userId = permission.TeacherId })</td>
+                    <td><input asp-for="@permission.CanEditCourse" type="checkbox" /></td>
+                    <td><input asp-for="@permission.CanAddStudents" type="checkbox" /></td>
+                    <td><input asp-for="@permission.CanRemoveStudents" type="checkbox" /></td>
+                    <td><input asp-for="@permission.CanManageContent" type="checkbox" /></td>
+                    <td><input asp-for="@permission.CanViewGrades" type="checkbox" /></td>
+                    <td><input asp-for="@permission.CanEditGrades" type="checkbox" /></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

@@ -118,7 +118,7 @@ namespace AdminModuleMVC.Controllers
                 }
             }
 
-            NotifyStudent(email);
+            //NotifyStudent(email);
 
             return PartialView(result);
         }
@@ -184,11 +184,67 @@ namespace AdminModuleMVC.Controllers
                 }
             }
 
-            NotifyTeacher(email);
+            //NotifyTeacher(email);
 
             return PartialView(result);
         }
 
+        public async Task<IActionResult> EditPermissions(string courseId)
+        {
+            var course = await _dbContext.Courses
+                .Include(c => c.Teachers)
+                .FirstOrDefaultAsync(c => c.Id == courseId);
+
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new CourseSettingsViewModel
+            {
+                CourseId = course.Id,
+                CourseName = course.Name,
+                TeacherPermissions = course.Teachers.Select(t => new TeacherPermissionViewModel
+                {
+                    TeacherId = t.Id,
+                    TeacherName = $"{t.Name} {t.Surname}",
+                    // Fetch existing permissions for the teacher if available
+                    CanEditCourse = false, // Placeholder
+                    CanAddStudents = false, // Placeholder
+                    CanRemoveStudents = false, // Placeholder
+                    CanManageContent = false, // Placeholder
+                    CanViewGrades = false, // Placeholder
+                    CanEditGrades = false // Placeholder
+                }).ToList()
+            };
+
+            return View(viewModel);
+        }
+
+        // POST: Settings/UpdatePermissions
+        [HttpPost]
+        public async Task<IActionResult> UpdatePermissions(CourseSettingsViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Update permissions logic here
+                foreach (var permission in model.TeacherPermissions)
+                {
+                    var teacher = await _dbContext.Teachers.FindAsync(permission.TeacherId);
+                    if (teacher != null)
+                    {
+                        // Save permissions for the teacher
+                        // Placeholder logic for saving permissions
+                    }
+                }
+
+                await _dbContext.SaveChangesAsync();
+                return RedirectToAction("Details", "Courses", new { id = model.CourseId });
+            }
+
+            return View("EditPermissions", model);
+        }
+   
         private void NotifyStudent(string studentEmail)
         {
 
