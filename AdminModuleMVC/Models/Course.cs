@@ -55,7 +55,7 @@ namespace CourseShared.Models
         // Список секторов
         public virtual List<Sector> Sections { get; set; }
 
-        public virtual List<String> Tags { get; set; }
+        //public virtual List<String> Tags { get; set; }
 
         // Имя автора
         public string? AutorName { get; set; }
