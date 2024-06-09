@@ -1,6 +1,7 @@
 ﻿using CourseShared.Models;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace AdminModuleMVC.Data
 {
     public class CourseDbContext : DbContext

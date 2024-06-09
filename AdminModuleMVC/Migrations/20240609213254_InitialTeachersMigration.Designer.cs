@@ -4,16 +4,19 @@ using AdminModuleMVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace AdminModuleMVC.Migrations.TeachersDb
+namespace AdminModuleMVC.Migrations
 {
     [DbContext(typeof(TeachersDbContext))]
-    partial class TeachersDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240609213254_InitialTeachersMigration")]
+    partial class InitialTeachersMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
