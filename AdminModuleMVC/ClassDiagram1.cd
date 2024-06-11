@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="CourseShared.Models.Achivement" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAAAAAAgAAAAAIABAAQAAAAAABAAAAAAAAAAAQA=</HashCode>
+      <FileName>Models\Achivement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Course" />
+      <Property Name="Image" />
+      <Property Name="Reward" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.Answer" Collapsed="true">
+    <Position X="7.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAAEAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\Answer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseShared.Models.Attendance" Collapsed="true">
+    <Position X="10.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Attendance.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Students" />
+      <Property Name="Events" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.Course" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAICBAAAAAAiERQAAAAkAATAAiAAAAAAAEAAC4AAAAA=</HashCode>
+      <FileName>Models\Course.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ChatInstance" />
+      <Property Name="Test" />
+      <Property Name="Homework" />
+      <Property Name="CourseImage" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Achivements" />
+      <Property Name="CourseFiles" />
+      <Property Name="Teachers" />
+      <Property Name="Students" />
+      <Property Name="Sections" />
+      <Property Name="Events" />
+      <Property Name="CourseStudentExp" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CourseShared.Models.CourseChat" Collapsed="true">
+    <Position X="4.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAqGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAA=</HashCode>
+      <FileName>Models\CourseChat.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Messages" />
+      <Property Name="Students" />
+      <Property Name="Teachers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.CourseCode" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAIAgAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Models\CourseCode.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Course" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.CourseFile" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAhAAIAgAAAAAQAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\CourseFile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Author" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.CourseStudentExp" Collapsed="true">
+    <Position X="4.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CourseStudentExp.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Course" />
+      <Property Name="Student" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.Event" Collapsed="true">
+    <Position X="8.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAgAAAAAAAIAAAAQAIAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\Event.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseShared.Models.Homework" Collapsed="true">
+    <Position X="11.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAjAAAAAAABABQgAAAAIAAAAgiCAEAAAAA=</HashCode>
+      <FileName>Models\Homework.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="HomeworkFile" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="StudentsFiles" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.HomeworkFile" Collapsed="true">
+    <Position X="10.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAAAAAAAgAAIAgAAAAAQAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\HomeworkFile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Homework" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.HomeworkGrade" Collapsed="true">
+    <Position X="4.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEGAAA=</HashCode>
+      <FileName>Models\HomeworkGrade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Homework" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.Image" Collapsed="true">
+    <Position X="9" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAQQAAAAAIAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Image.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseShared.Models.Item" Collapsed="true">
+    <Position X="7.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAEAAAQAAAAQAAAAAABAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\Item.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Image" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.Message" Collapsed="true">
+    <Position X="2.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAAAAAAAgAAAAAAAEAAQAAgAAAAAQ=</HashCode>
+      <FileName>Models\Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseShared.Models.Notification" Collapsed="true">
+    <Position X="10.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAEAAAAECAAgAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\Notification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseShared.Models.Question" Collapsed="true">
+    <Position X="1" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAAEAAABAAAAAAAAAAQQAAAAAAAAA=</HashCode>
+      <FileName>Models\Question.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Answers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.Sector" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgACEAAQAEAEAAQAAAAgAAAAAAAACQAAAAA=</HashCode>
+      <FileName>Models\Sector.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Test" />
+      <Property Name="Homework" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SectionFiles" />
+      <Property Name="Themes" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CourseShared.Models.Student" Collapsed="true">
+    <Position X="7.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgECACAACCQgAUSAAAQAAAwABAAAAAAAAAAIAhQAAAA=</HashCode>
+      <FileName>Models\Student.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Avatar" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Achivements" />
+      <Property Name="CourseChats" />
+      <Property Name="Courses" />
+      <Property Name="CourseStudentExp" />
+      <Property Name="HomeworkGrades" />
+      <Property Name="HomeworkFiles" />
+      <Property Name="Inventory" />
+      <Property Name="Notifications" />
+      <Property Name="TestGrades" />
+      <Property Name="TestInstances" />
+      <Property Name="UserChats" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.Teacher" Collapsed="true">
+    <Position X="2.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECACAACCAgAAAAAAQAAAwABAAAAAAAAAAIABAAAAA=</HashCode>
+      <FileName>Models\Teacher.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Avatar" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="CourseChats" />
+      <Property Name="Notifications" />
+      <Property Name="UserChats" />
+      <Property Name="Courses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.TeacherPermission" Collapsed="true">
+    <Position X="3" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgEWAAAAAAAAAAAIAIAACAAAABAAAAAAAAAAAADAAAA=</HashCode>
+      <FileName>Models\TeacherPermission.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Course" />
+      <Property Name="Teacher" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.Test" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAjAAEAAgAAABQAIAAAAAAEAgAAAAAAAAA=</HashCode>
+      <FileName>Models\Test.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Questions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.TestAnswer" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACAAAAAAAAAAAAAAAAAAAgAAAAAAAEAAAEAgQAAAA=</HashCode>
+      <FileName>Models\TestAnswer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Answer" />
+      <Property Name="Question" />
+      <Property Name="TestInstance" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.TestGrade" Collapsed="true">
+    <Position X="10.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAACAEEAAA=</HashCode>
+      <FileName>Models\TestGrade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TestSession" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.TestInstance" Collapsed="true">
+    <Position X="4.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAAAAAAAAAEAAAAIAAgAAAAQAAACAACAAA=</HashCode>
+      <FileName>Models\TestInstance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseShared.Models.TestSession" Collapsed="true">
+    <Position X="10.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAACAAAAAA=</HashCode>
+      <FileName>Models\TestSession.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Test" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Answers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.Theme" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgACEAAAAEAEAAYAAAAAAAAEAAAACQAAAAA=</HashCode>
+      <FileName>Models\Theme.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Homework" />
+      <Property Name="Test" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ThemeFiles" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CourseShared.Models.UserChat" Collapsed="true">
+    <Position X="7.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAAAAAAAABAAAAQAAAAAAAAAAACAgAAAQAAAAA=</HashCode>
+      <FileName>Models\UserChat.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Messages" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CourseShared.Models.UserFile" Collapsed="true">
+    <Position X="7.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAIAgAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserFile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Author" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="CourseShared.Models.ICourseStage" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQAAAAA=</HashCode>
+      <FileName>Models\ICourseStage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CourseShared.Models.IUser" Collapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAAACAAAAAIAAAAAAQAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Models\IUser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="CourseShared.Models.CourseFilter" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAIAQAAAAAAA=</HashCode>
+      <FileName>Models\CourseSearchViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CourseShared.Models.EventType" Collapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Models\Event.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

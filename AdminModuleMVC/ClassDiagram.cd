@@ -1,39 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="AdminModuleMVC.Controllers.CourseController">
-    <Position X="21.5" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>iAABBECAAACYEABBABC6ABbAGQCwAZBCACEQIwQAECE=</HashCode>
-      <FileName>Controllers\CourseController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AdminModuleMVC.Controllers.HomeController">
-    <Position X="23.25" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAIAAAAQAAAAEAAAAAAAA=</HashCode>
-      <FileName>Controllers\HomeController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AdminModuleMVC.Controllers.MessagesController">
-    <Position X="19.75" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAABBAAAAAAAAAAAACEAAAAAAAAAAAgAAAEAAAAAAAA=</HashCode>
-      <FileName>Controllers\MessagesController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AdminModuleMVC.Controllers.SettingsController">
-    <Position X="18" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>CAABBAgAAAAAgAAgABAAAABAAAEAAABAAAMAAABAAAA=</HashCode>
-      <FileName>Controllers\SettingsController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AdminModuleMVC.Controllers.AssessmentController">
-    <Position X="19.75" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>gAABBAAAAAQAAACAAAEAAAAAAAEAAEBAAAEBAAAAAAA=</HashCode>
-      <FileName>Controllers\AssessmentController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
