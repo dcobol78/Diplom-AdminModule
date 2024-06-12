@@ -8,6 +8,8 @@ namespace CourseShared.Models
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
+
+        public string QuestionId { get; set; }
         public bool IsCorrect { get; set; } = false;
 
         public string Content { get; set; } = string.Empty;

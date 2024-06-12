@@ -1,5 +1,13 @@
 ﻿@model Question
 
+<div>
+    @using (Html.BeginForm("GetTest", "Course", new { testId = Model.TestId}))
+    {
+        <button type="submit" class="btn btn-primary">К тесту</button>
+    }
+    <h1></h1>
+</div>
+
 <script type='text/javascript' src="..\assets\vendor\ckeditor5\build\ckeditor.js"></script>
 <div class="form-block">
         <form asp-action="UpdateQuestion" method="post">

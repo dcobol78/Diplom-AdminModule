@@ -922,6 +922,24 @@ namespace AdminModuleMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult GetTest(string testId)
+        {
+            // Проверка на то что пользователь имеет право редактировать курс
+            if (!string.IsNullOrEmpty((string)testId))
+            {
+                var test = _dbContext.
+                    Tests.
+                    Include(t => t.Questions).
+                    First(t => t.Id == testId);
+                if (test != null)
+                {
+                    TempData["TestId"] = test.Id;
+                    return View("EditTest" ,test);
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
         // Полный бред, находить экземпляр теста через Id родителя в EDIT TEST тут тоже покрутить???!!!??? Поправить позже
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -1016,18 +1034,23 @@ namespace AdminModuleMVC.Controllers
         public ActionResult AddQuestion()
         {
             var testId = TempData.Peek("TestId").ToString();
-            List<Question> questions = null;
             if (!string.IsNullOrEmpty(testId))
             {
                 var test = _dbContext.
                     Tests.
                     Include(t => t.Questions).
                     First(t => t.Id == testId);
-                test.Questions.Add(new Question(test.Questions.Count + 1));
-                questions = test.Questions;
+                var question = new Question
+                {
+                    TestId = test.Id,
+                    Number = test.Questions.Count + 1,
+                    Content = "Текст вопроса."
+                };
+                test.Questions.Add(question);
                 _dbContext.SaveChanges();
+                return PartialView("PartialTestQuestions", test.Questions);
             }
-            return PartialView("PartialTestQuestions", questions);
+            return View();
         }
 
         [HttpPost]

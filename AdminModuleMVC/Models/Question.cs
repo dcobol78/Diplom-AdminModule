@@ -18,16 +18,18 @@ namespace CourseShared.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
 
-        public string Content { get; set; }
+        public string? Content { get; set; }
+
+        public string? TestId { get; set; }
 
         public virtual List<Answer> Answers { get; set; }
 
-        public string Type { get; set; }
+        public string? Type { get; set; } = "Multiple";
         
         public int Number {  get; set; }
 
         // Стоимость вопроса
-        public int Cost { get; set; }
+        public int Cost { get; set; } = 0;
 
     }
 }

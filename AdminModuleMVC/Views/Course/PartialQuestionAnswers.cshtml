@@ -5,21 +5,24 @@
     <div class="form-block">
         @for (int i = 0; i < Model.Answers.Count; i++)
         {
-            @Html.HiddenFor(m => m.Answers[i])
-            <div class="answerItem">
+            <div class="form-block">
+                @Html.HiddenFor(m => m.Answers[i])
+                <div class="answerItem">
+                    <div>
+                        <label asp-for="@Model.Answers[i].Content">Вариант ответа</label>
+                        @Html.EditorFor(m => m.Answers[i].Content)
 
-                <label asp-for="@Model.Answers[i].Content">Вариант ответа</label>
-                @Html.EditorFor(m => m.Answers[i].Content)
+                        <label asp-for="@Model.Answers[i].IsCorrect">Верен ли ответ</label>
+                        @Html.CheckBoxFor(m => m.Answers[i].IsCorrect)
+                    </div>
+                    <span ></span>
+                    <button class="btn btn-primary" type="submit" style="" name="DeleteAnswer" id="DeleteAnswer" value="@Model.Answers[i].Id">Удалить</button>
 
-                <label asp-for="@Model.Answers[i].IsCorrect">Верен ли ответ</label>
-                @Html.CheckBoxFor(m => m.Answers[i].IsCorrect)
-
-                <input type="submit" name="DeleteAnswer" id="DeleteAnswer" value="@Model.Answers[i].Id" />
-
-                @Html.HiddenFor(m => m.Answers[i].Id)
-                @Html.HiddenFor(m => m.Answers[i].Number)
-                @Html.HiddenFor(m => m.Answers[i].Content)
-                @Html.HiddenFor(m => m.Answers[i].IsCorrect)
+                    @Html.HiddenFor(m => m.Answers[i].Id)
+                    @Html.HiddenFor(m => m.Answers[i].Number)
+                    @Html.HiddenFor(m => m.Answers[i].Content)
+                    @Html.HiddenFor(m => m.Answers[i].IsCorrect)
+                </div>
             </div>
         }
     </div>
