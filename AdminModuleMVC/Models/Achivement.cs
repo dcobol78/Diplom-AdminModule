@@ -18,8 +18,10 @@ namespace CourseShared.Models
 
         public Item? Reward { get; set; }
 
+
         public string CourseId { get; set; }
 
+        [ForeignKey("CourseId")]
         public Course Course { get; set; }  
 
         public Image? Image { get; set; }

@@ -15,7 +15,9 @@ namespace CourseShared.Models
 
         public string? Type { get; set; }
 
-        public string AchivementId { get; set; }
+        public string? AchivementId { get; set; }
+
+        public string? CourseId { get; set; }
 
         public Image? Image { get; set; }
 

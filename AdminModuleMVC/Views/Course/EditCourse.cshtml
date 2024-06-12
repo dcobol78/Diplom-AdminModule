@@ -108,6 +108,14 @@
     }
 </div>
 
+
+<div class="form-block">
+    @using (Html.BeginForm("Index", "Gamification", new {id = Model.Id}))
+    {
+        <input type="submit" value="Управлять достижениями" />
+    }
+</div>
+
 <div class="form-block">
     <h2>Тест</h2>
     @if (Model.Test != null)

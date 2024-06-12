@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Migrations\CourseDb\" />
     <Folder Include="Migrations\TeachersDb\" />
     <Folder Include="wwwroot\assets\vendor\" />
     <Folder Include="wwwroot\files\coursefiles\" />

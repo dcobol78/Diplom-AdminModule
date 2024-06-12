@@ -1,1 +1,39 @@
-﻿
+﻿@model AchivementsViewModel
+
+@{
+    ViewData["Title"] = "Achievements";
+}
+
+<h2>Achievements</h2>
+
+<p>
+    <a asp-action="Create" asp-route-id=@Model.courseId class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Exp Threshold</th>
+            <th>Course</th>
+            <th>Reward</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Achivements)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.ExpThreshold</td>
+            <td>@item.Course.Name</td>
+            <td>@item.Reward?.Name</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
