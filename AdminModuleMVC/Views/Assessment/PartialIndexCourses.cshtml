@@ -15,7 +15,7 @@
                 @foreach (var course in Model)
                 {
                     <tr>
-                    <td>@Html.ActionLink(course.Name, "EditPermissions", "Settings", new { id = course.Id })</td>
+                    <td>@Html.ActionLink(course.Name, "EditGrades", "Assessment", new { id = course.Id })</td>
                         <td>@course.AutorName</td>
                         <td>@course.Duration</td>
                         <td>@course.CreationDate.ToShortDateString()</td>

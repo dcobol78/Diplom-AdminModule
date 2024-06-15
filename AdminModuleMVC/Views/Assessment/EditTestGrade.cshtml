@@ -1,0 +1,23 @@
+﻿@model TestGrade
+
+@{
+    ViewData["Title"] = "Edit Test Grade";
+}
+
+<h2>Оценки за тест</h2>
+
+<form asp-action="EditTestGrade">
+    <div class="form-group">
+        <label asp-for="Grade" class="control-label"></label>
+        <input asp-for="Grade" class="form-control" />
+        <span asp-validation-for="Grade" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MaxGrade" class="control-label"></label>
+        <input asp-for="MaxGrade" class="form-control" />
+        <span asp-validation-for="MaxGrade" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>

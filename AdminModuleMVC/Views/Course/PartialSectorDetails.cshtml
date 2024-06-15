@@ -6,17 +6,13 @@
 
         <label asp-for="Duration">Продолжительность в неделях:</label>
         <input type="number" id="Duration" name="Duration" value="@Model.Duration" min=0 oninput="validity.valid||(value='')" required><br>
-
-        <label asp-for="Exp">Опыт получаемый за Окончание сектора:</label>
-        <input type="number" id="Exp" name="Exp" value="@Model.Exp" min=0 max=5000 oninput="validity.valid||(value='')" required><br>
-
         <head>
             <meta charset="utf-8">
             <title>Содержание</title>
         </head>
         <body>
             <h1>Содержание</h1>
-            <textarea asp-for="Content" name="Content" id="contEditor">
+            <textarea asp-for="Content" name="Content" id="contEditor" required>
                 @Model.Content
         </textarea>
             <script>

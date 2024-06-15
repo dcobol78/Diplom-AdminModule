@@ -5,6 +5,9 @@ namespace CourseShared.Models
 {
     public class TeacherPermission
     {
+
+        
+
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
@@ -12,11 +15,11 @@ namespace CourseShared.Models
         public Teacher Teacher { get; set; }
         public string CourseId { get; set; }
         public Course Course { get; set; }
-        public bool CanEditCourse { get; set; }
-        public bool CanAddStudents { get; set; }
-        public bool CanRemoveStudents { get; set; }
-        public bool CanManageContent { get; set; }
-        public bool CanViewGrades { get; set; }
-        public bool CanEditGrades { get; set; }
+        public bool CanEditCourse { get; set; } = false;
+        public bool CanAddStudents { get; set; } = false;
+        public bool CanRemoveStudents { get; set; } = false;
+        public bool CanManageContent { get; set; } = false;
+        public bool CanViewGrades { get; set; } = false;
+        public bool CanEditGrades { get; set; } = false;
     }
 }

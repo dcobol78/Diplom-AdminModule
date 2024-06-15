@@ -1,4 +1,5 @@
 ﻿using AdminModuleMVC.Data;
+using CourseShared.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -19,77 +20,103 @@ namespace AdminModuleMVC.Controllers
             _appEnvironment = appEnvironment;
         }
 
-        // Метод для отображения списка всех оценок
         public ActionResult Index()
         {
-            return View();
-        }
+            var currentUser = User;
+            var userId = _userManager.GetUserId(currentUser);
 
-        // Метод для отображения формы создания новой оценки
-        public ActionResult Create()
+            // Получение списка курсов из БД
+            var model = _dbContext.
+                Courses.
+                Where(c => c.AutorId == userId).
+                ToList();
+
+            return View(model);
+        }
+        public ActionResult EditGrades(string id)
         {
-            return View();
+            if (!string.IsNullOrEmpty(id))
+            {
+                var course = _dbContext.
+                    Courses.
+                    Include(c => c.Students).
+                    Include(c => c.Teachers).
+                    First(c => c.Id == id);
+                if (course != null)
+                {
+                    TempData["CourseId"] = id;
+                    return View(course.Students);
+                }
+            }
+
+            return RedirectToAction("Index");
         }
 
-        // Метод для сохранения новой оценки
+        public async Task<IActionResult> Details(string id)
+        {
+            var student = await _dbContext.Students.Include(s => s.HomeworkGrades).ThenInclude(hg => hg.Homework)
+                                                 .Include(s => s.TestGrades).ThenInclude(tg => tg.Test)
+                                                 .FirstOrDefaultAsync(s => s.Id == id);
+
+            var courseId = TempData.Peek("CourseId").ToString();
+            var tests = _dbContext.Tests.Where(t => t.ParentId == courseId);
+
+            var homeworks = _dbContext.Homeworks.Where(t => t.ParentId == courseId);
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return View(student);
+        }
+
+        public async Task<IActionResult> EditHomeworkGrade(string id)
+        {
+            var homeworkGrade = await _dbContext.HomeworkGrades.Include(hg => hg.Homework)
+                                                             .FirstOrDefaultAsync(hg => hg.Id == id);
+            if (homeworkGrade == null)
+            {
+                return NotFound();
+            }
+            return View(homeworkGrade);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddNewGrade()
+        public async Task<IActionResult> EditHomeworkGrade(HomeworkGrade homeworkGrade)
         {
-            return View();
+            var courseId = TempData.Peek("CourseId").ToString();
+            if (ModelState.IsValid)
+            {
+                _dbContext.Update(homeworkGrade);
+                await _dbContext.SaveChangesAsync();
+                return RedirectToAction(nameof(Details), new { id = courseId });
+            }
+            return View(homeworkGrade);
         }
 
-        // Метод для отображения формы редактирования оценки
-        public ActionResult EditGrades(int? id)
+        public async Task<IActionResult> EditTestGrade(string id)
         {
-            return View();
+            var testGrade = await _dbContext.TestGrades.Include(tg => tg.Test)
+                                                     .FirstOrDefaultAsync(tg => tg.Id == id);
+            if (testGrade == null)
+            {
+                return NotFound();
+            }
+            return View(testGrade);
         }
 
-        // Метод для сохранения изменений после редактирования оценки
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SaveChanges(int id)
+        public async Task<IActionResult> EditTestGrade(TestGrade testGrade)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                _dbContext.Update(testGrade);
+                await _dbContext.SaveChangesAsync();
+                return RedirectToAction(nameof(Details), new { id = testGrade.Test.ParentId });
+            }
+            return View(testGrade);
         }
-
-        // Метод для отображения частичного представления формы удаления оценки
-        public ActionResult Delete(int? id)
-        {
-            return View();
-        }
-
-        // Метод для отображения формы редактирования оценок домашинх заданий
-        public ActionResult HomeworkGrades(int? id)
-        {
-            return View();
-        }
-
-        // Метод для отображения формы редактирования оценок тестов
-        public ActionResult TestGrades(int? id)
-        {
-            return View();
-        }
-
-        // Метод для удаления оценки
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            /*
-            var assessment = await _dbContext.Assessments.FindAsync(id);
-            _dbContext.Assessments.Remove(assessment);
-            await _dbContext.SaveChangesAsync();
-            */
-            return RedirectToAction(nameof(Index));
-            
-        }
-
-        // Метод для проверки существования оценки
-        private bool AssessmentExists(int id)
-        {
-            return true;
-        }
-
     }
 }

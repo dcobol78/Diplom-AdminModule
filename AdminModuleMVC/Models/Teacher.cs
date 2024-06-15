@@ -26,6 +26,8 @@ namespace CourseShared.Models
 
         public virtual List<UserChat> UserChats { get; set; }
 
+        public virtual List<TeacherPermission> TeacherPermissions { get; set; }
+
         public virtual List<CourseChat> CourseChats { get; set; }
 
         public virtual List<Notification> Notifications { get; set; }

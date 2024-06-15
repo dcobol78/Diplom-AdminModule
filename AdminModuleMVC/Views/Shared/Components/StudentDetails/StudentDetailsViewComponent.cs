@@ -8,12 +8,12 @@ using Microsoft.EntityFrameworkCore;
 namespace AdminModuleMVC.Views.Shared.Components.TeacherDetails
 {
 
-    public class TeacherDetailsViewComponent : ViewComponent
+    public class StudentDetailsViewComponent : ViewComponent
     {
         private readonly CourseDbContext _dbContext;
         private readonly UserManager<IdentityUser> _userManager;
 
-        public TeacherDetailsViewComponent(CourseDbContext context, UserManager<IdentityUser> userManager)
+        public StudentDetailsViewComponent(CourseDbContext context, UserManager<IdentityUser> userManager)
         {
             _dbContext = context;
             _userManager = userManager;
@@ -22,20 +22,20 @@ namespace AdminModuleMVC.Views.Shared.Components.TeacherDetails
         public IViewComponentResult Invoke(string id)
         {
 
-            var teacher = _dbContext.Teachers.
+            var student = _dbContext.Students.
                 Include(t => t.Avatar).
                 FirstOrDefault(t => t.Id == id);
 
             var viewModel = new TeacherDetailsViewModel
             {
-                Id = teacher.Id,
-                Name = teacher.Name,
-                Surname = teacher.Surname,
-                Patronymic = teacher.Patronymic,
-                DOB = teacher.DOB,
-                Email = teacher.Email,
-                UserId = teacher.UserId,
-                AvatarUrl = teacher.Avatar?.GetImageDataUrl() ?? "/files/images/default-avatar.png"
+                Id = student.Id,
+                Name = student.Name,
+                Surname = student.Surname,
+                Patronymic = student.Patronymic,
+                DOB = student.DOB,
+                Email = student.Email,
+                UserId = student.UserId,
+                AvatarUrl = student.Avatar?.GetImageDataUrl() ?? "/files/images/default-avatar.png"
             };
 
             return View("PartialTeacherDetails", viewModel);

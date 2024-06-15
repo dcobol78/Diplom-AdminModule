@@ -1,24 +1,15 @@
 ﻿@model Course
+
+<script type='text/javascript' src="..\assets\vendor\ckeditor5\build\ckeditor.js"></script>
 @{
     ViewData["Title"] = "Home page";
 }
 
-<script type='text/javascript' src="..\assets\vendor\ckeditor5\build\ckeditor.js"></script>
-
 <div>
-@using (Html.BeginForm("Index", "Course"))
-{
-        <button type="submit" class="btn btn-primary">К курсам</button>
-}
-    <h1></h1>
-</div>
 
-@using (Html.BeginForm("StudentList", "Course"))
-{
-    <button type="submit" class="btn btn-primary">Управлять студентами</button>
-}
-
-<h1></h1>
+    <a asp-action="Index" class="btn btn-primary">Назад к курсам</a>
+<a asp-action="EditPermissions" asp-controller="Settings" asp-route-id=@Model.Id class="btn btn-primary">К настройкам</a>
+ <h1></h1>
 </div>
 
     <form asp-action="SaveCourse" method="post"
@@ -67,15 +58,12 @@
         <span id="loading" style="display:none;"> <i class="fas fa-spinner fa-spin"></i></span>
     </form>
 </div>
-    
-    <form asp-action="UpdateHomework" method="post" id="upload"
-          data-ajax="true"
-          data-ajax-method="post"
-          data-ajax-loading="#loading"
-          data-ajax-mode="replace"
-          data-ajax-update="#homework"
-          data-ajax-enctype="multipart/form-data">
 
+<form asp-action="UpdateHomework" method="post" data-ajax="true"
+      data-ajax-method="post"
+      data-ajax-loading="#loading"
+      data-ajax-mode="replace"
+      data-ajax-update="#homework">
         
     <div id="homework">
         @{
@@ -102,14 +90,7 @@
 </div>
 
 <div class="form-block">
-    @using(Html.BeginForm("SudentList", "Course"))
-    {
-        <input type="submit" value="Управлять студентами" />
-    }
-</div>
-
-
-<div class="form-block">
+    <h2>Достижения</h2>
     @using (Html.BeginForm("Index", "Gamification", new {id = Model.Id}))
     {
         <input type="submit" value="Управлять достижениями" />

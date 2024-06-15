@@ -93,27 +93,30 @@ namespace AdminModuleMVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         // Нужно как-то уведомлять клиента
-        public ActionResult AddStudent(string email)
+        public ActionResult AddStudentByEmail(string email)
         {
             var courseId = TempData.Peek("CourseId").ToString();
             Course course = null;
             string result = "NOT Success";
             if (!string.IsNullOrEmpty(courseId))
             {
-                course = _dbContext.
+                var student = _dbContext.Students.Include(s => s.Notifications).FirstOrDefault(s => s.Email == email);
+                if (student != null)
+                {
+                    course = _dbContext.
                     Courses.
                     Include(c => c.Students).
                     First(x => x.Id == courseId);
-                if (course != null)
-                {
+
                     var not = new Notification()
                     {
                         Title = "Invite",
-                        Description = $"Это приглашение на курс {course.Name}",
+                        Description = $"Это приглашение на курс {course.Name}! Принять <>",
                         ReciverEmail = email
                     };
-
-                    _dbContext.Notifications.Add(not);
+                    course.Students.Add(student);
+                    student.Notifications.Add(not);
+                    _dbContext.SaveChanges();
                     result = "Success";
                 }
             }
@@ -159,7 +162,7 @@ namespace AdminModuleMVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         // Нужно как-то уведомлять учителя
-        public ActionResult AddTeacher(string email)
+        public ActionResult AddTeacherByEmail(string email)
         {
             var courseId = TempData.Peek("CourseId").ToString();
             Course course = null;
@@ -170,30 +173,39 @@ namespace AdminModuleMVC.Controllers
                     Courses.
                     Include(c => c.Teachers).
                     First(x => x.Id == courseId);
+                var teacher = _dbContext.Teachers.Include(s => s.Notifications).FirstOrDefault(s => s.Email == email);
                 if (course != null)
                 {
+
                     var not = new Notification()
                     {
                         Title = "Invite",
                         Description = $"Это приглашение на курс {course.Name}",
                         ReciverEmail = email,
                     };
-
+                    _dbContext.TeacherPermissions.Add(new TeacherPermission
+                    {
+                        Teacher = teacher,
+                        TeacherId = teacher.Id,
+                        Course = course,
+                        CourseId = courseId
+                    });
                     _dbContext.Notifications.Add(not);
+                    course.Teachers.Add(teacher);
                     result = "Success";
                 }
             }
 
-            //NotifyTeacher(email);
+            _dbContext.SaveChanges();
 
-            return PartialView(result);
+            return RedirectToAction("EditPermissions", "Settings", new { id = course.Id });
         }
 
-        public async Task<IActionResult> EditPermissions(string courseId)
+        public async Task<IActionResult> EditPermissions(string id)
         {
             var course = await _dbContext.Courses
-                .Include(c => c.Teachers)
-                .FirstOrDefaultAsync(c => c.Id == courseId);
+                .Include(c => c.Teachers).Include(c => c.TeacherPermissions)
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             if (course == null)
             {
@@ -204,55 +216,51 @@ namespace AdminModuleMVC.Controllers
             {
                 CourseId = course.Id,
                 CourseName = course.Name,
-                TeacherPermissions = course.Teachers.Select(t => new TeacherPermissionViewModel
-                {
-                    TeacherId = t.Id,
-                    TeacherName = $"{t.Name} {t.Surname}",
-                    // Fetch existing permissions for the teacher if available
-                    CanEditCourse = false, // Placeholder
-                    CanAddStudents = false, // Placeholder
-                    CanRemoveStudents = false, // Placeholder
-                    CanManageContent = false, // Placeholder
-                    CanViewGrades = false, // Placeholder
-                    CanEditGrades = false // Placeholder
-                }).ToList()
+                TeacherPermissions = course.TeacherPermissions
             };
 
             return View(viewModel);
         }
 
+
         // POST: Settings/UpdatePermissions
         [HttpPost]
         public async Task<IActionResult> UpdatePermissions(CourseSettingsViewModel model)
         {
-            if (ModelState.IsValid)
+            if (model != null)
             {
+                var courseId = TempData.Peek("CourseId").ToString();
+                var course = _dbContext.
+                    Courses.
+                    Include(c => c.Teachers).
+                    First(x => x.Id == courseId);
+
+                var perms = _dbContext.TeacherPermissions.Where(p => p.CourseId == courseId);
                 // Update permissions logic here
                 foreach (var permission in model.TeacherPermissions)
                 {
                     var teacher = await _dbContext.Teachers.FindAsync(permission.TeacherId);
                     if (teacher != null)
                     {
-                        // Save permissions for the teacher
-                        // Placeholder logic for saving permissions
+                        var dbPerm = perms.FirstOrDefault(p => p.TeacherId == teacher.Id);
+                        if (dbPerm != null)
+                        {
+
+                            dbPerm.CanAddStudents = permission.CanAddStudents;
+                            dbPerm.CanEditCourse = permission.CanEditCourse;
+                            dbPerm.CanEditGrades = permission.CanEditGrades;
+                            dbPerm.CanManageContent = permission.CanManageContent;
+                            dbPerm.CanRemoveStudents = permission.CanRemoveStudents;
+                            dbPerm.CanViewGrades = permission.CanViewGrades;
+                        }
                     }
                 }
 
                 await _dbContext.SaveChangesAsync();
-                return RedirectToAction("Details", "Courses", new { id = model.CourseId });
+                return RedirectToAction("EditPermissions", "Settings", new { id = model.CourseId });
             }
 
             return View("EditPermissions", model);
-        }
-   
-        private void NotifyStudent(string studentEmail)
-        {
-
-        }
-
-        private void NotifyTeacher(string teacherEmail)
-        {
-
         }
     }
 }

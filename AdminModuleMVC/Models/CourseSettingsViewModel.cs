@@ -6,6 +6,6 @@ namespace CourseShared.Models
     {
         public string CourseId { get; set; }
         public string CourseName { get; set; }
-        public List<TeacherPermissionViewModel> TeacherPermissions { get; set; }
+        public List<TeacherPermission> TeacherPermissions { get; set; }
     }
 }

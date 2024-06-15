@@ -14,12 +14,12 @@
             @foreach (var file in Model)
             {
                 <tr>
-                    <td><a href=@file.Path>@file.Name</a></td>
+                    <td align="left"><a href=@file.Path>@file.Name</a></td>
                     <td>@file.Description</td>
-                    <td>
+                    <td align="center">
                         <form asp-action="DeleteFile" method="post">
+                            <button type="submit" value="X" class="btn btn-primary">X</button>
                             <input type="hidden" id="fileId" name="fileId" value="@file.Id"><br>
-                            <input type="submit" value="X" />
                         </form>
                     </td>
                 </tr>

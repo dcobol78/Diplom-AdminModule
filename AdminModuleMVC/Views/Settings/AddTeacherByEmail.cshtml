@@ -1,0 +1,16 @@
+﻿@model string
+
+
+@if (Model == "Success")
+{
+    <span class="text-success">
+        @Model
+    </span>
+}
+else
+{
+    <span class="text-warning">
+        @Model
+    </span>
+}
+

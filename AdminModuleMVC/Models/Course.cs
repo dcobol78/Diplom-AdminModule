@@ -101,6 +101,8 @@ namespace CourseShared.Models
         public virtual List<Student> Students { get; set; }
         public virtual List<Teacher> Teachers { get; set; }
 
+        public virtual List<TeacherPermission> TeacherPermissions { get; set; }
+
         public virtual List<CourseStudentExp> CourseStudentExp { get; set; }
 
         public CourseChat? ChatInstance { get; set; }

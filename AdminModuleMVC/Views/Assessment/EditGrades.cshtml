@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Student>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h2>Студенты</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Name @student.Surname</td>
+                <td>@student.Email</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@student.Id" class="btn btn-info">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

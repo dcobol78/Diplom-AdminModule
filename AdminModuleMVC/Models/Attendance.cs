@@ -10,8 +10,10 @@ namespace CourseShared.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
 
-        public virtual List<Student> Students { get; set; }
+        public virtual Student Student { get; set; }
 
-        public virtual List<Event> Events {  get; set; }
+        public virtual Event Event {  get; set; }
+
+        public bool Was { get; set; }
     }
 }

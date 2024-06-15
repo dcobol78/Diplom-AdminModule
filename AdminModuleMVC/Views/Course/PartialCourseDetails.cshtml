@@ -16,9 +16,6 @@
         <label asp-for="IsPublic">Открытый курс:</label>
         @Html.CheckBoxFor(model => model.IsPublic)
 
-        <label asp-for="Exp">Опыт получаемый за Окончание курса:</label>
-        <input type="number" id="Exp" name="Exp" value="@Model.Exp" min=0 max=10000 oninput="validity.valid||(value='')" required><br>
-
         <label asp-for="StartingDate">Дата открытия курса:</label>
         @Html.EditorFor(model => model.StartingDate)
 
@@ -30,7 +27,7 @@
         <body>
             <h1></h1>
             <div class="editor">
-            <textarea asp-for="Description" name="Description" id="descEditor">
+            <textarea asp-for="Description" name="Description" id="descEditor" required>
                 @Model.Description
             </textarea>
         </div>

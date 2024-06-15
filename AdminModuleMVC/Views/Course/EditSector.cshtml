@@ -28,13 +28,7 @@
 
 @Html.Partial("PartialSectorThemes", Model.Themes)
 
-<form asp-action="UpdateHomework" method="post" id="uploader"
-      data-ajax="true"
-      data-ajax-method="post"
-      data-ajax-loading="#loading"
-      data-ajax-mode="replace"
-      data-ajax-update="#homework"
-      data-ajax-enctype="multipart/form-data">
+<form asp-action="UpdateHomework" method="post">
 
 
     <div id="homework">

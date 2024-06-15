@@ -32,10 +32,10 @@ namespace CourseShared.Models
         public virtual List<Theme> Themes { get; set; }
 
         // Имя Сектора
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         // Содержание сектора
-        public string Content { get; set; }
+        public string? Content { get; set; }
 
         // Порядковый номер сектора
         public int Number { get; set; }

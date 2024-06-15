@@ -53,4 +53,16 @@ namespace CourseShared.Models
 
         public Student() { }
     }
+
+    public class StudentDetailsViewModel
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Patronymic { get; set; }
+        public DateOnly? DOB { get; set; }
+        public string Email { get; set; }
+        public string UserId { get; set; }
+        public string AvatarUrl { get; set; }
+    }
 }

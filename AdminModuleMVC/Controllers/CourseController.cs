@@ -38,10 +38,12 @@ namespace AdminModuleMVC.Controllers
             var currentUser = this.User;
             var userId = _userManager.GetUserId(currentUser);
 
+            var teacher = _dbContext.Teachers.FirstOrDefault(t => t.UserId == userId);
+
             // Получение списка курсов из БД
             var model = _dbContext.
                 Courses.
-                Where(c => c.AutorId == userId).
+                Where(c => c.AutorId == userId || c.Teachers.Contains(teacher)).
                 ToList();
                 
             return View(model);
@@ -1254,7 +1256,8 @@ namespace AdminModuleMVC.Controllers
         {
             var courseId = TempData.Peek("CourseId").ToString();
 
-            if (string.IsNullOrEmpty(eventId) && string.IsNullOrEmpty(courseId))
+            
+            if (!string.IsNullOrEmpty(eventId) && !string.IsNullOrEmpty(courseId))
             {
                 var course = _dbContext.
                     Courses.
@@ -1271,9 +1274,11 @@ namespace AdminModuleMVC.Controllers
             return View();
         }
 
-        public ActionResult SaveAttendance()
+        public ActionResult UpdateAttendance()
         {
+            var courseId = TempData.Peek("CourseId").ToString();
 
+            return RedirectToAction("EditCourse", new { courseId = courseId });
             return View();
         }
 
