@@ -17,7 +17,7 @@ using static System.Net.WebRequestMethods;
 
 namespace AdminModuleMVC.Controllers
 {
-
+    // Курс контроллер
     [Authorize]
     public class CourseController : Controller
     {
